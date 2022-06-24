@@ -7,7 +7,7 @@ const Footer = () => {
       </p>
 
       <div className="flex my-6">
-        <a href="https://github.com/intagaming/blog-astro">
+        <a href="https://github.com/intagaming/hxann.com">
           <i class="fa-brands fa-github fa-xl"></i>
         </a>
       </div>
