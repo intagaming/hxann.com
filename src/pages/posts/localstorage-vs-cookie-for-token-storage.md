@@ -1,5 +1,5 @@
 ---
-layout: ../../layouts/PostLayout.astro
+layout: ../../layouts/PostOrPageLayout.astro
 title: localStorage vs. Cookie for token storage
 slug: localstorage-vs-cookie-for-token-storage
 author: "An7"

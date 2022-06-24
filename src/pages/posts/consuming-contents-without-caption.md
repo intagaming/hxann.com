@@ -1,5 +1,5 @@
 ---
-layout: ../../layouts/PostLayout.astro
+layout: ../../layouts/PostOrPageLayout.astro
 title: Consuming contents without caption
 slug: consuming-contents-without-caption
 author: "An7"

@@ -1,5 +1,5 @@
 ---
-layout: ../../layouts/PostLayout.astro
+layout: ../../layouts/PostOrPageLayout.astro
 title: Using Supabase Authentication on Expo
 slug: using-supabase-authentication-on-expo
 author: ["An7"]

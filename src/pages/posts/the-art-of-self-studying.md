@@ -1,5 +1,5 @@
 ---
-layout: ../../layouts/PostLayout.astro
+layout: ../../layouts/PostOrPageLayout.astro
 title: The art of self-studying
 slug: the-art-of-self-studying
 author: "An7"

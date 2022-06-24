@@ -1,5 +1,5 @@
 ---
-layout: ../../layouts/PostLayout.astro
+layout: ../../layouts/PostOrPageLayout.astro
 title: About the hesitancy in reading Software Engineering writings
 slug: about-the-hesitancy-in-reading-software-engineering-writings
 author: "An7"

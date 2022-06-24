@@ -1,5 +1,5 @@
 ---
-layout: ../../layouts/PostLayout.astro
+layout: ../../layouts/PostOrPageLayout.astro
 title: What your school teaches you about making a Facebook clone
 slug: what-your-school-teaches-you-about-making-a-facebook-clone
 author: "An7"

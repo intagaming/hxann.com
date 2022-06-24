@@ -1,5 +1,5 @@
 ---
-layout: ../../layouts/PostLayout.astro
+layout: ../../layouts/PostOrPageLayout.astro
 title: The desire of documenting
 slug: the-desire-of-documenting
 author: "An7"
