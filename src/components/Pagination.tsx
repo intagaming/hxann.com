@@ -1,5 +1,5 @@
 import { Component, mergeProps } from "solid-js";
-import * as _ from "lodash";
+import { range } from "lodash";
 
 type PaginationButtonProps = {
   selected: boolean;
@@ -57,7 +57,7 @@ const Pagination: Component<Props> = (props) => {
     totalPages - 1,
     middlePagesStart + middlePagesCount
   );
-  const middlePages = _.range(middlePagesStart, middlePagesEnd + 1);
+  const middlePages = range(middlePagesStart, middlePagesEnd + 1);
 
   const showBeginningDots = middlePagesStart > 2;
   const showEndDots = middlePagesEnd < totalPages - 1;
