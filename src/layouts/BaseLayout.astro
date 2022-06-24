@@ -28,10 +28,21 @@ const navBarEntries: NavBarEntry[] = [
   <meta name="viewport" content="width=device-width">
   <link rel="icon" type="image/x-icon" href="/favicon.ico" />
   <title>Astro Title Placeholder</title>
+
+  <script is:inline>
+    if (localStorage.theme === "dark" || (!('theme' in localStorage) &&
+      window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark');
+      localStorage.setItem("theme", "dark");
+    } else {
+      document.documentElement.classList.remove('dark');
+      localStorage.setItem("theme", "light");
+    }
+  </script>
 </head>
 
 <body>
-  <div class="dark flex flex-col min-h-screen">
+  <div class="flex flex-col min-h-screen">
     <NavBar client:load entries={navBarEntries} />
     <div class="flex-1 dark:bg-neutral-900">
       <slot />

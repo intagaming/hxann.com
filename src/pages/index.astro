@@ -1,7 +1,7 @@
 ---
-import Layout from '@layouts/Layout.astro';
 import { PostFrontmatter } from 'src/types';
 import PostList from "@components/PostList";
+import BaseLayout from '@layouts/BaseLayout.astro';
 
 let allPosts = await Astro.glob<PostFrontmatter>('./posts/*.md');
 allPosts = allPosts.sort(
@@ -10,8 +10,8 @@ allPosts = allPosts.sort(
 );
 ---
 
-<Layout>
+<BaseLayout>
   <main>
     <PostList posts={allPosts} />
   </main>
-</Layout>
+</BaseLayout>
