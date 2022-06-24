@@ -23,7 +23,6 @@ const ThemeToggle = () => {
     setTheme(theme() !== "dark" ? "dark" : "light");
   };
 
-  console.log(localStorage.getItem("theme"));
   return (
     <>
       {mounted() && (
