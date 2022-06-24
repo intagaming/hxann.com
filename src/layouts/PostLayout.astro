@@ -12,7 +12,7 @@ export interface Props {
 
 const { content } = Astro.props as Props;
 
-let allPosts = await Astro.glob<PostFrontmatter>('../pages/posts/*.md');
+let allPosts = await Astro.glob<PostFrontmatter>('../pages/blog/posts/*.md');
 allPosts = allPosts.sort(
   (a, b) => new Date(b.frontmatter.publication_date).valueOf() -
     new Date(a.frontmatter.publication_date).valueOf()

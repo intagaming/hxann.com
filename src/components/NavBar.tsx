@@ -55,7 +55,7 @@ const NavBar: Component<Props> = (props) => {
 
         <div class="hidden md:flex flex-[3] text-lg justify-center gap-4">
           {props.entries.map((entry) => (
-            <a href={`/pages/${entry.slug}`} class="p-2">
+            <a href={`/blog/pages/${entry.slug}`} class="p-2">
               {entry.title}
             </a>
           ))}
@@ -110,7 +110,7 @@ const NavBar: Component<Props> = (props) => {
             </li>
             {props.entries.map((entry) => (
               <li>
-                <a href={`/pages/${entry.slug}`}>{entry.title}</a>
+                <a href={`/blog/pages/${entry.slug}`}>{entry.title}</a>
               </li>
             ))}
           </ul>

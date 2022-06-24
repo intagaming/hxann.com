@@ -1,5 +1,5 @@
 ---
-layout: ../../layouts/PageLayout.astro
+layout: ../../../layouts/PageLayout.astro
 type: page
 title: Contact
 slug: contact

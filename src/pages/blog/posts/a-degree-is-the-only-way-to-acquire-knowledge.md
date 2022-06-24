@@ -1,5 +1,5 @@
 ---
-layout: ../../layouts/PostLayout.astro
+layout: ../../../layouts/PostLayout.astro
 title: A degree is the only way to acquire knowledge
 slug: a-degree-is-the-only-way-to-acquire-knowledge
 author: "An7"

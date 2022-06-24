@@ -10,7 +10,7 @@ const NavCard: Component<NavCardProps> = (props) => (
   <div className="flex-1 max-w-xs">
     {props.post && (
       <a
-        href={`/posts/${props.post.slug}`}
+        href={`/blog/posts/${props.post.slug}`}
         class="flex flex-col w-full h-full gap-4 p-4 no-underline border rounded-md"
       >
         <div
