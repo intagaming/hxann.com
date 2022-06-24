@@ -1,5 +1,6 @@
 import { Component, createEffect, createSignal } from "solid-js";
 import ThemeToggle from "./ThemeToggle";
+import clickOutside from "src/directives/clickOutside";
 
 export type NavBarEntry = {
   slug: string;
@@ -9,6 +10,8 @@ export type NavBarEntry = {
 type Props = {
   entries: NavBarEntry[];
 };
+
+const _ = clickOutside;
 
 const NavBar: Component<Props> = (props) => {
   const [extend, setExtend] = createSignal(false);
@@ -72,11 +75,12 @@ const NavBar: Component<Props> = (props) => {
         />
         <div
           ref={menuRef}
-          class="fixed top-0 left-0 transition-transform ease-in-out duration-300 w-2/3 h-full z-50 bg-white shadow-md dark:bg-neutral-900"
+          class="fixed top-0 left-0 transition-transform ease-in-out duration-300 w-2/3 h-full z-50 bg-white shadow-md dark:bg-neutral-900 dark:text-white"
           classList={{
             "translate-x-0": extend(),
             "-translate-x-[67vw]": !extend(),
           }}
+          use:clickOutside={() => closeMenu()}
         >
           <button
             type="button"
