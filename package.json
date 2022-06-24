@@ -14,7 +14,9 @@
     "@astrojs/tailwind": "^0.2.1",
     "@fortawesome/fontawesome-free": "^6.1.1",
     "@tailwindcss/typography": "^0.5.2",
+    "@types/lodash": "^4.14.182",
     "astro": "^1.0.0-beta.53",
+    "lodash": "^4.17.21",
     "solid-js": "^1.4.4"
   }
 }

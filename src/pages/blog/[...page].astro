@@ -3,6 +3,7 @@ import { PostFrontmatter } from 'src/types';
 import PostList from "@components/PostList";
 import BaseLayout from '@layouts/BaseLayout.astro';
 import { MarkdownInstance, Page } from 'astro';
+import Pagination from "@components/Pagination";
 
 export async function getStaticPaths({ paginate }) {
   let allPosts = await Astro.glob<PostFrontmatter>('./posts/*.md');
@@ -11,7 +12,7 @@ export async function getStaticPaths({ paginate }) {
       new Date(a.frontmatter.publication_date).valueOf()
   );
 
-  return paginate(allPosts, { pageSize: 2 });
+  return paginate(allPosts, { pageSize: 10 });
 }
 
 export interface Props {
@@ -24,5 +25,7 @@ const { page } = Astro.props as Props;
 <BaseLayout>
   <main>
     <PostList posts={page.data} />
+    <Pagination totalItems={page.total} currentPage={page.currentPage} perPage={page.size} linkProducer={(page)=>
+      page === 1 ? "/blog" : `/blog/${page}`} />
   </main>
 </BaseLayout>
