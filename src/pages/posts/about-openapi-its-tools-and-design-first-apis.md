@@ -1,5 +1,5 @@
 ---
-layout: ../../layouts/PostOrPageLayout.astro
+layout: ../../layouts/PostLayout.astro
 title: About OpenAPI, its tools, and design-first APIs
 slug: about-openapi-its-tools-and-design-first-apis
 author: "An7"

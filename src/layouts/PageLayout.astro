@@ -3,12 +3,13 @@ import BaseLayout from "./BaseLayout.astro"
 import AuthorInfo from "@components/AuthorInfo";
 import { getAuthor } from "src/authors";
 import { PostOrPageFrontmatter } from "src/types";
+import { MarkdownContent } from "astro";
 
 export interface Props {
-  content: PostOrPageFrontmatter;
+  content: MarkdownContent<PostOrPageFrontmatter>;
 }
 
-const { content } = Astro.props;
+const { content } = Astro.props as Props;
 ---
 
 <BaseLayout>

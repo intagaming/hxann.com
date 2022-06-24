@@ -1,5 +1,5 @@
 ---
-layout: ../../layouts/PostOrPageLayout.astro
+layout: ../../layouts/PageLayout.astro
 type: page
 title: About
 slug: about

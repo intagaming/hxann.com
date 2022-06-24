@@ -1,5 +1,5 @@
 ---
-layout: ../../layouts/PostOrPageLayout.astro
+layout: ../../layouts/PostLayout.astro
 title: Software development education in Vietnam is extremely uncertain
 slug: software-development-education-in-vietnam-is-extremely-uncertain
 author: "An7"
