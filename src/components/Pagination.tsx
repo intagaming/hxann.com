@@ -1,5 +1,5 @@
 import { Component, mergeProps } from "solid-js";
-import { range } from "lodash";
+import { range } from "lodash-es";
 
 type PaginationButtonProps = {
   selected: boolean;
