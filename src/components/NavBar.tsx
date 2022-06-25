@@ -24,7 +24,7 @@ const NavBar: Component<Props> = (props) => {
 
   return (
     <>
-      <nav class="flex items-center h-20 gap-6 px-4 border-b md:px-14 dark:bg-neutral-900 dark:text-white">
+      <nav class="flex items-center h-28 gap-6 px-4 md:px-14 dark:bg-neutral-900 dark:text-white">
         <button
           type="button"
           class="flex-1 md:hidden"
