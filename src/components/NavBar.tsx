@@ -3,7 +3,7 @@ import ThemeToggle from "./ThemeToggle";
 import clickOutside from "src/directives/clickOutside";
 
 export type NavBarEntry = {
-  slug: string;
+  link: string;
   title: string;
 };
 
@@ -55,7 +55,7 @@ const NavBar: Component<Props> = (props) => {
 
         <div class="hidden md:flex flex-[3] text-lg justify-center gap-4">
           {props.entries.map((entry) => (
-            <a href={`/blog/pages/${entry.slug}`} class="p-2">
+            <a href={entry.link} class="p-2">
               {entry.title}
             </a>
           ))}
@@ -110,7 +110,7 @@ const NavBar: Component<Props> = (props) => {
             </li>
             {props.entries.map((entry) => (
               <li>
-                <a href={`/blog/pages/${entry.slug}`}>{entry.title}</a>
+                <a href={entry.link}>{entry.title}</a>
               </li>
             ))}
           </ul>
