@@ -10,11 +10,11 @@ import nextjsSvg from "/images/nextjs.svg"
 
 <BaseLayout>
   <main>
-    <div class="flex gap-10 my-20 mx-14">
-      <div class="flex flex-col items-end flex-1 text-right">
+    <div class="flex flex-col gap-10 m-4 lg:flex-row lg:my-14 xl:mx-14">
+      <div class="flex flex-col flex-1 lg:items-end lg:text-right md:my-10 md:mx-10 lg:mx-0">
         <h1 class="text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-pink-600">
           Build different.</h1>
-        <p class="mt-10 text-2xl">Often times things are pretty ugly, <br />so let's get
+        <p class="mt-10 text-2xl lg:w-[24rem]">Often times things are pretty ugly, so let's get
           <span class="font-semibold text-pink-600">architecting</span>!
         </p>
         <div class="flex gap-4 mt-10">
@@ -26,7 +26,7 @@ import nextjsSvg from "/images/nextjs.svg"
               me</span></a>
         </div>
       </div>
-      <div class="flex flex-col justify-around flex-1 gap-5 w-[40vw]">
+      <div class="flex flex-col justify-around flex-1 gap-5 xl:w-[40vw] md:mx-10 lg:mx-0">
         <div class="flex flex-col flex-1 gap-3 p-4 font-mono text-xl text-white bg-black rounded-md">
           <p><i class="text-indigo-500 fa-solid fa-chevron-right fa-xs"></i> hxann info</p>
           <div class="flex gap-7">
@@ -47,21 +47,26 @@ import nextjsSvg from "/images/nextjs.svg"
           <div class="flex flex-col items-start">
             <a href="/blog" class="underline">See my blog posts</a>
             <a href="/about" class="underline">About me</a>
+            <a href="https://github.com/intagaming" class="underline">My GitHub</a>
             <a href="https://github.com/intagaming/hxann.com" class="underline">This website's source code</a>
           </div>
         </div>
       </div>
     </div>
 
-    <div class="h-40 overflow-hidden">
-      <div class="-translate-x-10 bg-pink-600 translate-y-32 h-80 w-[150vw] rotate-3 dark:bg-pink-800"></div>
+    <div class="h-20 overflow-hidden md:h-40">
+      <div
+        class="-translate-x-10 bg-pink-600 translate-y-10 md:translate-y-32 h-80 w-[150vw] rotate-3 dark:bg-pink-800">
+      </div>
     </div>
 
-    <div class="flex flex-col items-center gap-20 py-32 text-white bg-pink-600 dark:bg-pink-800 px-60">
+    <div
+      class="flex flex-col items-center gap-10 px-4 py-10 text-white bg-pink-600 md:px-14 md:py-32 xl:gap-20 dark:bg-pink-800 xl:px-60">
       <p class="text-4xl font-bold">I build software for scale. <span class="italic text-yellow-400">Easily.</span>
       </p>
-      <div class="flex gap-10">
-        <div class="grid flex-shrink-0 grid-flow-row grid-cols-3 gap-6 p-10 bg-gray-200 rounded-md blur-sm w-80">
+      <div class="flex flex-col items-start gap-10 md:flex-row">
+        <div
+          class="grid flex-shrink-0 grid-flow-row grid-cols-3 gap-6 p-10 mx-auto bg-gray-200 rounded-md blur-sm xl:w-80">
           <div class="flex items-center justify-center">
             <i class="text-orange-600 fab fa-gitlab fa-4x" />
           </div>
@@ -100,12 +105,13 @@ import nextjsSvg from "/images/nextjs.svg"
       </div>
     </div>
 
-    <div class="flex flex-col items-center gap-20 py-48 px-60">
+    <div class="flex flex-col gap-10 px-4 py-20 md:py-36 xl:py-40 md:px-14 xl:px-60">
       <p class="text-4xl font-bold">Deep researching goes <span class="text-red-500">a long way.</span></p>
-      <div class="flex w-full gap-10">
+      <div class="flex flex-col-reverse w-full gap-10 md:flex-row xl:gap-10">
         <div class="flex-1">
-          <div class="flex flex-col gap-3 text-3xl font-semibold text-neutral-600 dark:text-neutral-300">
-            <p class="mt-4 ">Search for the cause.</p>
+          <div
+            class="flex flex-col gap-3 text-xl font-semibold sm:text-2xl xl:text-3xl text-neutral-600 dark:text-neutral-300">
+            <p class="mt-4">Search for the cause.</p>
             <p>Dig to the ground.</p>
             <p class="text-amber-500 dark:text-amber-300">Every RFC is a story.</p>
           </div>
@@ -113,18 +119,16 @@ import nextjsSvg from "/images/nextjs.svg"
           <div class="flex flex-col items-start gap-2 mt-10">
             <p class="italic font-thin text-md">You might be interested in:</p>
             <a href="/blog/posts/about-the-hesitancy-in-reading-software-engineering-writings"
-              class="flex items-center gap-3 px-5 py-3 text-lg font-semibold rounded-lg w-[26rem] bg-rose-600 text-neutral-100"><span>About
+              class="flex items-center gap-3 px-5 py-3 text-lg font-semibold rounded-lg md:w-[26rem] bg-rose-600 text-neutral-100"><span>About
                 the hesitancy in reading Software Engineering writings</span></a>
           </div>
         </div>
-        <div class="flex justify-center flex-1"><i
-            class="text-[20em] text-neutral-900 dark:text-neutral-200 fas fa-book-open" /></div>
       </div>
     </div>
 
-    <div class="flex flex-col items-center gap-16 mt-14 mb-60">
+    <div class="flex flex-col gap-10 mx-4 mb-20 md:mb-40 md:mx-14 mt-14">
       <p class="text-4xl font-extrabold">Showcase</p>
-      <div class="flex gap-3">
+      <div class="flex flex-col gap-3 lg:flex-row">
         <a href="https://github.com/intagaming/go-blog-backend" class="flex items-center gap-2 p-2 border-2 rounded-md">
           <i class="fa-brands fa-golang"></i>
           <p>A blog backend written in Go.</p>
