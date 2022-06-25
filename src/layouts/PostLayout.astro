@@ -2,12 +2,12 @@
 import BaseLayout from "./BaseLayout.astro"
 import AuthorInfo from "@components/AuthorInfo";
 import { getAuthor } from "src/authors";
-import { PostFrontmatter, PostOrPageFrontmatter } from "src/types";
+import { PostFrontmatter, SEO } from "src/types";
 import { MarkdownContent, MarkdownInstance } from "astro";
 import PostLastNextNav from "@components/PostLastNextNav";
 
 export interface Props {
-  content: MarkdownContent<PostOrPageFrontmatter>;
+  content: MarkdownContent<PostFrontmatter>;
 }
 
 const { content } = Astro.props as Props;
@@ -27,9 +27,25 @@ if (foundAt !== -1) {
   nextPost = allPosts[foundAt - 1] ?? null;
 }
 
+const seo: SEO = {
+  title: content.title,
+  description: content.excerpt,
+  openGraph: {
+    title: content.title,
+    type: "article",
+    description: content.excerpt,
+    url: Astro.canonicalURL.href,
+    image: content.cover_url,
+    article: {
+      authors: [content.author],
+      publishedTime: content.publication_date,
+      modifiedTime: content.publication_date,
+    }
+  },
+};
 ---
 
-<BaseLayout>
+<BaseLayout seo={seo}>
   <article
     class="px-4 mx-auto my-10 prose dark:prose-invert xl:prose-xl md:my-20 md:px-0 font-serif prose-h1:font-sans">
     <slot />

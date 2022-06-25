@@ -13,3 +13,20 @@ export interface PostFrontmatter extends PostOrPageFrontmatter {
 export interface PageFrontmatter extends PostOrPageFrontmatter {
   cover_url: string;
 }
+
+export interface SEO {
+  title: string;
+  description: string;
+  openGraph: {
+    title: string;
+    type: string;
+    url: string;
+    description: string;
+    image: string;
+    article?: {
+      publishedTime: string;
+      modifiedTime: string;
+      authors: string[];
+    };
+  };
+}

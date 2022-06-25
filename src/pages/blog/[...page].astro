@@ -1,5 +1,5 @@
 ---
-import { PostFrontmatter } from 'src/types';
+import { PostFrontmatter, SEO } from 'src/types';
 import PostList from "@components/PostList";
 import BaseLayout from '@layouts/BaseLayout.astro';
 import { MarkdownInstance, Page } from 'astro';
@@ -20,9 +20,21 @@ export interface Props {
 }
 
 const { page } = Astro.props as Props;
+
+const seo: SEO = {
+  title: "Blog | An Hoang",
+  description: "I do Software Engineering stuff. Coding, Architecting, criticise things engineers make.",
+  openGraph: {
+    title: "An Hoang",
+    type: "website",
+    description: "I do Software Engineering stuff. Coding, Architecting, criticise things engineers make.",
+    url: Astro.canonicalURL.href,
+    image: "https://res.cloudinary.com/an7/image/upload/v1656043905/blog/banner_wywcvv.png",
+  },
+};
 ---
 
-<BaseLayout>
+<BaseLayout seo={seo}>
   <main>
     <PostList posts={page.data} />
     <Pagination totalItems={page.total} currentPage={page.currentPage} perPage={page.size} linkProducer={(page)=>

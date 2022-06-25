@@ -5,10 +5,22 @@ import dotnetSvg from "/images/dotnet.svg"
 import kubernetesSvg from "/images/kubernetes.svg"
 import springSvg from "/images/spring.svg"
 import nextjsSvg from "/images/nextjs.svg"
+import { SEO } from "src/types"
 
+const seo: SEO = {
+  title: "An Hoang",
+  description: "I do Software Engineering stuff. Coding, Architecting, criticise things engineers make.",
+  openGraph: {
+    title: "An Hoang",
+    type: "website",
+    description: "I do Software Engineering stuff. Coding, Architecting, criticise things engineers make.",
+    url: Astro.canonicalURL.href,
+    image: "https://res.cloudinary.com/an7/image/upload/v1656043905/blog/banner_wywcvv.png",
+  },
+};
 ---
 
-<BaseLayout>
+<BaseLayout seo={seo}>
   <main>
     <div class="flex flex-col gap-10 m-4 lg:flex-row lg:my-14 xl:mx-14">
       <div class="flex flex-col flex-1 lg:items-end lg:text-right md:my-10 md:mx-10 lg:mx-0">

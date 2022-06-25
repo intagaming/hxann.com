@@ -2,18 +2,35 @@
 import BaseLayout from "./BaseLayout.astro"
 import AuthorInfo from "@components/AuthorInfo";
 import { getAuthor } from "src/authors";
-import { PostOrPageFrontmatter } from "src/types";
+import { PageFrontmatter, SEO } from "src/types";
 import { MarkdownContent } from "astro";
 import Utterances from "@components/Utterances";
 
 export interface Props {
-  content: MarkdownContent<PostOrPageFrontmatter>;
+  content: MarkdownContent<PageFrontmatter>;
 }
 
 const { content } = Astro.props as Props;
+
+const seo: SEO = {
+  title: content.title,
+  description: content.excerpt,
+  openGraph: {
+    title: content.title,
+    type: "article",
+    description: content.excerpt,
+    url: Astro.canonicalURL.href,
+    image: "https://res.cloudinary.com/an7/image/upload/v1656043905/blog/banner_wywcvv.png",
+    article: {
+      authors: [content.author],
+      publishedTime: content.publication_date,
+      modifiedTime: content.publication_date,
+    }
+  },
+};
 ---
 
-<BaseLayout>
+<BaseLayout seo={seo}>
   <article
     class="px-4 mx-auto my-10 font-serif prose dark:prose-invert xl:prose-xl md:my-20 md:px-0 prose-h1:font-sans">
     <slot />
