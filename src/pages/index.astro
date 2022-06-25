@@ -1,0 +1,51 @@
+---
+import BaseLayout from "@layouts/BaseLayout.astro"
+
+---
+
+<BaseLayout>
+  <main>
+    <div class="flex gap-10 my-14 mx-14">
+      <div class="flex flex-col items-end flex-1 text-right">
+        <h1 class="text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-pink-600">
+          Build different.</h1>
+        <p class="mt-10 text-2xl">Often times things are pretty ugly, so let's get
+          architecting!
+        </p>
+        <div class="flex gap-4 mt-10">
+          <a href="/blog"
+            class="flex items-center gap-3 px-5 py-3 text-lg font-semibold bg-indigo-600 rounded-lg text-neutral-100"><span>See
+              my posts</span></a>
+          <a href="/blog/pages/about"
+            class="flex items-center gap-3 px-5 py-3 text-lg font-semibold border rounded-lg border-neutral-300"><span>About
+              me</span></a>
+        </div>
+      </div>
+      <div class="flex flex-col justify-around flex-1 gap-5 w-[40vw]">
+        <div class="flex flex-col flex-1 gap-3 p-4 font-mono text-xl text-white bg-black rounded-md">
+          <p><i class="text-indigo-500 fa-solid fa-chevron-right fa-xs"></i> hxann info</p>
+          <div class="flex gap-7">
+            <div class="w-48">
+              <img src="https://res.cloudinary.com/an7/image/upload/v1656089853/blog/avatar_a8yy9u.jpg"
+                class="object-cover rounded-md aspect-square" />
+            </div>
+            <div>
+              <p>An Hoang</p>
+              <a href="mailto:xuanan2001@pm.me" class="underline">xuanan2001@pm.me</a>
+              <p>I do Software Engineering stuff.</p>
+              <p>Coding, Architecting, criticise things engineers make.</p>
+            </div>
+          </div>
+          <p class="mt-7">
+            <i class="text-indigo-500 fa-solid fa-chevron-right fa-xs"></i> hxann links
+          </p>
+          <div class="flex flex-col items-start">
+            <a href="/blog" class="underline">See my blog posts</a>
+            <a href="/blog/pages/about" class="underline">About me</a>
+            <a href="https://github.com/intagaming/hxann.com" class="underline">This website's source code</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</BaseLayout>
