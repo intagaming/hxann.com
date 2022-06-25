@@ -9,14 +9,16 @@ const navBarEntries: NavBarEntry[] = [
     title: "Blog",
   },
   {
-    link: "/blog/pages/about",
+    link: "/about",
     title: "About",
   },
   {
-    link: "/blog/pages/contact",
+    link: "/contact",
     title: "Contact",
   }
 ];
+
+const path = (new URL(Astro.request.url)).pathname;
 ---
 
 <!DOCTYPE html>
@@ -55,7 +57,7 @@ const navBarEntries: NavBarEntry[] = [
 
 <body>
   <div class="flex flex-col min-h-screen">
-    <NavBar client:load entries={navBarEntries} />
+    <NavBar client:load entries={navBarEntries} currentPath={path} />
     <div class="flex-1 dark:bg-neutral-900">
       <slot />
     </div>

@@ -9,6 +9,7 @@ export type NavBarEntry = {
 
 type Props = {
   entries: NavBarEntry[];
+  currentPath: string;
 };
 
 const _ = clickOutside;
@@ -21,6 +22,8 @@ const NavBar: Component<Props> = (props) => {
   };
 
   let menuRef: HTMLDivElement | undefined = undefined;
+
+  console.log(props.currentPath, props.entries);
 
   return (
     <>
@@ -50,12 +53,33 @@ const NavBar: Component<Props> = (props) => {
           href="/"
           class="text-2xl flex-[2] md:flex-1 text-center md:text-left font-bold"
         >
-          An Hoang
+          <span
+            class="border-b-2 border-transparent hover:border-indigo-600"
+            classList={{
+              "border-indigo-600": props.currentPath === "/",
+            }}
+          >
+            An Hoang
+          </span>
         </a>
 
         <div class="hidden md:flex flex-[3] text-lg justify-center gap-4">
           {props.entries.map((entry) => (
-            <a href={entry.link} class="p-2">
+            <a
+              href={entry.link}
+              class="p-2 border-b-2 border-transparent hover:border-indigo-600 hover:text-neutral-900 dark:hover:text-neutral-100"
+              classList={{
+                "border-indigo-600": props.currentPath.startsWith(entry.link),
+                "text-neutral-900": props.currentPath.startsWith(entry.link),
+                "dark:text-neutral-100": props.currentPath.startsWith(
+                  entry.link
+                ),
+                "dark:text-neutral-400": !props.currentPath.startsWith(
+                  entry.link
+                ),
+                "text-neutral-400": !props.currentPath.startsWith(entry.link),
+              }}
+            >
               {entry.title}
             </a>
           ))}
