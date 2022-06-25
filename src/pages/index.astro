@@ -54,10 +54,10 @@ import nextjsSvg from "/images/nextjs.svg"
     </div>
 
     <div class="h-40 overflow-hidden">
-      <div class="-translate-x-10 bg-pink-600 translate-y-32 h-80 w-[150vw] rotate-3"></div>
+      <div class="-translate-x-10 bg-pink-600 translate-y-32 h-80 w-[150vw] rotate-3 dark:bg-pink-800"></div>
     </div>
 
-    <div class="flex flex-col items-center gap-20 py-32 text-white bg-pink-600 px-60">
+    <div class="flex flex-col items-center gap-20 py-32 text-white bg-pink-600 dark:bg-pink-800 px-60">
       <p class="text-4xl font-bold">I build software for scale. <span class="italic text-yellow-400">Easily.</span>
       </p>
       <div class="flex gap-10">
@@ -82,14 +82,16 @@ import nextjsSvg from "/images/nextjs.svg"
           </div>
         </div>
         <div>
-          <p class="text-xl">Technologies are sometimes oversolved. Whenever it tries to do too many things, I have an
-            immediate flashback of ASP.NET&apos;s <span
-              class="font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-yellow-400">"ecosystem"</span>.
-          </p>
-          <p class="mt-5 text-xl">Using a niche framework is kind of like doing drugs. You feel cool, until you don't.
-          </p>
+          <div class="text-neutral-100">
+            <p class="text-xl">Technologies are sometimes oversolved. Whenever it tries to do too many things, I have an
+              immediate flashback of ASP.NET&apos;s <span
+                class="font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-yellow-400">"ecosystem"</span>.
+            </p>
+            <p class="mt-5 text-xl">Using a niche framework is kind of like doing drugs. You feel cool, until you don't.
+            </p>
+          </div>
           <div class="flex flex-col items-start gap-2 mt-10">
-            <p class="text-xl italic">You might be interested in:</p>
+            <p class="italic font-thin text-md">You might be interested in:</p>
             <a href="/blog/posts/about-openapi-its-tools-and-design-first-apis"
               class="flex items-center gap-3 px-5 py-3 text-lg font-semibold rounded-lg bg-emerald-600 text-neutral-100"><span>About
                 OpenAPI, its tools, and design-first APIs</span></a>
@@ -102,20 +104,21 @@ import nextjsSvg from "/images/nextjs.svg"
       <p class="text-4xl font-bold">Deep researching goes <span class="text-red-500">a long way.</span></p>
       <div class="flex w-full gap-10">
         <div class="flex-1">
-          <div class="flex flex-col gap-3 text-3xl font-semibold text-neutral-600">
+          <div class="flex flex-col gap-3 text-3xl font-semibold text-neutral-600 dark:text-neutral-300">
             <p class="mt-4 ">Search for the cause.</p>
-            <p class="">Dig to the ground.</p>
-            <p class="">Every RFC is a story.</p>
+            <p>Dig to the ground.</p>
+            <p class="text-amber-500 dark:text-amber-300">Every RFC is a story.</p>
           </div>
 
           <div class="flex flex-col items-start gap-2 mt-10">
-            <p class="text-xl italic">You might be interested in:</p>
+            <p class="italic font-thin text-md">You might be interested in:</p>
             <a href="/blog/posts/about-the-hesitancy-in-reading-software-engineering-writings"
               class="flex items-center gap-3 px-5 py-3 text-lg font-semibold rounded-lg w-[26rem] bg-rose-600 text-neutral-100"><span>About
                 the hesitancy in reading Software Engineering writings</span></a>
           </div>
         </div>
-        <div class="flex justify-center flex-1"><i class="text-[20em] text-neutral-900 fas fa-book-open" /></div>
+        <div class="flex justify-center flex-1"><i
+            class="text-[20em] text-neutral-900 dark:text-neutral-200 fas fa-book-open" /></div>
       </div>
     </div>
 
@@ -127,7 +130,7 @@ import nextjsSvg from "/images/nextjs.svg"
           <p>A blog backend written in Go.</p>
         </a>
         <a href="https://github.com/intagaming/blog2" class="flex items-center gap-2 p-2 border-2 rounded-md">
-          <img src={nextjsSvg} class="h-6" />
+          <img src={nextjsSvg} class="h-5 dark:invert" />
           <p>A Next.js blog.</p>
         </a>
         <a href="https://github.com/intagaming/hxann.com" class="flex items-center gap-2 p-2 border-2 rounded-md">
