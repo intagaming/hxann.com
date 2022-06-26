@@ -1,11 +1,12 @@
 ---
 import BaseLayout from "@layouts/BaseLayout.astro"
-import graphqlSvg from "/images/graphql.svg"
-import dotnetSvg from "/images/dotnet.svg"
-import kubernetesSvg from "/images/kubernetes.svg"
-import springSvg from "/images/spring.svg"
-import nextjsSvg from "/images/nextjs.svg"
 import { SEO } from "src/types"
+import astroSvg from "/images/astro.svg"
+import dotnetSvg from "/images/dotnet.svg"
+import graphqlSvg from "/images/graphql.svg"
+import kubernetesSvg from "/images/kubernetes.svg"
+import nextjsSvg from "/images/nextjs.svg"
+import springSvg from "/images/spring.svg"
 
 const seo: SEO = {
   title: "An Hoang",
@@ -150,7 +151,7 @@ const seo: SEO = {
           <p>A Next.js blog.</p>
         </a>
         <a href="https://github.com/intagaming/hxann.com" class="flex items-center gap-2 p-2 border-2 rounded-md">
-          <i class="fa-brands fa-golang"></i>
+          <img src={astroSvg} class="h-5" />
           <p>This website's source code.</p>
         </a>
       </div>
