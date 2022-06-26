@@ -1,42 +1,31 @@
-# Welcome to [Astro](https://astro.build)
+# hxann.com
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
+Portfolio and blog, powered by [Astro][1].
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+Source code for [https://hxann.com][4].
 
-## 🚀 Project Structure
+## Design decisions
 
-Inside of your Astro project, you'll see the following folders and files:
+## Components
 
-```
-/
-├── public/
-│   └── favicon.ico
-├── src/
-│   ├── components/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+I use [SolidJS][2]. Personal preference I guess.
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+The thing you put inside the JSX for the SolidJS's `ParentComponent` currently
+doesn't qualify as `children`, so you have to set the `children` prop. That's
+one thing to keep in mind.
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components or layouts.
+## Styling
 
-Any static assets, like images, can be placed in the `public/` directory.
+[Tailwind CSS][3]. Fast to prototype, haven't had any problems.
 
-## 🧞 Commands
+## Content
 
-All commands are run from the root of the project, from a terminal:
+I use Markdown. Astro will render `*.md` into pages.
 
-| Command           | Action                                       |
-| :---------------- | :------------------------------------------- |
-| `npm install`     | Installs dependencies                        |
-| `npm run dev`     | Starts local dev server at `localhost:3000`  |
-| `npm run build`   | Build your production site to `./dist/`      |
-| `npm run preview` | Preview your build locally, before deploying |
+I upload images to Cloudinary and use them in my Markdown. The Cloudinary CDN
+will do well to provide good responsiveness.
 
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+[1]: https://astro.build
+[2]: https://www.solidjs.com
+[3]: https://tailwindcss.com
+[4]: https://hxann.com
