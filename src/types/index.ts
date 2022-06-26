@@ -4,6 +4,7 @@ export interface PostOrPageFrontmatter {
   author: string;
   excerpt: string;
   publication_date: string;
+  modified_date?: string;
 }
 
 export interface PostFrontmatter extends PostOrPageFrontmatter {
