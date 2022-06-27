@@ -31,7 +31,7 @@ const NavCard: Component<NavCardProps> = (props) => (
             </>
           )}
         </div>
-        <div className="font-bold">{props.post.title}</div>
+        <div className="font-bold font-sans">{props.post.title}</div>
       </a>
     )}
   </div>
