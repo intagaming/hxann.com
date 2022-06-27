@@ -91,3 +91,6 @@ sure, you have to dig much deeper than widespread knowledge.
 Making assumptions about how things work is a very normal engineer's thing to
 do. But the truth is sometimes not that trivial. Really dig deep into the truth.
 That is what really separates an engineer from a normie (seriously.)
+
+[1]: https://res.cloudinary.com/an7/image/upload/v1656331497/blog/where-to-store-access-token-in-react-js_hzelfl.png
+[2]: https://stackoverflow.com/a/61106253
