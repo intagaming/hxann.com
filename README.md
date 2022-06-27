@@ -6,7 +6,7 @@ Source code for [https://hxann.com][4].
 
 ## Design decisions
 
-## Components
+### Components
 
 I use [SolidJS][2]. Personal preference I guess.
 
@@ -14,11 +14,11 @@ The thing you put inside the JSX for the SolidJS's `ParentComponent` currently
 doesn't qualify as `children`, so you have to set the `children` prop. That's
 one thing to keep in mind.
 
-## Styling
+### Styling
 
 [Tailwind CSS][3]. Fast to prototype, haven't had any problems.
 
-## Content
+### Content
 
 I use Markdown. Astro will render `*.md` into pages.
 
