@@ -66,7 +66,7 @@ These messages will be broadcast to all clients.
 
 > But, what if we want to send a message to a specific client only?
 
-Ah. Two options, you can either send the messages to a primary message channel
+Ah. Two options, you can either send the messages to a private message channel
 that only the recipient subscribes to, or you can encrypt it in a way that only
 the recipient can decrypt.
 
