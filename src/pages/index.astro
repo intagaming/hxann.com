@@ -8,6 +8,7 @@ import kubernetesSvg from "/images/kubernetes.svg"
 import nextjsSvg from "/images/nextjs.svg"
 import springSvg from "/images/spring.svg"
 import t3Svg from "/images/t3.svg"
+import hollowCircleSvg from "/images/hollow-circle.svg"
 
 const seo: SEO = {
   title: "An Hoang",
@@ -142,7 +143,7 @@ const seo: SEO = {
 
     <div class="flex flex-col gap-10 mx-4 mb-20 md:mb-40 md:mx-14 mt-14">
       <p class="text-4xl font-extrabold">Showcase</p>
-      <div class="flex flex-col gap-3 lg:flex-row">
+      <div class="flex flex-col gap-3 lg:flex-row flex-wrap">
         <a href="https://github.com/intagaming/go-blog-backend" class="flex items-center gap-2 p-2 border-2 rounded-md">
           <i class="fa-brands fa-golang"></i>
           <p>A blog backend written in Go.</p>
@@ -155,9 +156,13 @@ const seo: SEO = {
           <img src={astroSvg} class="h-5" />
           <p>This website's source code.</p>
         </a>
+        <a href="https://ttt.hxann.com" class="flex items-center gap-2 p-2 border-2 rounded-md">
+          <img src={hollowCircleSvg} class="h-5" />
+          <p>Tic Tac Toe with Distributed Realtime Server Architecture</p>
+        </a>
         <a href="https://github.com/intagaming/tic-tac-toe" class="flex items-center gap-2 p-2 border-2 rounded-md">
           <img src={t3Svg} class="h-5" />
-          <p>Tic Tac Toe Next.js, powered by create-t3-app</p>
+          <p>Tic Tac Toe Next.js repository, powered by create-t3-app</p>
         </a>
         <a href="https://github.com/intagaming/tic-tac-toe-worker"
           class="flex items-center gap-2 p-2 border-2 rounded-md">
