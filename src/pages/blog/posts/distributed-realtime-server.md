@@ -74,6 +74,8 @@ the recipient can decrypt.
 
 I made a Tic Tac Toe game that implements this architecture.
 
+[Try the game live here.][ttt]
+
 [The Next.js frontend "Client" GitHub repository][3]
 
 [The Go "Worker" GitHub repository][4]
@@ -134,3 +136,4 @@ document and elaborate on things happening just to stay informed in some way.
 [4]: https://github.com/intagaming/tic-tac-toe-worker
 [ping]: https://ping.gg/
 [theo]: https://t3.gg/
+[ttt]: https://ttt.hxann.com
