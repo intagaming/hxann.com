@@ -1,4 +1,4 @@
-import { Component, mergeProps } from "solid-js";
+import {Component, JSX, mergeProps} from 'solid-js';
 import { range } from "lodash-es";
 
 type PaginationButtonProps = {
@@ -7,7 +7,7 @@ type PaginationButtonProps = {
   link: string;
 };
 
-const PaginationButton: Component<PaginationButtonProps> = (props) => {
+const PaginationButton: Component<PaginationButtonProps> = (props):JSX.Element => {
   return (
     <li>
       <a
