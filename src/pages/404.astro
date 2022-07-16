@@ -1,1 +1,20 @@
-<p>not found</p>
+---
+import BaseLayout from "@layouts/BaseLayout.astro"
+import { SEO } from "src/types"
+
+const seo: SEO = {
+  title: "An Hoang",
+  description: "Oops, 404.",
+  openGraph: {
+    title: "An Hoang",
+    type: "website",
+    description: "I do Software Engineering stuff. Coding, Architecting, criticise things engineers make.",
+    url: Astro.canonicalURL.href,
+    image: "https://res.cloudinary.com/an7/image/upload/v1656043905/blog/banner_wywcvv.png",
+  },
+};
+---
+
+<BaseLayout seo={seo}>
+  <main>404.</main>
+</BaseLayout>
