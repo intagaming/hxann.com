@@ -78,7 +78,7 @@ I made a Tic Tac Toe game that implements this architecture.
 
 [The Next.js frontend "Client" GitHub repository][3]
 
-[The Node.js "Worker" GitHub repository][4]
+[The Go worker GitHub repository][4]
 
 ## The "Ticker" extension
 
@@ -133,7 +133,7 @@ document and elaborate on things happening just to stay informed in some way.
 [1]: https://ably.com/blog/achieving-exactly-once-message-processing-with-ably
 [2]: https://ably.com/docs/general/queues
 [3]: https://github.com/intagaming/tic-tac-toe
-[4]: https://github.com/intagaming/tic-tac-toe-worker-node
+[4]: https://github.com/intagaming/tic-tac-toe-worker
 [ping]: https://ping.gg/
 [theo]: https://t3.gg/
 [ttt]: https://ttt.hxann.com
