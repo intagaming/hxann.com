@@ -1,6 +1,6 @@
-import { Component, createEffect, createSignal } from "solid-js";
-import ThemeToggle from "./ThemeToggle";
+import { Component, createSignal } from "solid-js";
 import clickOutside from "src/directives/clickOutside";
+import ThemeToggle from "./ThemeToggle";
 
 export type NavBarEntry = {
   link: string;
@@ -37,11 +37,11 @@ const NavBar: Component<Props> = (props) => {
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
-            strokeWidth={2}
+            stroke-width={2}
           >
             <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
+              stroke-linecap="round"
+              stroke-linejoin="round"
               d="M4 6h16M4 12h16M4 18h16"
             />
           </svg>
@@ -115,11 +115,11 @@ const NavBar: Component<Props> = (props) => {
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
-              strokeWidth={2}
+              stroke-width={2}
             >
               <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
+                stroke-linecap="round"
+                stroke-linejoin="round"
                 d="M6 18L18 6M6 6l12 12"
               />
             </svg>

@@ -7,7 +7,7 @@ type NavCardProps = {
 };
 
 const NavCard: Component<NavCardProps> = (props) => (
-  <div className="flex-1 max-w-xs">
+  <div class="flex-1 max-w-xs">
     {props.post && (
       <a
         href={`/blog/posts/${props.post.slug}`}
@@ -31,7 +31,7 @@ const NavCard: Component<NavCardProps> = (props) => (
             </>
           )}
         </div>
-        <div className="font-bold font-sans">{props.post.title}</div>
+        <div class="font-bold font-sans">{props.post.title}</div>
       </a>
     )}
   </div>
@@ -43,7 +43,7 @@ type Props = {
 };
 
 const PostLastNextNav: Component<Props> = (props) => (
-  <div className="flex items-stretch justify-between gap-4 py-8">
+  <div class="flex items-stretch justify-between gap-4 py-8">
     <NavCard isNext={false} post={props.last} />
     <NavCard isNext post={props.next} />
   </div>

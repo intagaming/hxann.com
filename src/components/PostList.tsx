@@ -7,12 +7,9 @@ type Props = {
 };
 
 const PostList = ({ posts }: Props) => (
-  <div className="flex flex-col items-center gap-12 px-6 my-12">
+  <div class="flex flex-col items-center gap-12 px-6 my-12">
     {posts.slice(0, 10).map((post, index) => (
-      <div
-        key={(post.frontmatter as unknown as PostFrontmatter).slug}
-        className="w-full md:max-w-4xl"
-      >
+      <div class="w-full md:max-w-4xl">
         <PostCard post={post} />
       </div>
     ))}

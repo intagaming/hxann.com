@@ -8,9 +8,9 @@ type Props = {
 const AuthorInfo: Component<Props> = (props) => (
   <>
     <p>
-      Written by <b className="font-bold">{props.author.fullName}</b>
+      Written by <b class="font-bold">{props.author.fullName}</b>
     </p>
-    <blockquote className="italic">{props.author.bio}</blockquote>
+    <blockquote class="italic">{props.author.bio}</blockquote>
   </>
 );
 
