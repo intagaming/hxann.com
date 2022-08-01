@@ -4,6 +4,7 @@ title: localStorage vs. Cookie for token storage
 slug: localstorage-vs-cookie-for-token-storage
 author: "An7"
 publication_date: "2021-09-24"
+modified_date: "2022-08-01 14:05:00"
 excerpt: localStorage is not as unsecured as you'd think.
 cover_url: https://res.cloudinary.com/an7/image/upload/v1656043905/blog/cookie_iwqxlf.jpg
 ---
@@ -13,6 +14,12 @@ cover_url: https://res.cloudinary.com/an7/image/upload/v1656043905/blog/cookie_i
 ![cover](https://res.cloudinary.com/an7/image/upload/v1656043905/blog/cookie_iwqxlf.jpg)
 
 localStorage is not as unsecured as you'd think.
+
+## Update August 1st, 2022
+
+I recently had a new hot take on this subject on YouTube, check it out (please click the image):
+
+[![React: localStorage vs. Cookie?](https://img.youtube.com/vi/OTcjpteMB6c/0.jpg)][12]
 
 ## Context
 
@@ -233,3 +240,4 @@ Here's something you'll dig:
 [9]: https://stackoverflow.com/questions/39176237/how-do-i-store-jwt-and-send-them-with-every-request-using-react
 [10]: https://stackoverflow.com/questions/69294536/where-to-store-jwt-token-in-react-client-side-in-secure-way
 [11]: https://portswigger.net/web-security/cross-site-scripting/exploiting/lab-perform-csrf
+[12]: https://youtu.be/OTcjpteMB6c
