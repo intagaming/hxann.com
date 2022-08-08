@@ -27,8 +27,5 @@
     "lodash-es": "^4.17.21",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
-  },
-  "dependencies": {
-    "usehooks-ts": "^2.6.0"
   }
 }

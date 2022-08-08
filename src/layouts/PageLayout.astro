@@ -37,6 +37,6 @@ const seo: SEO = {
     <slot />
     <hr />
     <AuthorInfo author={getAuthor(content.author)} />
-    <Utterances client:only />
+    <Utterances client:only="react" />
   </article>
 </BaseLayout>
