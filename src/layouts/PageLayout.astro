@@ -12,6 +12,7 @@ export interface Props {
 
 const { content } = Astro.props as Props;
 
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 const seo: SEO = {
   title: content.title,
   description: content.excerpt,
@@ -19,7 +20,7 @@ const seo: SEO = {
     title: content.title,
     type: "article",
     description: content.excerpt,
-    url: Astro.canonicalURL.href,
+    url: canonicalURL.toString(),
     image: "https://res.cloudinary.com/an7/image/upload/v1656043905/blog/banner_wywcvv.png",
     article: {
       authors: [content.author],

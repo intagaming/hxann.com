@@ -90,6 +90,7 @@ const Pagination = ({
 
         {middlePages.map((page) => (
           <PaginationButton
+            key={page}
             page={page}
             selected={currentPage === page}
             link={linkProducer(page)}

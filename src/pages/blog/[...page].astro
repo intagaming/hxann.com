@@ -21,6 +21,7 @@ export interface Props {
 
 const { page } = Astro.props as Props;
 
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 const seo: SEO = {
   title: "Blog | An Hoang",
   description: "I do Software Engineering stuff. Coding, Architecting, criticize things engineers make.",
@@ -28,7 +29,7 @@ const seo: SEO = {
     title: "An Hoang",
     type: "website",
     description: "I do Software Engineering stuff. Coding, Architecting, criticize things engineers make.",
-    url: Astro.canonicalURL.href,
+    url: canonicalURL.toString(),
     image: "https://res.cloudinary.com/an7/image/upload/v1656043905/blog/banner_wywcvv.png",
   },
 };

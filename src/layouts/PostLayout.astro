@@ -28,6 +28,7 @@ if (foundAt !== -1) {
   nextPost = allPosts[foundAt - 1] ?? null;
 }
 
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 const seo: SEO = {
   title: content.title,
   description: content.excerpt,
@@ -35,7 +36,7 @@ const seo: SEO = {
     title: content.title,
     type: "article",
     description: content.excerpt,
-    url: Astro.canonicalURL.href,
+    url: canonicalURL.toString(),
     image: content.cover_url,
     article: {
       authors: [content.author],
