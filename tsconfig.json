@@ -11,8 +11,6 @@
     "paths": {
       "@components/*": ["src/components/*"],
       "@layouts/*": ["src/layouts/*"]
-    },
-    "jsx": "preserve",
-    "jsxImportSource": "solid-js"
+    }
   }
 }

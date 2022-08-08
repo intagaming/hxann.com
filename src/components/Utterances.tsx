@@ -1,9 +1,9 @@
-import { Component, onMount } from "solid-js";
+import { useEffect, useRef } from "react";
 
-const Utterances: Component = () => {
-  let container: HTMLDivElement | undefined;
+const Utterances = () => {
+  const container = useRef<HTMLDivElement>(null);
 
-  onMount(() => {
+  useEffect(() => {
     const script = document.createElement("script");
     const theme = localStorage.getItem("theme");
     script.src = "https://utteranc.es/client.js";
@@ -15,8 +15,8 @@ const Utterances: Component = () => {
     );
     script.setAttribute("crossorigin", "anonymous");
     script.setAttribute("async", "true");
-    container.appendChild(script);
-  });
+    container.current.appendChild(script);
+  }, []);
 
   return <div ref={container}></div>;
 };

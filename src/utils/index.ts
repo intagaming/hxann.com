@@ -1,3 +1,4 @@
+// TODO: move this
 export const parseDate = (input: string): Date => {
   const parts = input.split("-");
   // new Date(year, month [, day [, hours[, minutes[, seconds[, ms]]]]])

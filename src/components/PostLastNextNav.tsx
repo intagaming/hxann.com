@@ -1,51 +1,49 @@
-import { Component } from "solid-js";
 import { PostFrontmatter } from "src/types";
 
-type NavCardProps = {
+const NavCard = ({
+  post,
+  isNext,
+}: {
   post?: PostFrontmatter;
   isNext: boolean;
-};
-
-const NavCard: Component<NavCardProps> = (props) => (
-  <div class="flex-1 max-w-xs">
-    {props.post && (
+}) => (
+  <div className="flex-1 max-w-xs">
+    {post && (
       <a
-        href={`/blog/posts/${props.post.slug}`}
-        class="flex flex-col w-full h-full gap-4 p-4 no-underline border rounded-md"
+        href={`/blog/posts/${post.slug}`}
+        className="flex flex-col w-full h-full gap-4 p-4 no-underline border rounded-md"
       >
         <div
-          class="flex items-center gap-4"
-          classList={{
-            "justify-end": props.isNext,
-          }}
+          className={`flex items-center gap-4 ${isNext ? "justify-end" : ""}`}
         >
-          {!props.isNext ? (
+          {!isNext ? (
             <>
-              <i class="fa-solid fa-arrow-left"></i>
+              <i className="fa-solid fa-arrow-left"></i>
               <span>Last Article</span>
             </>
           ) : (
             <>
               <span>Next Article</span>
-              <i class="fa-solid fa-arrow-right"></i>
+              <i className="fa-solid fa-arrow-right"></i>
             </>
           )}
         </div>
-        <div class="font-bold font-sans">{props.post.title}</div>
+        <div className="font-bold font-sans">{post.title}</div>
       </a>
     )}
   </div>
 );
 
-type Props = {
+const PostLastNextNav = ({
+  last,
+  next,
+}: {
   last?: PostFrontmatter;
   next?: PostFrontmatter;
-};
-
-const PostLastNextNav: Component<Props> = (props) => (
-  <div class="flex items-stretch justify-between gap-4 py-8">
-    <NavCard isNext={false} post={props.last} />
-    <NavCard isNext post={props.next} />
+}) => (
+  <div className="flex items-stretch justify-between gap-4 py-8">
+    <NavCard isNext={false} post={last} />
+    <NavCard isNext post={next} />
   </div>
 );
 

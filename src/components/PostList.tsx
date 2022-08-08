@@ -2,14 +2,14 @@ import { PostFrontmatter } from "src/types";
 import PostCard from "./PostCard";
 import { MarkdownInstance } from "astro";
 
-type Props = {
+const PostList = ({
+  posts,
+}: {
   posts: MarkdownInstance<PostFrontmatter>[];
-};
-
-const PostList = ({ posts }: Props) => (
-  <div class="flex flex-col items-center gap-12 px-6 my-12">
-    {posts.slice(0, 10).map((post, index) => (
-      <div class="w-full md:max-w-4xl">
+}) => (
+  <div className="flex flex-col items-center gap-12 px-6 my-12">
+    {posts.slice(0, 10).map((post) => (
+      <div key={post.frontmatter.slug} className="w-full md:max-w-4xl">
         <PostCard post={post} />
       </div>
     ))}

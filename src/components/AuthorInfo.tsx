@@ -1,16 +1,11 @@
-import { Component } from "solid-js";
 import { Author } from "src/authors";
 
-type Props = {
-  author: Author;
-};
-
-const AuthorInfo: Component<Props> = (props) => (
+const AuthorInfo = ({ author }: { author: Author }) => (
   <>
     <p>
-      Written by <b class="font-bold">{props.author.fullName}</b>
+      Written by <b className="font-bold">{author.fullName}</b>
     </p>
-    <blockquote class="italic">{props.author.bio}</blockquote>
+    <blockquote className="italic">{author.bio}</blockquote>
   </>
 );
 

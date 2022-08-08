@@ -1,15 +1,15 @@
-import { Component } from "solid-js";
 import { PostOrPageFrontmatter } from "src/types";
 
-type Props = Pick<PostOrPageFrontmatter, "publication_date" | "modified_date">;
-
-const PublicationAndModifiedDate: Component<Props> = (props) => (
-  <div class="text-base mb-10 font-sans">
-    <span class="mr-6">
-      Published {new Date(props.publication_date).toLocaleString()}
+const PublicationAndModifiedDate = ({
+  publication_date,
+  modified_date,
+}: Pick<PostOrPageFrontmatter, "publication_date" | "modified_date">) => (
+  <div className="text-base mb-10 font-sans">
+    <span className="mr-6">
+      Published {new Date(publication_date).toLocaleString()}
     </span>
-    {props.modified_date && (
-      <span>Updated {new Date(props.modified_date).toLocaleString()}</span>
+    {modified_date && (
+      <span>Updated {new Date(modified_date).toLocaleString()}</span>
     )}
   </div>
 );
