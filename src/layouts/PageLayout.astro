@@ -1,10 +1,10 @@
 ---
 import BaseLayout from "./BaseLayout.astro"
-import AuthorInfo from "@components/AuthorInfo";
+import AuthorInfo from "@/components/AuthorInfo";
 import { getAuthor } from "src/authors";
 import { PageFrontmatter, SEO } from "src/types";
 import { MarkdownContent } from "astro";
-import Utterances from "@components/Utterances";
+import Utterances from "@/components/Utterances";
 
 export interface Props {
   content: MarkdownContent<PageFrontmatter>;

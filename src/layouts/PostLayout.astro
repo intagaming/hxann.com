@@ -1,11 +1,11 @@
 ---
 import BaseLayout from "./BaseLayout.astro"
-import AuthorInfo from "@components/AuthorInfo";
+import AuthorInfo from "@/components/AuthorInfo";
 import { getAuthor } from "src/authors";
 import { PostFrontmatter, SEO } from "src/types";
 import { MarkdownContent, MarkdownInstance } from "astro";
-import PostLastNextNav from "@components/PostLastNextNav";
-import PublicationAndModifiedDate from "@components/PublicationAndModifiedDate";
+import PostLastNextNav from "@/components/PostLastNextNav";
+import PublicationAndModifiedDate from "@/components/PublicationAndModifiedDate";
 
 export interface Props {
   content: MarkdownContent<PostFrontmatter>;

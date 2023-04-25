@@ -8,4 +8,9 @@ import react from "@astrojs/react";
 export default defineConfig({
   integrations: [tailwind(), sitemap(), react()],
   site: "https://hxann.com",
+  vite: {
+    ssr: {
+      noExternal: ["@fortawesome/*"],
+    },
+  },
 });

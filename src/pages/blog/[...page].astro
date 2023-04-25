@@ -1,14 +1,15 @@
 ---
-import { PostFrontmatter, SEO } from 'src/types';
-import PostList from "@components/PostList";
-import BaseLayout from '@layouts/BaseLayout.astro';
-import { MarkdownInstance, Page } from 'astro';
-import Pagination from "@components/Pagination";
+import { PostFrontmatter, SEO } from "src/types";
+import PostList from "@/components/PostList";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { MarkdownInstance, Page } from "astro";
+import Pagination from "@/components/Pagination";
 
 export async function getStaticPaths({ paginate }) {
-  let allPosts = await Astro.glob<PostFrontmatter>('./posts/*.md');
+  let allPosts = await Astro.glob<PostFrontmatter>("./posts/*.md");
   allPosts = allPosts.sort(
-    (a, b) => new Date(b.frontmatter.publication_date).valueOf() -
+    (a, b) =>
+      new Date(b.frontmatter.publication_date).valueOf() -
       new Date(a.frontmatter.publication_date).valueOf()
   );
 
@@ -24,13 +25,16 @@ const { page } = Astro.props as Props;
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 const seo: SEO = {
   title: "Blog | An Hoang",
-  description: "I do Software Engineering stuff. Coding, Architecting, criticize things engineers make.",
+  description:
+    "I do Software Engineering stuff. Coding, Architecting, criticize things engineers make.",
   openGraph: {
     title: "An Hoang",
     type: "website",
-    description: "I do Software Engineering stuff. Coding, Architecting, criticize things engineers make.",
+    description:
+      "I do Software Engineering stuff. Coding, Architecting, criticize things engineers make.",
     url: canonicalURL.toString(),
-    image: "https://res.cloudinary.com/an7/image/upload/v1656043905/blog/banner_wywcvv.png",
+    image:
+      "https://res.cloudinary.com/an7/image/upload/v1656043905/blog/banner_wywcvv.png",
   },
 };
 ---
@@ -38,7 +42,12 @@ const seo: SEO = {
 <BaseLayout seo={seo}>
   <main>
     <PostList posts={page.data} />
-    <Pagination totalItems={page.total} currentPage={page.currentPage} perPage={page.size} linkProducer={(page)=>
-      page === 1 ? "/blog" : `/blog/${page}`} />
+    <Pagination
+      totalItems={page.total}
+      currentPage={page.currentPage}
+      perPage={page.size}
+      linkProducer={(page) => (page === 1 ? "/blog" : `/blog/${page}`)}
+    />
   </main>
 </BaseLayout>
+
