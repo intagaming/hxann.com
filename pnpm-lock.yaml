@@ -55,6 +55,9 @@ devDependencies:
   tailwindcss:
     specifier: ^3.3.1
     version: 3.3.1(postcss@8.4.23)
+  typescript:
+    specifier: ^5.0.4
+    version: 5.0.4
 
 packages:
 
