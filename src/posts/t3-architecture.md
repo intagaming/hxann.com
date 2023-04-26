@@ -1,5 +1,4 @@
 ---
-layout: ../../../layouts/PostLayout.astro
 title: What is the architecture of the T3 application?
 slug: t3-architecture
 author: "An7"

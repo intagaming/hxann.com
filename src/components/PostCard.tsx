@@ -10,7 +10,7 @@ const PostCard = ({ post }: Props) => {
   const fm = post.frontmatter;
 
   return (
-    <a href={`/blog/posts/${fm.slug}`}>
+    <a href={`/${fm.slug}`}>
       <article className="flex flex-col gap-4 md:flex-row md:gap-10">
         <div className="md:flex-1">
           <div className="aspect-video">

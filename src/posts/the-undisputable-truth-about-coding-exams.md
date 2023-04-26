@@ -1,5 +1,4 @@
 ---
-layout: ../../../layouts/PostLayout.astro
 title: 'The undisputable truth about "coding exams"'
 slug: the-undisputable-truth-about-coding-exams
 author: "An7"

@@ -1,5 +1,4 @@
 ---
-layout: ../../../layouts/PostLayout.astro
 title: The desire of documenting
 slug: the-desire-of-documenting
 author: "An7"

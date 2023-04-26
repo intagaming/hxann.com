@@ -1,5 +1,4 @@
 ---
-layout: ../../../layouts/PostLayout.astro
 title: Distributed Realtime Server Architecture
 slug: distributed-realtime-server
 author: "An7"

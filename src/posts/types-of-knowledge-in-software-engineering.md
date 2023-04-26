@@ -1,5 +1,4 @@
 ---
-layout: ../../../layouts/PostLayout.astro
 title: Types of knowledge in Software Engineering
 slug: types-of-knowledge-in-software-engineering
 author: An7

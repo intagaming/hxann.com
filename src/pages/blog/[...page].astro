@@ -6,7 +6,7 @@ import { MarkdownInstance, Page } from "astro";
 import Pagination from "@/components/Pagination";
 
 export async function getStaticPaths({ paginate }) {
-  let allPosts = await Astro.glob<PostFrontmatter>("./posts/*.md");
+  let allPosts = await Astro.glob<PostFrontmatter>("../../posts/*.md");
   allPosts = allPosts.sort(
     (a, b) =>
       new Date(b.frontmatter.publication_date).valueOf() -

@@ -10,7 +10,7 @@ const NavCard = ({
   <div className="flex-1 max-w-xs">
     {post && (
       <a
-        href={`/blog/posts/${post.slug}`}
+        href={`/${post.slug}`}
         className="flex flex-col w-full h-full gap-4 p-4 no-underline border rounded-md"
       >
         <div
