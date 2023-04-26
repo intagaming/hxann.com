@@ -1,87 +1,124 @@
 ---
-import BaseLayout from "@/layouts/BaseLayout.astro"
-import { SEO } from "src/types"
-import astroSvg from "/images/astro.svg"
-import dotnetSvg from "/images/dotnet.svg"
-import graphqlSvg from "/images/graphql.svg"
-import kubernetesSvg from "/images/kubernetes.svg"
-import nextjsSvg from "/images/nextjs.svg"
-import springSvg from "/images/spring.svg"
-import t3Svg from "/images/t3.svg"
-import hollowCircleSvg from "/images/hollow-circle.svg"
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { SEO } from "src/types";
+import astroSvg from "/images/astro.svg";
+import dotnetSvg from "/images/dotnet.svg";
+import graphqlSvg from "/images/graphql.svg";
+import kubernetesSvg from "/images/kubernetes.svg";
+import nextjsSvg from "/images/nextjs.svg";
+import springSvg from "/images/spring.svg";
+import t3Svg from "/images/t3.svg";
+import hollowCircleSvg from "/images/hollow-circle.svg";
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 const seo: SEO = {
   title: "An Hoang",
-  description: "I do Software Engineering stuff. Coding, Architecting, criticize things engineers make.",
+  description:
+    "I do Software Engineering stuff. Coding, Architecting, criticize things engineers make.",
   openGraph: {
     title: "An Hoang",
     type: "website",
-    description: "I do Software Engineering stuff. Coding, Architecting, criticize things engineers make.",
+    description:
+      "I do Software Engineering stuff. Coding, Architecting, criticize things engineers make.",
     url: canonicalURL.toString(),
-    image: "https://res.cloudinary.com/an7/image/upload/v1656043905/blog/banner_wywcvv.png",
+    image:
+      "https://res.cloudinary.com/an7/image/upload/v1656043905/blog/banner_wywcvv.png",
   },
 };
 ---
 
-<BaseLayout seo={seo}>
+<BaseLayout seo={seo} includeNetlifyIdentity>
   <main>
     <div class="flex flex-col gap-10 m-4 lg:flex-row lg:my-14 xl:mx-14">
-      <div class="flex flex-col flex-1 lg:items-end lg:text-right md:my-10 md:mx-10 lg:mx-0">
-        <h1 class="text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-pink-600">
-          Build different.</h1>
-        <p class="mt-10 text-2xl lg:w-[24rem]">Often times things are pretty ugly, so let's get
+      <div
+        class="flex flex-col flex-1 lg:items-end lg:text-right md:my-10 md:mx-10 lg:mx-0"
+      >
+        <h1
+          class="text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-pink-600"
+        >
+          Build different.
+        </h1>
+        <p class="mt-10 text-2xl lg:w-[24rem]">
+          Often times things are pretty ugly, so let's get
           <span class="font-semibold text-pink-600">architecting</span>!
         </p>
         <div class="flex gap-4 mt-10">
-          <a href="/blog"
-            class="flex items-center gap-3 px-5 py-3 text-lg font-semibold bg-indigo-600 rounded-lg text-neutral-100"><span>See
-              my posts</span></a>
-          <a href="/about"
-            class="flex items-center gap-3 px-5 py-3 text-lg font-semibold border rounded-lg border-neutral-300"><span>About
-              me</span></a>
+          <a
+            href="/blog"
+            class="flex items-center gap-3 px-5 py-3 text-lg font-semibold bg-indigo-600 rounded-lg text-neutral-100"
+            ><span>See my posts</span></a
+          >
+          <a
+            href="/about"
+            class="flex items-center gap-3 px-5 py-3 text-lg font-semibold border rounded-lg border-neutral-300"
+            ><span>About me</span></a
+          >
         </div>
       </div>
-      <div class="flex flex-col justify-around flex-1 gap-5 xl:w-[40vw] md:mx-10 lg:mx-0">
-        <div class="flex flex-col flex-1 gap-3 p-4 font-mono text-lg lg:text-xl text-white bg-black rounded-md">
-          <p><i class="text-indigo-500 fa-solid fa-chevron-right fa-xs"></i> hxann info</p>
+      <div
+        class="flex flex-col justify-around flex-1 gap-5 xl:w-[40vw] md:mx-10 lg:mx-0"
+      >
+        <div
+          class="flex flex-col flex-1 gap-3 p-4 font-mono text-lg lg:text-xl text-white bg-black rounded-md"
+        >
+          <p>
+            <i class="text-indigo-500 fa-solid fa-chevron-right fa-xs"></i> hxann
+            info
+          </p>
           <div class="flex gap-7">
             <div class="w-48">
-              <img src="https://res.cloudinary.com/an7/image/upload/v1656089853/blog/avatar_a8yy9u.jpg"
-                class="object-cover rounded-md aspect-square" />
+              <img
+                src="https://res.cloudinary.com/an7/image/upload/v1656089853/blog/avatar_a8yy9u.jpg"
+                class="object-cover rounded-md aspect-square"
+              />
             </div>
             <div>
               <p>An Hoang</p>
-              <a href="mailto:xuanan2001@pm.me" class="underline">xuanan2001@pm.me</a>
+              <a href="mailto:xuanan2001@pm.me" class="underline"
+                >xuanan2001@pm.me</a
+              >
               <p>I do Software Engineering stuff.</p>
               <p>Coding, Architecting, criticize things engineers make.</p>
             </div>
           </div>
           <p class="mt-7">
-            <i class="text-indigo-500 fa-solid fa-chevron-right fa-xs"></i> hxann links
+            <i class="text-indigo-500 fa-solid fa-chevron-right fa-xs"></i> hxann
+            links
           </p>
           <div class="flex flex-col items-start">
             <a href="/blog" class="underline">See my blog posts</a>
             <a href="/about" class="underline">About me</a>
-            <a href="https://www.youtube.com/c/AnHoangXuan" class="underline">My YouTube Channel</a>
-            <a href="https://github.com/intagaming" class="underline">My GitHub</a>
-            <a href="https://github.com/intagaming/hxann.com" class="underline">This website's source code</a>
+            <a href="https://www.youtube.com/c/AnHoangXuan" class="underline"
+              >My YouTube Channel</a
+            >
+            <a href="https://github.com/intagaming" class="underline"
+              >My GitHub</a
+            >
+            <a href="https://github.com/intagaming/hxann.com" class="underline"
+              >This website's source code</a
+            >
           </div>
         </div>
       </div>
     </div>
 
-    <div class="flex flex-col items-center gap-10 px-4 py-10 md:px-14 md:py-32 xl:gap-20 xl:px-60">
-      <p class="text-4xl font-bold">I build software for scale. <span class="italic text-yellow-400">Easily.</span>
+    <div
+      class="flex flex-col items-center gap-10 px-4 py-10 md:px-14 md:py-32 xl:gap-20 xl:px-60"
+    >
+      <p class="text-4xl font-bold">
+        I build software for scale. <span class="italic text-yellow-400"
+          >Easily.</span
+        >
       </p>
       <div class="flex flex-col items-start gap-10 md:flex-row">
         <div
-          class="grid flex-shrink-0 grid-flow-row grid-cols-3 gap-6 p-10 mx-auto bg-gray-200 rounded-md blur-sm xl:w-80">
+          class="grid flex-shrink-0 grid-flow-row grid-cols-3 gap-6 p-10 mx-auto bg-gray-200 rounded-md blur-sm xl:w-80"
+        >
           <div class="flex items-center justify-center">
-            <i class="text-orange-600 fab fa-gitlab fa-4x" />
+            <i class="text-orange-600 fab fa-gitlab fa-4x"></i>
           </div>
           <div class="flex items-center justify-center">
-            <i class="text-blue-500 fab fa-docker fa-3x" />
+            <i class="text-blue-500 fab fa-docker fa-3x"></i>
           </div>
           <div class="flex items-center justify-center">
             <img src={kubernetesSvg} class="object-contain h-16" />
@@ -98,39 +135,55 @@ const seo: SEO = {
         </div>
         <div>
           <div class="">
-            <p class="text-xl">Technologies are sometimes oversolved. Whenever it tries to do too many things, I have an
-              immediate flashback of ASP.NET&apos;s <span
-                class="font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-yellow-400">"ecosystem"</span>.
+            <p class="text-xl">
+              Technologies are sometimes oversolved. Whenever it tries to do too
+              many things, I have an immediate flashback of ASP.NET&apos;s <span
+                class="font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-yellow-400"
+                >"ecosystem"</span
+              >.
             </p>
-            <p class="mt-5 text-xl">Using a niche framework is kind of like doing drugs. You feel cool, until you don't.
+            <p class="mt-5 text-xl">
+              Using a niche framework is kind of like doing drugs. You feel
+              cool, until you don't.
             </p>
           </div>
           <div class="flex flex-col items-start gap-2 mt-10">
             <p class="italic font-thin text-md">You might be interested in:</p>
-            <a href="/about-openapi-its-tools-and-design-first-apis"
-              class="flex items-center gap-3 px-5 py-3 text-lg font-semibold rounded-lg bg-yellow-400 text-neutral-700"><span>About
-                OpenAPI, its tools, and design-first APIs</span></a>
+            <a
+              href="/about-openapi-its-tools-and-design-first-apis"
+              class="flex items-center gap-3 px-5 py-3 text-lg font-semibold rounded-lg bg-yellow-400 text-neutral-700"
+              ><span>About OpenAPI, its tools, and design-first APIs</span></a
+            >
           </div>
         </div>
       </div>
     </div>
 
-    <div class="flex flex-col gap-10 px-4 py-12 md:py-28 xl:py-20 md:px-14 xl:px-60">
-      <p class="text-4xl font-bold">Deep researching goes <span class="text-red-500">a long way.</span></p>
+    <div
+      class="flex flex-col gap-10 px-4 py-12 md:py-28 xl:py-20 md:px-14 xl:px-60"
+    >
+      <p class="text-4xl font-bold">
+        Deep researching goes <span class="text-red-500">a long way.</span>
+      </p>
       <div class="flex flex-col-reverse w-full gap-10 md:flex-row xl:gap-10">
         <div class="flex-1">
           <div
-            class="flex flex-col gap-3 text-xl font-semibold sm:text-2xl xl:text-3xl text-neutral-600 dark:text-neutral-300">
+            class="flex flex-col gap-3 text-xl font-semibold sm:text-2xl xl:text-3xl text-neutral-600 dark:text-neutral-300"
+          >
             <p class="mt-4">Search for the cause.</p>
             <p>Dig to the ground.</p>
-            <p class="text-amber-500 dark:text-amber-300">Every RFC is a story.</p>
+            <p class="text-amber-500 dark:text-amber-300">
+              Every RFC is a story.
+            </p>
           </div>
 
           <div class="flex flex-col items-start gap-2 mt-10">
             <p class="italic font-thin text-md">You might be interested in:</p>
-            <a href="/types-of-knowledge-in-software-engineering"
-              class="flex items-center gap-3 px-5 py-3 text-lg font-semibold rounded-lg md:w-[23rem] bg-rose-600 text-neutral-100"><span>Types
-                of knowledge in Software Engineering</span></a>
+            <a
+              href="/types-of-knowledge-in-software-engineering"
+              class="flex items-center gap-3 px-5 py-3 text-lg font-semibold rounded-lg md:w-[23rem] bg-rose-600 text-neutral-100"
+              ><span>Types of knowledge in Software Engineering</span></a
+            >
           </div>
         </div>
       </div>
@@ -139,28 +192,45 @@ const seo: SEO = {
     <div class="flex flex-col gap-10 mx-4 mb-20 md:mb-40 md:mx-14 mt-14">
       <p class="text-4xl font-extrabold">Showcase</p>
       <div class="flex flex-col gap-3 lg:flex-row flex-wrap">
-        <a href="https://github.com/intagaming/go-blog-backend" class="flex items-center gap-2 p-2 border-2 rounded-md">
+        <a
+          href="https://github.com/intagaming/go-blog-backend"
+          class="flex items-center gap-2 p-2 border-2 rounded-md"
+        >
           <i class="fa-brands fa-golang"></i>
           <p>A blog backend written in Go.</p>
         </a>
-        <a href="https://github.com/intagaming/blog2" class="flex items-center gap-2 p-2 border-2 rounded-md">
+        <a
+          href="https://github.com/intagaming/blog2"
+          class="flex items-center gap-2 p-2 border-2 rounded-md"
+        >
           <img src={nextjsSvg} class="h-5 dark:invert" />
           <p>A Next.js blog.</p>
         </a>
-        <a href="https://github.com/intagaming/hxann.com" class="flex items-center gap-2 p-2 border-2 rounded-md">
+        <a
+          href="https://github.com/intagaming/hxann.com"
+          class="flex items-center gap-2 p-2 border-2 rounded-md"
+        >
           <img src={astroSvg} class="h-5" />
           <p>This website's source code.</p>
         </a>
-        <a href="https://ttt.hxann.com" class="flex items-center gap-2 p-2 border-2 rounded-md">
+        <a
+          href="https://ttt.hxann.com"
+          class="flex items-center gap-2 p-2 border-2 rounded-md"
+        >
           <img src={hollowCircleSvg} class="h-5" />
           <p>Tic Tac Toe with Distributed Realtime Server Architecture</p>
         </a>
-        <a href="https://github.com/intagaming/tic-tac-toe" class="flex items-center gap-2 p-2 border-2 rounded-md">
+        <a
+          href="https://github.com/intagaming/tic-tac-toe"
+          class="flex items-center gap-2 p-2 border-2 rounded-md"
+        >
           <img src={t3Svg} class="h-5" />
           <p>Tic Tac Toe Next.js repository, powered by create-t3-app</p>
         </a>
-        <a href="https://github.com/intagaming/tic-tac-toe-worker-node"
-          class="flex items-center gap-2 p-2 border-2 rounded-md">
+        <a
+          href="https://github.com/intagaming/tic-tac-toe-worker-node"
+          class="flex items-center gap-2 p-2 border-2 rounded-md"
+        >
           <i class="fa-brands fa-node-js"></i>
           <p>Tic Tac Toe Node.js Distributed Realtime Server/Worker/Ticker</p>
         </a>
