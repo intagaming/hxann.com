@@ -21,8 +21,7 @@ const seo: SEO = {
     type: "article",
     description: content.excerpt,
     url: canonicalURL.toString(),
-    image:
-      "https://res.cloudinary.com/an7/image/upload/v1656043905/blog/banner_wywcvv.png",
+    image: `${Astro.site?.href || ""}/images/banner.png`,
     article: {
       authors: [content.author],
       publishedTime: content.publication_date,

@@ -1,6 +1,6 @@
 ---
-import BaseLayout from "@/layouts/BaseLayout.astro"
-import { SEO } from "src/types"
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { SEO } from "src/types";
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
@@ -10,9 +10,10 @@ const seo: SEO = {
   openGraph: {
     title: "An Hoang",
     type: "website",
-    description: "I do Software Engineering stuff. Coding, Architecting, criticize things engineers make.",
-    url: canonicalURL,
-    image: "https://res.cloudinary.com/an7/image/upload/v1656043905/blog/banner_wywcvv.png",
+    description:
+      "I do Software Engineering stuff. Coding, Architecting, criticize things engineers make.",
+    url: canonicalURL.toString(),
+    image: `${Astro.site?.href || ""}/images/banner.png`,
   },
 };
 ---

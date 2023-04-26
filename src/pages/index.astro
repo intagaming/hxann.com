@@ -19,8 +19,7 @@ const seo: SEO = {
     description:
       "I do Software Engineering stuff. Coding, Architecting, criticize things engineers make.",
     url: canonicalURL.toString(),
-    image:
-      "https://res.cloudinary.com/an7/image/upload/v1656043905/blog/banner_wywcvv.png",
+    image: `${Astro.site?.href || ""}/images/banner.png`,
   },
 };
 ---
