@@ -2,14 +2,8 @@
 import type { MarkdownInstance } from "astro";
 import type { PostFrontmatter, SEO } from "src/types";
 
-import astroSvg from "/images/astro.svg";
-import dotnetSvg from "/images/dotnet.svg";
-import graphqlSvg from "/images/graphql.svg";
-import kubernetesSvg from "/images/kubernetes.svg";
-import nextjsSvg from "/images/nextjs.svg";
-import springSvg from "/images/spring.svg";
-import BaseLayout from "@/layouts/BaseLayout.astro";
 import PostCard from "@/components/PostCard";
+import BaseLayout from "@/layouts/BaseLayout.astro";
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 const seo: SEO = {
