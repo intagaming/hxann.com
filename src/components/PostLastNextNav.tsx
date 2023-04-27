@@ -11,7 +11,7 @@ const NavCard = ({
     {post && (
       <a
         href={`/${post.slug}`}
-        className="flex h-full w-full flex-col gap-4 rounded-md border p-4 no-underline"
+        className="flex h-full w-full flex-col gap-4 border p-4 no-underline hover:bg-neutral-800"
       >
         <div
           className={`flex items-center gap-4 ${isNext ? "justify-end" : ""}`}

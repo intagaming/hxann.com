@@ -1,5 +1,6 @@
 ---
-import type { SEO } from "src/types";
+import type { MarkdownInstance } from "astro";
+import type { PostFrontmatter, SEO } from "src/types";
 
 import astroSvg from "/images/astro.svg";
 import dotnetSvg from "/images/dotnet.svg";
@@ -8,6 +9,7 @@ import kubernetesSvg from "/images/kubernetes.svg";
 import nextjsSvg from "/images/nextjs.svg";
 import springSvg from "/images/spring.svg";
 import BaseLayout from "@/layouts/BaseLayout.astro";
+import PostCard from "@/components/PostCard";
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 const seo: SEO = {
@@ -23,6 +25,16 @@ const seo: SEO = {
     image: `${Astro.site?.href || ""}/images/banner.png`,
   },
 };
+
+const featuredPosts = (
+  await Astro.glob<MarkdownInstance<PostFrontmatter>>("../posts/*.{md,mdx}")
+)
+  .filter((post) => post.frontmatter.featured)
+  .sort(
+    (a, b) =>
+      new Date(b.frontmatter.publication_date).valueOf() -
+      new Date(a.frontmatter.publication_date).valueOf()
+  );
 ---
 
 <BaseLayout seo={seo} includeNetlifyIdentity>
@@ -37,46 +49,47 @@ const seo: SEO = {
           Build different.
         </h1>
         <p class="mt-10 text-2xl lg:w-[24rem]">
-          Often times things are pretty ugly, so let's get
-          <span class="font-semibold text-pink-600">architecting</span>!
+          Hi. I'm exposing
+          <span class="font-semibold text-pink-600"> software</span>.
         </p>
         <div class="mt-10 flex gap-4">
           <a
             href="/blog"
-            class="flex items-center gap-3 rounded-lg bg-indigo-600 px-5 py-3 text-lg font-semibold text-neutral-100"
-            ><span>See my posts</span></a
+            class="flex items-center gap-3 bg-indigo-600 px-5 py-3 text-lg font-semibold text-neutral-100 hover:bg-indigo-700"
           >
+            <span>See my posts</span>
+          </a>
           <a
             href="/about"
-            class="flex items-center gap-3 rounded-lg border border-neutral-300 px-5 py-3 text-lg font-semibold"
-            ><span>About me</span></a
+            class="flex items-center gap-3 border border-neutral-300 px-5 py-3 text-lg font-semibold hover:bg-neutral-800"
           >
+            <span>About me</span>
+          </a>
         </div>
       </div>
       <div
         class="flex flex-1 flex-col justify-around gap-5 md:mx-10 lg:mx-0 xl:w-[40vw]"
       >
         <div
-          class="flex flex-1 flex-col gap-3 rounded-md bg-black p-4 font-mono text-lg text-white lg:text-xl"
+          class="flex flex-1 flex-col gap-3 bg-black p-4 font-mono text-lg text-white lg:text-xl"
         >
           <p>
             <i class="fa-solid fa-chevron-right fa-xs text-indigo-500"></i> hxann
             info
           </p>
           <div class="flex gap-7">
-            <div class="w-48">
+            <div class="flex-1 shrink-0">
               <img
                 src="https://res.cloudinary.com/an7/image/upload/v1656089853/blog/avatar_a8yy9u.jpg"
                 class="aspect-square rounded-md object-cover"
               />
             </div>
-            <div>
+            <div class="flex-[3]">
               <p>An Hoang</p>
-              <a href="mailto:xuanan2001@pm.me" class="underline"
-                >xuanan2001@pm.me</a
-              >
-              <p>I do Software Engineering stuff.</p>
-              <p>Coding, Architecting, criticize things engineers make.</p>
+              <a href="mailto:xuanan2001@pm.me" class="underline">
+                xuanan2001@pm.me
+              </a>
+              <p>software</p>
             </div>
           </div>
           <p class="mt-7">
@@ -86,17 +99,39 @@ const seo: SEO = {
           <div class="flex flex-col items-start">
             <a href="/blog" class="underline">See my blog posts</a>
             <a href="/about" class="underline">About me</a>
-            <a href="https://www.youtube.com/c/AnHoangXuan" class="underline"
-              >My YouTube Channel</a
-            >
-            <a href="https://github.com/intagaming" class="underline"
-              >My GitHub</a
-            >
-            <a href="https://github.com/intagaming/hxann.com" class="underline"
-              >This website's source code</a
-            >
+            <a href="https://www.youtube.com/c/AnHoangXuan" class="underline">
+              My YouTube Channel
+            </a>
+            <a href="https://github.com/intagaming" class="underline">
+              My GitHub
+            </a>
+            <a href="https://github.com/intagaming/hxann.com" class="underline">
+              This website's source code
+            </a>
           </div>
         </div>
+      </div>
+    </div>
+
+    <div class="mx-4 my-10 md:mx-14 md:my-20">
+      <h2 class="mb-4 text-2xl font-bold md:text-3xl">Featured posts</h2>
+
+      <div class="flex flex-col gap-12 md:grid md:grid-cols-3">
+        {
+          featuredPosts.map((post) => (
+            <PostCard post={post} direction="column" />
+          ))
+        }
+      </div>
+
+      <div class="flex flex-col md:items-end">
+        <a
+          href="/blog"
+          class="mt-12 flex items-center justify-center gap-2 bg-indigo-600 px-12 py-3 font-bold text-white hover:bg-indigo-700"
+        >
+          <span>View more</span>
+          <span>→</span>
+        </a>
       </div>
     </div>
   </main>

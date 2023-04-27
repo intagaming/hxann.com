@@ -9,7 +9,7 @@ const PostList = ({
   posts: MarkdownInstance<PostFrontmatter>[];
 }) => (
   <div className="my-12 flex flex-col items-center gap-12 px-6">
-    {posts.slice(0, 10).map((post) => (
+    {posts.map((post) => (
       <div key={post.frontmatter.slug} className="w-full md:max-w-4xl">
         <PostCard post={post} />
       </div>

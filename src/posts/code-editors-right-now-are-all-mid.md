@@ -5,6 +5,7 @@ author: "An7"
 publication_date: "2023-03-12 23:15:00"
 excerpt: Just spent my weekend improving my editor situation. Let's talk about what happened.
 cover_url: /images/uploads/code-editors-right-now-are-all-mid.jpeg
+featured: true
 ---
 
 # Code editors right now are all mid

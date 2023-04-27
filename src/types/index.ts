@@ -9,6 +9,7 @@ export interface PostOrPageFrontmatter {
 
 export interface PostFrontmatter extends PostOrPageFrontmatter {
   cover_url: string;
+  featured?: true;
 }
 
 export interface PageFrontmatter extends PostOrPageFrontmatter {

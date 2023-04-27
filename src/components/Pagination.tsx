@@ -67,7 +67,7 @@ const Pagination = ({
         <li>
           <a
             href={linkProducer(Math.max(1, currentPage - 1))}
-            className="rounded-l-lg border border-neutral-300 bg-white px-3 py-2 leading-tight text-neutral-500 hover:bg-neutral-100 hover:text-neutral-700 dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-400 dark:hover:bg-neutral-700 dark:hover:text-white"
+            className="border border-neutral-300 bg-white px-3 py-2 leading-tight text-neutral-500 hover:bg-neutral-100 hover:text-neutral-700 dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-400 dark:hover:bg-neutral-700 dark:hover:text-white"
           >
             <span className="sr-only">Previous</span>
             <i className="fa-solid fa-chevron-left"></i>
@@ -116,7 +116,7 @@ const Pagination = ({
         <li>
           <a
             href={linkProducer(Math.min(totalPages, currentPage + 1))}
-            className="rounded-r-lg border border-neutral-300 bg-white px-3 py-2 leading-tight text-neutral-500 hover:bg-neutral-100 hover:text-neutral-700 dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-400 dark:hover:bg-neutral-700 dark:hover:text-white"
+            className="border border-neutral-300 bg-white px-3 py-2 leading-tight text-neutral-500 hover:bg-neutral-100 hover:text-neutral-700 dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-400 dark:hover:bg-neutral-700 dark:hover:text-white"
           >
             <span className="sr-only">Next</span>
             <i className="fa-solid fa-chevron-right"></i>

@@ -1,17 +1,26 @@
 import type { MarkdownInstance } from "astro";
+import clsx from "clsx";
 import type { PostFrontmatter } from "src/types";
 import { parseDate } from "src/utils";
 
 type Props = {
   post: MarkdownInstance<PostFrontmatter>;
+  direction?: "row" | "column";
 };
 
-const PostCard = ({ post }: Props) => {
+const PostCard = ({ post, direction }: Props) => {
   const fm = post.frontmatter;
 
   return (
     <a href={`/${fm.slug}`}>
-      <article className="flex flex-col gap-4 md:flex-row md:gap-10">
+      <article
+        className={clsx(
+          "flex gap-4 md:gap-10",
+          !direction && "flex-col md:flex-row",
+          direction === "row" && "flex-row",
+          direction === "column" && "flex-col"
+        )}
+      >
         <div className="md:flex-1">
           <div className="aspect-video">
             <img
