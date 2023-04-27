@@ -29,17 +29,6 @@ type Props = {
 };
 
 const { seo, includeNetlifyIdentity } = Astro.props as Props;
-
-const netlifyIdentity = (window as any).netlifyIdentity;
-if (netlifyIdentity) {
-  netlifyIdentity.on("init", (user: any) => {
-    if (!user) {
-      netlifyIdentity.on("login", () => {
-        document.location.href = "/admin/";
-      });
-    }
-  });
-}
 ---
 
 <!DOCTYPE html>
