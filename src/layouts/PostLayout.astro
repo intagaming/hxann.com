@@ -15,7 +15,9 @@ export interface Props {
 
 const { content } = Astro.props as Props;
 
-let allPosts = await Astro.glob<PostFrontmatter>("../posts/*.md");
+let allPosts = await Astro.glob<MarkdownInstance<PostFrontmatter>>(
+  "../posts/*.{md,mdx}"
+);
 allPosts = allPosts.sort(
   (a, b) =>
     new Date(b.frontmatter.publication_date).valueOf() -

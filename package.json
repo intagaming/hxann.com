@@ -13,6 +13,7 @@
     "lint-autofix": "eslint ./src --ext .ts,.tsx,.astro --fix"
   },
   "devDependencies": {
+    "@astro-community/astro-embed-youtube": "^0.2.2",
     "@astrojs/react": "^2.1.1",
     "@astrojs/sitemap": "^1.2.2",
     "@astrojs/tailwind": "^3.1.1",
@@ -39,5 +40,8 @@
     "react-dom": "^18.2.0",
     "tailwindcss": "^3.3.1",
     "typescript": "^5.0.4"
+  },
+  "dependencies": {
+    "@astrojs/mdx": "^0.19.0"
   }
 }
