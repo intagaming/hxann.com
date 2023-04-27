@@ -27,7 +27,7 @@ of salt, which leads to the...
 ## Original knowledge
 
 Original knowledge are things that the original creator says that they're true.
-For example, if they say it is *blazingly fast*, then indeed it is. 🐧
+For example, if they say it is _blazingly fast_, then indeed it is. 🐧
 
 Original knowledge ranges from the original documentation to the Request For
 Comment (RFC). Anything authoritative from credible sources is considered
@@ -42,7 +42,7 @@ StackOverflow, and some hospitable people on SO came and authored a genius
 solution. Sometimes it is indeed, but you might have already figured out that I
 lied about the former if you're a seasoned engineer.
 
-Speculation knowledge are things *people* come up with. By *people* I mean the
+Speculation knowledge are things _people_ come up with. By _people_ I mean the
 people who have not comprehended the entirety of the problem but still came up
 with an answer decent enough that makes a portion of people think that it is
 correct.
@@ -76,15 +76,15 @@ This is kind of a no-brainer, but do your research before applying blindly.
 ## Inferred knowledge
 
 Inferred knowledge are things an engineer considered correct but no one has ever
-told them so. It's mostly intuition, and it *might* be correct. For something to
-be "correct" takes some validation and sometimes *opinion*, but if the knowledge
+told them so. It's mostly intuition, and it _might_ be correct. For something to
+be "correct" takes some validation and sometimes _opinion_, but if the knowledge
 turns out to be a misunderstanding assumption, then the knowledge serves very
 little purpose.
 
 For example, based on what you know from a book from college about how a CPU
 does its caching, you can infer that your CPU also does the same thing. But it
 is an assumption because no one has ever told you that your exact model of CPU
-does the same method of caching. The assumption *might* be correct, but to be
+does the same method of caching. The assumption _might_ be correct, but to be
 sure, you have to dig much deeper than widespread knowledge.
 
 Making assumptions about how things work is a very normal engineer's thing to

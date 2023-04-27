@@ -1,5 +1,5 @@
-import { MarkdownInstance } from "astro";
-import { PostFrontmatter } from "src/types";
+import type { MarkdownInstance } from "astro";
+import type { PostFrontmatter } from "src/types";
 import { parseDate } from "src/utils";
 
 type Props = {
@@ -17,13 +17,13 @@ const PostCard = ({ post }: Props) => {
             <img
               alt="cover image"
               src={fm.cover_url}
-              className="object-cover h-full w-full"
+              className="h-full w-full object-cover"
             />
           </div>
         </div>
 
         <div className="flex flex-col gap-4 md:flex-1">
-          <h2 className="text-2xl font-bold md:text-3xl dark:text-white">
+          <h2 className="text-2xl font-bold dark:text-white md:text-3xl">
             {fm.title}
           </h2>
           <p className="text-neutral-700 dark:text-neutral-400">{fm.excerpt}</p>

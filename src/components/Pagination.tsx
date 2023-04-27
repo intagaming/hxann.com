@@ -16,8 +16,8 @@ const PaginationButton = ({
         aria-current={selected ? "page" : undefined}
         className={
           selected
-            ? "py-2 px-3 font-bold bg-blue-50 border border-neutral-300 hover:bg-blue-100 dark:border-neutral-700 dark:bg-neutral-700 dark:text-white dark:font-normal"
-            : "py-2 px-3 leading-tight text-neutral-500 bg-white border border-neutral-300 hover:bg-neutral-100 hover:text-neutral-700 dark:bg-neutral-800 dark:border-neutral-700 dark:text-neutral-400 dark:hover:bg-neutral-700 dark:hover:text-white"
+            ? "border border-neutral-300 bg-blue-50 px-3 py-2 font-bold hover:bg-blue-100 dark:border-neutral-700 dark:bg-neutral-700 dark:font-normal dark:text-white"
+            : "border border-neutral-300 bg-white px-3 py-2 leading-tight text-neutral-500 hover:bg-neutral-100 hover:text-neutral-700 dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-400 dark:hover:bg-neutral-700 dark:hover:text-white"
         }
       >
         {page}
@@ -28,20 +28,20 @@ const PaginationButton = ({
 
 const Pagination = ({
   totalItems,
-  currentPage,
-  perPage,
-  maxPages,
+  currentPage = 1,
+  perPage = 10,
+  maxShownPages = 7,
   linkProducer,
 }: {
   totalItems: number;
   currentPage?: number;
   perPage?: number;
-  maxPages?: number;
+  maxShownPages?: number;
   linkProducer: (page: number) => string;
 }) => {
   const totalPages = Math.ceil(totalItems / perPage);
 
-  let middlePagesCount = maxPages - 2;
+  let middlePagesCount = maxShownPages - 2; // Minus the first and last page
   if (middlePagesCount % 2 === 0) middlePagesCount--;
 
   // 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15
@@ -67,7 +67,7 @@ const Pagination = ({
         <li>
           <a
             href={linkProducer(Math.max(1, currentPage - 1))}
-            className="py-2 px-3 leading-tight text-neutral-500 bg-white rounded-l-lg border border-neutral-300 hover:bg-neutral-100 hover:text-neutral-700 dark:bg-neutral-800 dark:border-neutral-700 dark:text-neutral-400 dark:hover:bg-neutral-700 dark:hover:text-white"
+            className="rounded-l-lg border border-neutral-300 bg-white px-3 py-2 leading-tight text-neutral-500 hover:bg-neutral-100 hover:text-neutral-700 dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-400 dark:hover:bg-neutral-700 dark:hover:text-white"
           >
             <span className="sr-only">Previous</span>
             <i className="fa-solid fa-chevron-left"></i>
@@ -82,7 +82,7 @@ const Pagination = ({
 
         {showBeginningDots && (
           <li>
-            <span className="py-2 px-3 leading-tight text-neutral-500 bg-white dark:bg-neutral-900 dark:text-neutral-400">
+            <span className="bg-white px-3 py-2 leading-tight text-neutral-500 dark:bg-neutral-900 dark:text-neutral-400">
               ...
             </span>
           </li>
@@ -99,7 +99,7 @@ const Pagination = ({
 
         {showEndDots && (
           <li>
-            <span className="py-2 px-3 leading-tight text-neutral-500 bg-white dark:bg-neutral-900 dark:text-neutral-400">
+            <span className="bg-white px-3 py-2 leading-tight text-neutral-500 dark:bg-neutral-900 dark:text-neutral-400">
               ...
             </span>
           </li>
@@ -116,7 +116,7 @@ const Pagination = ({
         <li>
           <a
             href={linkProducer(Math.min(totalPages, currentPage + 1))}
-            className="py-2 px-3 leading-tight text-neutral-500 bg-white rounded-r-lg border border-neutral-300 hover:bg-neutral-100 hover:text-neutral-700 dark:bg-neutral-800 dark:border-neutral-700 dark:text-neutral-400 dark:hover:bg-neutral-700 dark:hover:text-white"
+            className="rounded-r-lg border border-neutral-300 bg-white px-3 py-2 leading-tight text-neutral-500 hover:bg-neutral-100 hover:text-neutral-700 dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-400 dark:hover:bg-neutral-700 dark:hover:text-white"
           >
             <span className="sr-only">Next</span>
             <i className="fa-solid fa-chevron-right"></i>
@@ -125,11 +125,6 @@ const Pagination = ({
       </ul>
     </nav>
   );
-};
-Pagination.defaultProps = {
-  currentPage: 1,
-  perPage: 10,
-  maxPages: 7,
 };
 
 export default Pagination;

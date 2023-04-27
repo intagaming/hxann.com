@@ -27,7 +27,7 @@ const ThemeToggle = () => {
     <>
       {mounted && (
         <button
-          className="relative flex items-center justify-center w-12 h-12"
+          className="relative flex h-12 w-12 items-center justify-center"
           type="button"
           onClick={handleClick}
         >
@@ -35,7 +35,7 @@ const ThemeToggle = () => {
             {theme === "light" && (
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                className="w-6 h-6"
+                className="h-6 w-6"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -51,7 +51,7 @@ const ThemeToggle = () => {
             {theme === "dark" && (
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                className="w-6 h-6"
+                className="h-6 w-6"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"

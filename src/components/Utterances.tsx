@@ -4,6 +4,8 @@ const Utterances = () => {
   const container = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    if (!container.current) return;
+
     const script = document.createElement("script");
     const theme = localStorage.getItem("theme");
     script.src = "https://utteranc.es/client.js";

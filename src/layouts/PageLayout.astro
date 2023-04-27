@@ -1,10 +1,12 @@
 ---
-import BaseLayout from "./BaseLayout.astro";
-import AuthorInfo from "@/components/AuthorInfo";
+import type { MarkdownContent } from "astro";
 import { getAuthor } from "src/authors";
-import { PageFrontmatter, SEO } from "src/types";
-import { MarkdownContent } from "astro";
+import type { PageFrontmatter, SEO } from "src/types";
+
+import AuthorInfo from "@/components/AuthorInfo";
 import Utterances from "@/components/Utterances";
+
+import BaseLayout from "./BaseLayout.astro";
 
 export interface Props {
   content: MarkdownContent<PageFrontmatter>;
@@ -35,7 +37,7 @@ const author = getAuthor(content.author);
 
 <BaseLayout seo={seo}>
   <article
-    class="px-4 mx-auto my-10 prose dark:prose-invert xl:prose-xl md:my-20 md:px-0"
+    class="prose mx-auto my-10 px-4 dark:prose-invert xl:prose-xl md:my-20 md:px-0"
   >
     <slot />
     <hr />

@@ -1,4 +1,4 @@
-import { PostFrontmatter } from "src/types";
+import type { PostFrontmatter } from "src/types";
 
 const NavCard = ({
   post,
@@ -7,11 +7,11 @@ const NavCard = ({
   post?: PostFrontmatter;
   isNext: boolean;
 }) => (
-  <div className="flex-1 max-w-xs">
+  <div className="max-w-xs flex-1">
     {post && (
       <a
         href={`/${post.slug}`}
-        className="flex flex-col w-full h-full gap-4 p-4 no-underline border rounded-md"
+        className="flex h-full w-full flex-col gap-4 rounded-md border p-4 no-underline"
       >
         <div
           className={`flex items-center gap-4 ${isNext ? "justify-end" : ""}`}
@@ -28,7 +28,7 @@ const NavCard = ({
             </>
           )}
         </div>
-        <div className="font-bold font-sans">{post.title}</div>
+        <div className="font-sans font-bold">{post.title}</div>
       </a>
     )}
   </div>

@@ -1,8 +1,10 @@
 ---
-import NavBar, { NavBarEntry } from "@/components/NavBar";
-import Footer from "@/components/Footer";
 import "@fortawesome/fontawesome-free/css/all.css";
-import { SEO } from "src/types";
+
+import type { SEO } from "src/types";
+
+import Footer from "@/components/Footer";
+import NavBar, { type NavBarEntry } from "@/components/NavBar";
 
 const navBarEntries: NavBarEntry[] = [
   {
@@ -27,6 +29,17 @@ type Props = {
 };
 
 const { seo, includeNetlifyIdentity } = Astro.props as Props;
+
+const netlifyIdentity = (window as any).netlifyIdentity;
+if (netlifyIdentity) {
+  netlifyIdentity.on("init", (user: any) => {
+    if (!user) {
+      netlifyIdentity.on("login", () => {
+        document.location.href = "/admin/";
+      });
+    }
+  });
+}
 ---
 
 <!DOCTYPE html>
@@ -97,7 +110,7 @@ const { seo, includeNetlifyIdentity } = Astro.props as Props;
   </head>
 
   <body>
-    <div class="flex flex-col min-h-screen">
+    <div class="flex min-h-screen flex-col">
       <NavBar client:load entries={navBarEntries} currentPath={path} />
       <div class="flex-1 dark:bg-neutral-900">
         <slot />
@@ -105,19 +118,29 @@ const { seo, includeNetlifyIdentity } = Astro.props as Props;
       <Footer />
     </div>
 
-    {includeNetlifyIdentity && (
-      <script>
-        const netlifyIdentity = (window as any).netlifyIdentity;
-        if (netlifyIdentity) {
-          netlifyIdentity.on("init", (user: any) => {
-            if (!user) {
-              netlifyIdentity.on("login", () => {
-                document.location.href = "/admin/";
-              });
-            }
-          });
+    <script>
+      class BottomScript extends HTMLElement {
+        constructor() {
+          super();
+
+          const message = this.dataset.message;
+          if (!message) return;
+
+          const netlifyIdentity = (window as any).netlifyIdentity;
+          if (netlifyIdentity) {
+            netlifyIdentity.on("init", (user: any) => {
+              if (!user) {
+                netlifyIdentity.on("login", () => {
+                  document.location.href = "/admin/";
+                });
+              }
+            });
+          }
         }
-      </script>
-    )}
+      }
+
+      customElements.define("bottom-script", BottomScript);
+    </script>
+    <bottom-script data-message={includeNetlifyIdentity}></bottom-script>
   </body>
 </html>

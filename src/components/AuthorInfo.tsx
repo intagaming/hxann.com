@@ -1,4 +1,4 @@
-import { Author } from "src/authors";
+import type { Author } from "src/authors";
 
 const AuthorInfo = ({ author }: { author: Author }) => (
   <>

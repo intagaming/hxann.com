@@ -1,11 +1,12 @@
 ---
-import { PostFrontmatter, SEO } from "src/types";
+import type { GetStaticPaths, MarkdownInstance, Page } from "astro";
+import type { PostFrontmatter, SEO } from "src/types";
+
+import Pagination from "@/components/Pagination";
 import PostList from "@/components/PostList";
 import BaseLayout from "@/layouts/BaseLayout.astro";
-import { MarkdownInstance, Page } from "astro";
-import Pagination from "@/components/Pagination";
 
-export async function getStaticPaths({ paginate }) {
+export const getStaticPaths = (async ({ paginate }) => {
   let allPosts = await Astro.glob<PostFrontmatter>("../../posts/*.md");
   allPosts = allPosts.sort(
     (a, b) =>
@@ -14,7 +15,7 @@ export async function getStaticPaths({ paginate }) {
   );
 
   return paginate(allPosts, { pageSize: 10 });
-}
+}) satisfies GetStaticPaths;
 
 export interface Props {
   page: Page<MarkdownInstance<PostFrontmatter>>;

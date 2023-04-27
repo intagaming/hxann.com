@@ -6,6 +6,7 @@ publication_date: "2022-06-07"
 excerpt: OpenAPI has not ripen.
 cover_url: https://res.cloudinary.com/an7/image/upload/v1656043904/blog/openapi_o3ewy8.jpg
 ---
+
 # About OpenAPI, its tools, and design-first APIs
 
 ![cover](https://res.cloudinary.com/an7/image/upload/v1656043904/blog/openapi_o3ewy8.jpg)

@@ -31,7 +31,7 @@ whole application, when considering the architecture of the T3 stack, we must
 consider the architecture of the whole T3 stack. Expect there is a problem: the
 T3 stack contains multiple applications, each with different architecture.
 
-*Side note about what a T3 stack is: [https://init.tips/](https://init.tips/)*
+_Side note about what a T3 stack is: [https://init.tips/](https://init.tips/)_
 
 ## The T3 application breakdown
 
@@ -44,8 +44,8 @@ React app.
 
 ### Next.js (backend)
 
-The Next.js application, which uses React as the frontend, can do several *data
-fetching patterns* depending on how Next.js is used.
+The Next.js application, which uses React as the frontend, can do several _data
+fetching patterns_ depending on how Next.js is used.
 
 - Client-side Rendering (CSR) is the pattern where data is fetched on the
   client-side, i.e. the user's browser.
@@ -55,7 +55,7 @@ fetching patterns* depending on how Next.js is used.
   (ISR): data is fetch once, then no more. From the second requests on, the page
   has the same data.
 
-The aboves are just patterns to *fetch data for the Next.js frontend*. There are
+The aboves are just patterns to _fetch data for the Next.js frontend_. There are
 also the Next.js backend: a bunch of functions waiting to be called. Not much of
 an architecture on the Next.js backend itself: how the Next.js backend is
 organized is not regulated and varies between apps. However the Next.js frontend
@@ -92,7 +92,7 @@ by the Controller. There are a few options here:
   to the React app. Hence Next.js is the Controller.
 - If no SSR or SSG is used, the Controller is the React app. The React app has
   to actually go and fetch the data it needs by itself.
-- Even if SSR or SSG is used, those are just used to *fetch* data **initially**.
+- Even if SSR or SSG is used, those are just used to _fetch_ data **initially**.
   If we need to fetch/update data while the app is running, React must go and do
   that itself by calling the Next.js backend. React is now the Controller.
 
