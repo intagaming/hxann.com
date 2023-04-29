@@ -42,6 +42,9 @@ devDependencies:
   astro:
     specifier: ^2.3.0
     version: 2.3.0
+  class-variance-authority:
+    specifier: ^0.6.0
+    version: 0.6.0(typescript@5.0.4)
   clsx:
     specifier: ^1.2.1
     version: 1.2.1
@@ -84,6 +87,9 @@ devDependencies:
   react-dom:
     specifier: ^18.2.0
     version: 18.2.0(react@18.2.0)
+  tailwind-merge:
+    specifier: ^1.12.0
+    version: 1.12.0
   tailwindcss:
     specifier: ^3.3.1
     version: 3.3.1(postcss@8.4.23)
@@ -1503,6 +1509,18 @@ packages:
   /ci-info@3.8.0:
     resolution: {integrity: sha512-eXTggHWSooYhq49F2opQhuHWgzucfF2YgODK4e1566GQs5BIfP30B0oenwBJHfWxAs2fyPB1s7Mg949zLf61Yw==}
     engines: {node: '>=8'}
+
+  /class-variance-authority@0.6.0(typescript@5.0.4):
+    resolution: {integrity: sha512-qdRDgfjx3GRb9fpwpSvn+YaidnT7IUJNe4wt5/SWwM+PmUwJUhQRk/8zAyNro0PmVfmen2635UboTjIBXXxy5A==}
+    peerDependencies:
+      typescript: '>= 4.5.5 < 6'
+    peerDependenciesMeta:
+      typescript:
+        optional: true
+    dependencies:
+      clsx: 1.2.1
+      typescript: 5.0.4
+    dev: true
 
   /cli-boxes@3.0.0:
     resolution: {integrity: sha512-/lzGpEWL/8PfI0BmBOPRwp0c/wFNX1RdUML3jK/RcSBA9T8mZDdQpqYBKtCFTOfQbwPqWEOpjqW+Fnayc0969g==}
@@ -4415,6 +4433,10 @@ packages:
     dependencies:
       '@pkgr/utils': 2.3.1
       tslib: 2.5.0
+
+  /tailwind-merge@1.12.0:
+    resolution: {integrity: sha512-Y17eDp7FtN1+JJ4OY0Bqv9OA41O+MS8c1Iyr3T6JFLnOgLg3EvcyMKZAnQ8AGyvB5Nxm3t9Xb5Mhe139m8QT/g==}
+    dev: true
 
   /tailwindcss@3.3.1(postcss@8.4.23):
     resolution: {integrity: sha512-Vkiouc41d4CEq0ujXl6oiGFQ7bA3WEhUZdTgXAhtKxSy49OmKs8rEfQmupsfF0IGW8fv2iQkp1EVUuapCFrZ9g==}
