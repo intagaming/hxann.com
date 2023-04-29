@@ -12,4 +12,4 @@ I'm good with casual talks! You can find me on:
 
 - [Facebook](https://facebook.com/an.xuanhoang)
 - Discord: **An7**#4498
-- Email: [xuanan2001@gmail.com](mailto:xuanan2001@gmail.com)
+- Email: [xuanan2001@pm.me](mailto:xuanan2001@pm.me)
