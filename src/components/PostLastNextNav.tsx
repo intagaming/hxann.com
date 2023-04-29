@@ -28,7 +28,7 @@ const NavCard = ({
             </>
           )}
         </div>
-        <div className="font-sans font-bold">{post.title}</div>
+        <div className="font-bold">{post.title}</div>
       </a>
     )}
   </div>
