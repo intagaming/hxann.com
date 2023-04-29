@@ -53,27 +53,37 @@ const author = getAuthor(content.author);
 ---
 
 <BaseLayout seo={seo}>
-  <article
-    class="prose mx-auto my-10 px-4 dark:prose-invert xl:prose-xl prose-h1:text-3xl md:my-20 md:px-0 md:prose-h1:text-4xl"
-  >
+  <div class="mx-auto my-10 w-fit px-4 md:my-20 md:px-0">
     <PublicationAndModifiedDate
       publication_date={content.publication_date}
       modified_date={content.modified_date}
     />
-    <slot />
-    <hr />
-    {author && <AuthorInfo author={author} />}
-    <PostLastNextNav
-      last={lastPost?.frontmatter}
-      next={nextPost?.frontmatter}
-    />
-    <script
-      src="https://utteranc.es/client.js"
-      repo="intagaming/hxann.com"
-      issue-term="pathname"
-      theme="github-dark"
-      crossorigin="anonymous"
-      async
-    ></script>
-  </article>
+    {
+      author && (
+        <p>
+          By <b>{author.username}</b>
+        </p>
+      )
+    }
+    <div class="h-10"></div>
+    <article
+      class="prose dark:prose-invert xl:prose-xl prose-h1:text-3xl md:prose-h1:text-4xl"
+    >
+      <slot />
+      <hr />
+      {author && <AuthorInfo author={author} />}
+      <PostLastNextNav
+        last={lastPost?.frontmatter}
+        next={nextPost?.frontmatter}
+      />
+      <script
+        src="https://utteranc.es/client.js"
+        repo="intagaming/hxann.com"
+        issue-term="pathname"
+        theme="github-dark"
+        crossorigin="anonymous"
+        async
+      ></script>
+    </article>
+  </div>
 </BaseLayout>
