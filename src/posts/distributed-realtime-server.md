@@ -2,7 +2,7 @@
 title: Distributed Realtime Server Architecture
 slug: distributed-realtime-server
 author: "An7"
-publication_date: "2022-07-08 10:33:00"
+publication_date: "2022-07-08 03:33:00"
 excerpt: How I tried to scale a realtime authoritative server horizontally.
 cover_url: https://res.cloudinary.com/an7/image/upload/v1657248180/blog/distributed-realtime-architecture-overview_e9mm3e.png
 ---

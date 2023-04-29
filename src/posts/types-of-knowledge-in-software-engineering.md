@@ -2,7 +2,7 @@
 title: Types of knowledge in Software Engineering
 slug: types-of-knowledge-in-software-engineering
 author: An7
-publication_date: "2022-06-27 19:25:00"
+publication_date: "2022-06-27 12:25:00"
 excerpt: Distinction between facts, "original knowledge", "speculation knowledge" and "inferred knowledge".
 cover_url: https://res.cloudinary.com/an7/image/upload/v1656331914/blog/pexels-mentatdgt-1319854_kt0lbp.jpg
 ---

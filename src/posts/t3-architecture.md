@@ -2,7 +2,7 @@
 title: What is the architecture of the T3 application?
 slug: t3-architecture
 author: "An7"
-publication_date: "2022-09-25 10:47:00"
+publication_date: "2022-09-25 03:47:00"
 excerpt: Is it even MVC? Serverless?
 cover_url: https://res.cloudinary.com/an7/image/upload/v1664117454/blog/t3-architecture_l3iakv.png
 featured: true

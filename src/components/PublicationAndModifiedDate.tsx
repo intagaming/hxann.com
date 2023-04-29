@@ -6,10 +6,20 @@ const PublicationAndModifiedDate = ({
 }: Pick<PostOrPageFrontmatter, "publication_date" | "modified_date">) => (
   <div className="mb-10 text-base">
     <span className="mr-6">
-      Published {new Date(publication_date).toLocaleString()}
+      Published{" "}
+      {new Date(publication_date).toLocaleString("en-US", {
+        dateStyle: "medium",
+        timeStyle: "short",
+      })}
     </span>
     {modified_date && (
-      <span>Updated {new Date(modified_date).toLocaleString()}</span>
+      <span>
+        Updated{" "}
+        {new Date(modified_date).toLocaleString("en-US", {
+          dateStyle: "medium",
+          timeStyle: "short",
+        })}
+      </span>
     )}
   </div>
 );

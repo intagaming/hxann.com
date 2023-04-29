@@ -36,9 +36,13 @@ const PostCard = ({ post, direction }: Props) => {
             {fm.title}
           </h2>
           <p className="text-neutral-700 dark:text-neutral-400">{fm.excerpt}</p>
-          <p className="text-neutral-700 dark:text-neutral-400">
-            By {fm.author} on{" "}
-            {parseDate(fm.publication_date).toLocaleDateString()}
+          <p className="italic text-neutral-700 dark:text-neutral-500">
+            By <b>{fm.author}</b> on{" "}
+            {parseDate(fm.publication_date).toLocaleDateString("en-US", {
+              month: "short",
+              day: "numeric",
+              year: "numeric",
+            })}
           </p>
         </div>
       </article>
