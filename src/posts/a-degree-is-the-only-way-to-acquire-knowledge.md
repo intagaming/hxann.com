@@ -7,10 +7,6 @@ excerpt: 🐧
 cover_url: https://res.cloudinary.com/an7/image/upload/v1656043905/blog/studying_fle4sc.jpg
 ---
 
-# A degree is the only way to acquire knowledge
-
-![cover](https://res.cloudinary.com/an7/image/upload/v1656043905/blog/studying_fle4sc.jpg)
-
 Today I came across this:
 
 !["4 years of education can't be replaced by

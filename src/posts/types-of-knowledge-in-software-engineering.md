@@ -7,10 +7,6 @@ excerpt: Distinction between facts, "original knowledge", "speculation knowledge
 cover_url: https://res.cloudinary.com/an7/image/upload/v1656331914/blog/pexels-mentatdgt-1319854_kt0lbp.jpg
 ---
 
-# Types of knowledge in Software Engineering
-
-![cover](https://res.cloudinary.com/an7/image/upload/v1656331914/blog/pexels-mentatdgt-1319854_kt0lbp.jpg)
-
 A decent engineer should be able to differentiate the types of knowledge they'll
 be acquiring throughout their research/learning time. Here is my take on it,
 based on what I know and encountered when I was researching OAuth.

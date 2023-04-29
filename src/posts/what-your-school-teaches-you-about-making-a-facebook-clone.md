@@ -7,10 +7,6 @@ excerpt: 'Alternative title: How you can make "AJAX" calls without APIs.'
 cover_url: https://res.cloudinary.com/an7/image/upload/v1656043906/blog/fap-meme_q4zxhd.jpg
 ---
 
-# What your school teaches you about making a Facebook clone
-
-![cover](https://res.cloudinary.com/an7/image/upload/v1656043906/blog/fap-meme_q4zxhd.jpg)
-
 Here's a hot take from me.
 
 At the higher level, I will put on 2 sides: _"Static"_ and _"Dynamic"_, as in

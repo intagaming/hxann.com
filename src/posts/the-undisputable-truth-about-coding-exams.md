@@ -7,10 +7,6 @@ excerpt: Did you not remember the damn Math.pow() in your foreign programming la
 cover_url: https://res.cloudinary.com/an7/image/upload/v1656043905/blog/code_thalin.jpg
 ---
 
-# The undisputable truth about "coding exams"
-
-![cover](https://res.cloudinary.com/an7/image/upload/v1656043905/blog/code_thalin.jpg)
-
 Did you not remember the damn Math.pow() in your foreign programming language?
 
 I’m Vietnamese. I had to take a subject about _Introduction to Programming_ back

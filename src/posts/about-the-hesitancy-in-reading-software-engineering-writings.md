@@ -7,10 +7,6 @@ excerpt: Read documentations!
 cover_url: https://res.cloudinary.com/an7/image/upload/v1656043905/blog/docs_gdclax.png
 ---
 
-# About the hesitancy in reading Software Engineering writings
-
-![cover](https://res.cloudinary.com/an7/image/upload/v1656043905/blog/docs_gdclax.png)
-
 Over my university years, I've noticed that my peers don't have a keen on
 reading technological writings, i.e. tech documentations, or articles on a tech
 topic. They prefer watching videos or, somewhat unfortunately, read articles

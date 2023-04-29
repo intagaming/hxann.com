@@ -7,10 +7,6 @@ excerpt: How to integrate Supabase Authentication into Expo, with GitHub OAuth e
 cover_url: https://res.cloudinary.com/an7/image/upload/v1656043904/blog/lock_ljzpi4.jpg
 ---
 
-# Using Supabase Authentication on Expo
-
-![cover](https://res.cloudinary.com/an7/image/upload/v1656043904/blog/lock_ljzpi4.jpg)
-
 I will start in the order of the steps you would want to do with a new Expo
 project. Although you could figure out Supabase Authentication via this blog, I
 highly recommend following Supabase documentation first, starting with the

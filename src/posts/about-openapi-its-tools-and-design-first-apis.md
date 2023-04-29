@@ -7,10 +7,6 @@ excerpt: OpenAPI has not ripen.
 cover_url: https://res.cloudinary.com/an7/image/upload/v1656043904/blog/openapi_o3ewy8.jpg
 ---
 
-# About OpenAPI, its tools, and design-first APIs
-
-![cover](https://res.cloudinary.com/an7/image/upload/v1656043904/blog/openapi_o3ewy8.jpg)
-
 When it comes to designing a web API, OpenAPI is the standard. It's everywhere,
 it's also known under the name Swagger (whatever Swagger product they're
 called). But if you have ever written an OpenAPI specification document, I think

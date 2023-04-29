@@ -8,10 +8,6 @@ cover_url: https://res.cloudinary.com/an7/image/upload/v1664117454/blog/t3-archi
 featured: true
 ---
 
-# What is the architecture of the T3 application?
-
-![cover](https://res.cloudinary.com/an7/image/upload/v1664117454/blog/t3-architecture_l3iakv.png)
-
 ## MVC and its derived patterns
 
 [Model-View-Controller (MVC) is a user interface architecture

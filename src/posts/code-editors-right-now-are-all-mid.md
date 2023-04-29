@@ -8,10 +8,6 @@ cover_url: /images/uploads/code-editors-right-now-are-all-mid.jpeg
 featured: true
 ---
 
-# Code editors right now are all mid
-
-![cover](/images/uploads/code-editors-right-now-are-all-mid.jpeg)
-
 Just spent my weekend improving my editor situation. Let's talk about what
 happened.
 

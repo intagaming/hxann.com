@@ -7,10 +7,6 @@ excerpt: How I tried to scale a realtime authoritative server horizontally.
 cover_url: https://res.cloudinary.com/an7/image/upload/v1657248180/blog/distributed-realtime-architecture-overview_e9mm3e.png
 ---
 
-# Distributed Realtime Server Architecture
-
-![cover](https://res.cloudinary.com/an7/image/upload/v1657248180/blog/distributed-realtime-architecture-overview_e9mm3e.png)
-
 Here you go, free TL;DR. Interested?
 
 ## Storytime

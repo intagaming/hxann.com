@@ -7,10 +7,6 @@ excerpt: It doesn't have to be messy.
 cover_url: https://res.cloudinary.com/an7/image/upload/v1656043905/blog/book-and-pen_vovlqo.jpg
 ---
 
-# The art of self-studying
-
-![cover](https://res.cloudinary.com/an7/image/upload/v1656043905/blog/book-and-pen_vovlqo.jpg)
-
 It doesn't have to be messy.
 
 There is a bigger problem here. To all the _self-study advice giving_ people,

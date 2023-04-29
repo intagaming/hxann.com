@@ -69,13 +69,22 @@ const author = getAuthor(content.author);
     <article
       class="prose dark:prose-invert xl:prose-xl prose-h1:text-3xl md:prose-h1:text-4xl"
     >
+      <!-- Prefix with `_` in case the markdown includes "Title" as a section -->
+      <h1 id="_title">{content.title}</h1>
+
+      <img src={content.cover_url} alt={content.title} />
+
       <slot />
+
       <hr />
+
       {author && <AuthorInfo author={author} />}
+
       <PostLastNextNav
         last={lastPost?.frontmatter}
         next={nextPost?.frontmatter}
       />
+
       <script
         src="https://utteranc.es/client.js"
         repo="intagaming/hxann.com"

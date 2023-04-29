@@ -7,10 +7,6 @@ excerpt: You might have achieved adequate English comprehension without knowing.
 cover_url: https://res.cloudinary.com/an7/image/upload/v1656043905/blog/content-consuming_dpqcbq.jpg
 ---
 
-# Consuming contents without caption
-
-![cover](https://res.cloudinary.com/an7/image/upload/v1656043905/blog/content-consuming_dpqcbq.jpg)
-
 English is my first non-native language that I can read and understand
 reasonably well, though I could never speak or write sharply because I have
 never been in an environment that required me to do so. Through years of

@@ -7,10 +7,6 @@ excerpt: Think, at which point in time do you want to document things?
 cover_url: https://res.cloudinary.com/an7/image/upload/v1656043906/blog/document_iiusji.jpg
 ---
 
-# The desire of documenting
-
-![cover](https://res.cloudinary.com/an7/image/upload/v1656043906/blog/document_iiusji.jpg)
-
 Think, at which point in time do you want to document things?
 
 That's right. _You don't_ **until** you need to _reflect_ on them.

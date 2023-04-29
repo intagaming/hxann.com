@@ -7,10 +7,6 @@ excerpt: Someone who's teaching you right now might never be able to join the jo
 cover_url: https://res.cloudinary.com/an7/image/upload/v1656043904/blog/laptop-coding_snvztx.jpg
 ---
 
-# Software development education in Vietnam is extremely uncertain
-
-![cover](https://res.cloudinary.com/an7/image/upload/v1656043904/blog/laptop-coding_snvztx.jpg)
-
 Someone who's teaching you right now might never be able to join the job market
 anymore.
 
