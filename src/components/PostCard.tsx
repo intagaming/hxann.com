@@ -15,7 +15,7 @@ const PostCard = ({ post, direction }: Props) => {
     <a href={`/${fm.slug}`}>
       <article
         className={clsx(
-          "flex gap-4 md:gap-10",
+          "flex gap-4 md:gap-6",
           !direction && "flex-col md:flex-row",
           direction === "row" && "flex-row",
           direction === "column" && "flex-col"
@@ -32,9 +32,7 @@ const PostCard = ({ post, direction }: Props) => {
         </div>
 
         <div className="flex flex-col gap-4 md:flex-1">
-          <h2 className="text-2xl font-bold dark:text-white md:text-3xl">
-            {fm.title}
-          </h2>
+          <h2 className="text-2xl font-bold dark:text-white">{fm.title}</h2>
           <p className="text-neutral-700 dark:text-neutral-400">{fm.excerpt}</p>
           <p className="italic text-neutral-700 dark:text-neutral-500">
             By <b>{fm.author}</b> on{" "}
