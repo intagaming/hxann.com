@@ -51,8 +51,7 @@ As a newcomer, not only this page tells me what is Node.js, it also instructs me
 about what I need to know before learning *Node.js*. The *Getting Started*
 section does exactly what it implies: **Getting Started**.
 
-![The Node.js fs
-module](https://res.cloudinary.com/an7/image/upload/v1656043904/blog/nodejs-fs-module_thove7.png)
+![](/images/uploads/mszm-arlu.png)
 
 Take the page *The Node.js fs module* for example, which is the "File System"
 module. It is as concise as it is possible. I'm sure you can read this in 5
