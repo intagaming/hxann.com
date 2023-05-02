@@ -34,6 +34,9 @@ if (foundAt !== -1) {
 }
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const ogImageURL = content.cover_url.startsWith("/")
+  ? new URL(content.cover_url, Astro.site)
+  : new URL(content.cover_url);
 const seo: SEO = {
   title: content.title,
   description: content.excerpt,
@@ -42,7 +45,7 @@ const seo: SEO = {
     type: "article",
     description: content.excerpt,
     url: canonicalURL.toString(),
-    image: content.cover_url,
+    image: ogImageURL.toString(),
     article: {
       authors: [content.author],
       publishedTime: content.publication_date,
