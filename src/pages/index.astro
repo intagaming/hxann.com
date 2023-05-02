@@ -35,13 +35,11 @@ const featuredPosts = (
 <BaseLayout seo={seo} includeNetlifyIdentity>
   <main>
     <div class="m-4 flex flex-col gap-10 lg:mx-14 lg:my-14 lg:flex-row">
-      <div
-        class="flex flex-1 flex-col md:mx-10 md:my-10 lg:mx-0 xl:items-end xl:text-right"
-      >
+      <div class="flex flex-1 flex-col md:mx-10 md:my-10 lg:mx-0">
         <h1
           class="bg-gradient-to-r from-indigo-600 to-pink-600 bg-clip-text text-6xl font-extrabold text-transparent"
         >
-          Build<br class="xl:hidden" />different.
+          Build<br />different.
         </h1>
         <p class="mt-10 text-2xl lg:w-[24rem]">
           Hi. I'm exposing
@@ -57,47 +55,41 @@ const featuredPosts = (
         </div>
       </div>
       <div
-        class="flex flex-1 flex-col justify-around gap-5 md:mx-10 lg:mx-0 xl:w-[40vw]"
+        class="flex flex-1 flex-col gap-3 bg-black p-4 font-mono text-lg text-white md:mx-10 lg:mx-0 lg:text-xl"
       >
-        <div
-          class="flex flex-1 flex-col gap-3 bg-black p-4 font-mono text-lg text-white lg:text-xl"
-        >
-          <p>
-            <i class="fa-solid fa-chevron-right fa-xs text-indigo-500"></i> hxann
-            info
-          </p>
-          <div class="flex gap-7">
-            <div class="flex-1 shrink-0">
-              <img
-                src="https://res.cloudinary.com/an7/image/upload/v1656089853/blog/avatar_a8yy9u.jpg"
-                class="aspect-square rounded-md object-cover"
-              />
-            </div>
-            <div class="flex-[3]">
-              <p>An Hoang</p>
-              <a href="mailto:xuanan2001@pm.me" class="underline">
-                xuanan2001@pm.me
-              </a>
-              <p>software</p>
-            </div>
+        <p>
+          <i class="fa-solid fa-chevron-right fa-xs text-indigo-500"></i> hxann info
+        </p>
+        <div class="flex gap-7">
+          <div class="flex-1 shrink-0">
+            <img
+              src="https://res.cloudinary.com/an7/image/upload/v1656089853/blog/avatar_a8yy9u.jpg"
+              class="aspect-square rounded-md object-cover"
+            />
           </div>
-          <p class="mt-7">
-            <i class="fa-solid fa-chevron-right fa-xs text-indigo-500"></i> hxann
-            links
-          </p>
-          <div class="flex flex-col items-start">
-            <a href="/blog" class="underline">See my blog posts</a>
-            <a href="/about" class="underline">About me</a>
-            <a href="https://www.youtube.com/c/AnHoangXuan" class="underline">
-              My YouTube Channel
+          <div class="flex-[3]">
+            <p>An Hoang</p>
+            <a href="mailto:xuanan2001@pm.me" class="underline">
+              xuanan2001@pm.me
             </a>
-            <a href="https://github.com/intagaming" class="underline">
-              My GitHub
-            </a>
-            <a href="https://github.com/intagaming/hxann.com" class="underline">
-              This website's source code
-            </a>
+            <p>software</p>
           </div>
+        </div>
+        <p class="mt-7">
+          <i class="fa-solid fa-chevron-right fa-xs text-indigo-500"></i> hxann links
+        </p>
+        <div class="flex flex-col items-start">
+          <a href="/blog" class="underline">See my blog posts</a>
+          <a href="/about" class="underline">About me</a>
+          <a href="https://www.youtube.com/c/AnHoangXuan" class="underline">
+            My YouTube Channel
+          </a>
+          <a href="https://github.com/intagaming" class="underline">
+            My GitHub
+          </a>
+          <a href="https://github.com/intagaming/hxann.com" class="underline">
+            This website's source code
+          </a>
         </div>
       </div>
     </div>
