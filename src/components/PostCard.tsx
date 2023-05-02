@@ -22,7 +22,7 @@ const PostCard = ({ post, direction }: Props) => {
         )}
       >
         <div className="md:flex-1">
-          <div className="aspect-video">
+          <div className="aspect-[1200/630]">
             <img
               alt="cover image"
               src={fm.cover_url}
