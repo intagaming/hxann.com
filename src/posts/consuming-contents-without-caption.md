@@ -1,10 +1,10 @@
 ---
 title: Consuming contents without caption
 slug: consuming-contents-without-caption
-author: "An7"
-publication_date: "2021-12-23"
+author: An7
+publication_date: 2021-12-23
 excerpt: You might have achieved adequate English comprehension without knowing.
-cover_url: https://res.cloudinary.com/an7/image/upload/v1656043905/blog/content-consuming_dpqcbq.jpg
+cover_url: /images/uploads/f-dh2zld1.jpg
 ---
 
 English is my first non-native language that I can read and understand
