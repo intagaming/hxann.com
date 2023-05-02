@@ -1,10 +1,11 @@
 ---
 title: Software development education in Vietnam is extremely uncertain
 slug: software-development-education-in-vietnam-is-extremely-uncertain
-author: "An7"
-publication_date: "2021-10-02"
-excerpt: Someone who's teaching you right now might never be able to join the job market anymore.
-cover_url: https://res.cloudinary.com/an7/image/upload/v1656043904/blog/laptop-coding_snvztx.jpg
+author: An7
+publication_date: 2021-10-02
+excerpt: Someone who's teaching you right now might never be able to join the
+  job market anymore.
+cover_url: /images/uploads/qsicvnv2e.jpg
 ---
 
 Someone who's teaching you right now might never be able to join the job market
