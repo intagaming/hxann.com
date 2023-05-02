@@ -1,10 +1,10 @@
 ---
 title: The art of self-studying
 slug: the-art-of-self-studying
-author: "An7"
-publication_date: "2021-06-25"
+author: An7
+publication_date: 2021-06-25
 excerpt: It doesn't have to be messy.
-cover_url: https://res.cloudinary.com/an7/image/upload/v1656043905/blog/book-and-pen_vovlqo.jpg
+cover_url: /images/uploads/book-and-pen_vovlqo.jpg
 ---
 
 It doesn't have to be messy.
