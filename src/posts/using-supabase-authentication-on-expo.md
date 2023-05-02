@@ -1,10 +1,11 @@
 ---
 title: Using Supabase Authentication on Expo
 slug: using-supabase-authentication-on-expo
-author: ["An7"]
-publication_date: "2021-12-24"
+author:
+  - An7
+publication_date: 2021-12-24
 excerpt: How to integrate Supabase Authentication into Expo, with GitHub OAuth example.
-cover_url: https://res.cloudinary.com/an7/image/upload/v1656043904/blog/lock_ljzpi4.jpg
+cover_url: /images/uploads/fefcodo7g.jpg
 ---
 
 I will start in the order of the steps you would want to do with a new Expo
