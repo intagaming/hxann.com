@@ -1,10 +1,10 @@
 ---
-title: 'The undisputable truth about "coding exams"'
+title: The undisputable truth about "coding exams"
 slug: the-undisputable-truth-about-coding-exams
-author: "An7"
-publication_date: "2021-08-14"
+author: An7
+publication_date: 2021-08-14
 excerpt: Did you not remember the damn Math.pow() in your foreign programming language?
-cover_url: https://res.cloudinary.com/an7/image/upload/v1656043905/blog/code_thalin.jpg
+cover_url: /images/uploads/code.jpg
 ---
 
 Did you not remember the damn Math.pow() in your foreign programming language?
