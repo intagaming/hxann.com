@@ -6,58 +6,55 @@ publication_date: 2022-05-27
 excerpt: Read documentations!
 cover_url: /og-image?title=About the hesitancy in reading Software Engineering writings
 ---
-
 Over my university years, I've noticed that my peers don't have a keen on
 reading technological writings, i.e. tech documentations, or articles on a tech
 topic. They prefer watching videos or, somewhat unfortunately, read articles
 that are "easy to understand" but lack the credibility or depth, usually from
 incompetent writers (I'll show you some).
 
-There is nothing wrong with how you perceive information, but if you are _so_
+There is nothing wrong with how you perceive information, but if you are *so*
 determined on not reading the documentation for a piece of software from its
 creators, I can confidently tell you that you are doing things fundamentally
 wrong. How wrong, you ask?
 
 ## An example of skipping documentations
 
-Granted, some documentations are just utterly awful (I'm looking at you, _Java
-documentation_). But let's look at a proper, **manly** documentation.
+Granted, some documentations are just utterly awful (I'm looking at you, *Java
+documentation*). But let's look at a proper, **manly** documentation.
 
-_NOTE: A technical writing on a specific topic that is referenced by the
+*NOTE: A technical writing on a specific topic that is referenced by the
 maintainers of the software could be considered a documentation. Examples can be
-[the Next.js' documentation][6]._
+[the Next.js' documentation](https://nextjs.org/docs/getting-started).*
 
-You want to learn _Node.js_. One-liner: _Node.js_ is the thing that runs
-JavaScript outside of the browser, and you want to learn _Node.js_ to write
+You want to learn *Node.js*. One-liner: *Node.js* is the thing that runs
+JavaScript outside of the browser, and you want to learn *Node.js* to write
 backends with JavaScript. So you look for a tutorial.
 
-Let's hit YouTube, the _default_ source of graduates' knowledge. Here's one:
+Let's hit YouTube, the *default* source of graduates' knowledge. Here's one:
 
-![Node.js Tutorial
-YouTube](https://res.cloudinary.com/an7/image/upload/v1656043904/blog/nodejs-tutorial-youtube_zn0pgk.png)
+![](/images/uploads/idnbo6lug.png)
 
 "8 hours!?" says a graduate. They proceed anyway. How many of you actually went
 through an 8-hour tutorial and feels superior afterwards?
 
-Here's how I would do it. I go to Google and search for _Node.js_, and click the
-official _Node.js_ website, `nodejs.org`. I click _Docs_, then _Guides_, and
-then _Getting Started Guide_. Just one more step, I click _Introduction to
-Node.js_ highlighted in green color.
+Here's how I would do it. I go to Google and search for *Node.js*, and click the
+official *Node.js* website, `nodejs.org`. I click *Docs*, then *Guides*, and
+then *Getting Started Guide*. Just one more step, I click *Introduction to
+Node.js* highlighted in green color.
 
-Here I am, the link that's recommended by the Node.js officials, _Introduction
-to Node.js_:
+Here I am, the link that's recommended by the Node.js officials, *Introduction
+to Node.js*:
 
-![Introduction to
-Node.js](https://res.cloudinary.com/an7/image/upload/v1656043906/blog/introduction-to-nodejs_xtswwc.png)
+![](/images/uploads/g6zly4qwc.png)
 
 As a newcomer, not only this page tells me what is Node.js, it also instructs me
-about what I need to know before learning _Node.js_. The _Getting Started_
+about what I need to know before learning *Node.js*. The *Getting Started*
 section does exactly what it implies: **Getting Started**.
 
 ![The Node.js fs
 module](https://res.cloudinary.com/an7/image/upload/v1656043904/blog/nodejs-fs-module_thove7.png)
 
-Take the page _The Node.js fs module_ for example, which is the "File System"
+Take the page *The Node.js fs module* for example, which is the "File System"
 module. It is as concise as it is possible. I'm sure you can read this in 5
 minutes. Not only the YouTube version 3 times lengthier, if you need to review
 something, you might be lost rewinding the video to a very specific timestamp
@@ -73,29 +70,29 @@ through books or writings of some sort. The choice is yours.
 
 Here's what's needed for an article to be "engaging" (for me):
 
-- The article must be **exactly** what I seek.
-- The article must be in good format. No unnecessary wordings to waste my time.
-- **I know everything that the article presents but doesn't explain.**
-- The article must lead me somewhere. **I must be able to guess things ahead of
+* The article must be **exactly** what I seek.
+* The article must be in good format. No unnecessary wordings to waste my time.
+* **I know everything that the article presents but doesn't explain.**
+* The article must lead me somewhere. **I must be able to guess things ahead of
   time.**
-- Skim-able.
+* Skim-able.
 
 Before you go, I have some not-the-best-quality writings that I want to show
 you, so you'd know what kind of writings to avoid.
 
 ## Bad Writing Examples: "Backend Development Is Not Hard"
 
-[Source.][1]
+[Source.](https://mudit.hashnode.dev/backend-development-is-not-hard)
 
 This article was on daily.dev one day. I had skimmed through it.
 
-_TL;DR_: A short "What is a web server?" section, followed by a tutorial on
+*TL;DR*: A short "What is a web server?" section, followed by a tutorial on
 installing Node.js, Express.js and run an HTTP server.
 
 Is this whole article justifies the "Backend Development Is Not Hard" statement
 in the title? I'll get straight into the weeds: Backend Development is **hard**.
 Doubt? Go on and do backend for a month, maybe two, then evaluate your knowledge
-with the [Backend Roadmap][2].
+with the [Backend Roadmap](https://roadmap.sh/backend).
 
 Does a doctor say, "Being doctor is easy feet"?
 
@@ -106,11 +103,11 @@ If I were a backend newbie, and I want to use JavaScript, I would do the Node.js
 Getting Started, then trying to create a backend immediately. Maybe I need a
 database, or need a config file, or `async`, or maybe Load Balancing, but until
 I need those, I don't care, and **no one** will try to teach me things I don't
-care _yet_.
+care *yet*.
 
 ## Bad Writing Examples: "Git branching for small teams"
 
-[Source.][3]
+[Source.](https://www.smashingmagazine.com/2021/08/http3-core-concepts-part1/)
 
 This is an article in the "Top" page of `dev.to`. "Elite", you might say.
 
@@ -118,7 +115,7 @@ One question only: Do you **really** need to branch?
 
 If you can't answer this question (or the article doesn't say, as in the article
 above), you should not read this article at all, or any "Git branching guide".
-[Here's why you don't branch (mostly), if you are interested.][4] It's like
+[Here's why you don't branch (mostly), if you are interested.](https://www.smashingmagazine.com/2021/08/http3-core-concepts-part1/) It's like
 learning how to fly a plane without knowing **why** you need to do so.
 
 This article doesn't explain the situations when you might need to branch. Don't
@@ -132,24 +129,17 @@ If you have no idea why you're reading the thing, don't.
 Didn't come up with any particular example. But there are some identifying
 features:
 
-- A big wall of code.
-- Doesn't explain everything. Yeah, I need **everything** in a coding article to
+* A big wall of code.
+* Doesn't explain everything. Yeah, I need **everything** in a coding article to
   be explained, or at least self-explanatory.
-- Heavily, but badly opinionated.
-- Use of external packages that are not essential.
+* Heavily, but badly opinionated.
+* Use of external packages that are not essential.
 
 It takes skills to read these kind of articles, otherwise it has **big**
 consequences. If you can't identify good coding, close the tab and stick to the
 basic.
 
----
+- - -
 
 Hope you will find some good articles to read soon. Here's one I've read today:
-[HTTP/3 From A To Z: Core Concepts][5]
-
-[1]: https://mudit.hashnode.dev/backend-development-is-not-hard
-[2]: https://roadmap.sh/backend
-[3]: https://www.smashingmagazine.com/2021/08/http3-core-concepts-part1/
-[4]: https://www.smashingmagazine.com/2021/08/http3-core-concepts-part1/
-[5]: https://www.smashingmagazine.com/2021/08/http3-core-concepts-part1/
-[6]: https://nextjs.org/docs/getting-started
+[HTTP/3 From A To Z: Core Concepts](https://www.smashingmagazine.com/2021/08/http3-core-concepts-part1/)
