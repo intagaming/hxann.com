@@ -1,10 +1,10 @@
 ---
 title: About the hesitancy in reading Software Engineering writings
 slug: about-the-hesitancy-in-reading-software-engineering-writings
-author: "An7"
-publication_date: "2022-05-27"
+author: An7
+publication_date: 2022-05-27
 excerpt: Read documentations!
-cover_url: https://res.cloudinary.com/an7/image/upload/v1656043905/blog/docs_gdclax.png
+cover_url: /og-image?title=About the hesitancy in reading Software Engineering writings
 ---
 
 Over my university years, I've noticed that my peers don't have a keen on
