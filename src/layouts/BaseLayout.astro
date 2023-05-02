@@ -1,6 +1,7 @@
 ---
 import "@fortawesome/fontawesome-free/css/all.css";
 
+import type { ComponentProps } from "react";
 import type { SEO } from "src/types";
 
 import Footer from "@/components/Footer";
@@ -8,27 +9,29 @@ import NavBar, { type NavBarEntry } from "@/components/NavBar";
 
 const navBarEntries: NavBarEntry[] = [
   {
+    id: "blog",
     link: "/blog",
     title: "Blog",
   },
   {
+    id: "about",
     link: "/about",
     title: "About",
   },
   {
+    id: "contact",
     link: "/contact",
     title: "Contact",
   },
 ];
 
-const path = new URL(Astro.request.url).pathname;
-
 type Props = {
   seo: SEO;
+  activeNav?: ComponentProps<typeof NavBar>["activeNav"];
   includeNetlifyIdentity?: boolean;
 };
 
-const { seo, includeNetlifyIdentity } = Astro.props as Props;
+const { seo, includeNetlifyIdentity, activeNav = "/" } = Astro.props as Props;
 ---
 
 <!DOCTYPE html>
@@ -100,7 +103,7 @@ const { seo, includeNetlifyIdentity } = Astro.props as Props;
 
   <body class="font-mono">
     <div class="flex min-h-screen flex-col">
-      <NavBar client:load entries={navBarEntries} currentPath={path} />
+      <NavBar client:load entries={navBarEntries} activeNav={activeNav} />
       <div class="flex-1 dark:bg-neutral-900">
         <slot />
       </div>

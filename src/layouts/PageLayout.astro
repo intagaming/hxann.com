@@ -35,7 +35,7 @@ const seo: SEO = {
 const author = getAuthor(content.author);
 ---
 
-<BaseLayout seo={seo}>
+<BaseLayout seo={seo} activeNav={content.slug}>
   <article
     class="prose mx-auto my-10 px-4 dark:prose-invert xl:prose-xl md:my-20 md:px-0"
   >

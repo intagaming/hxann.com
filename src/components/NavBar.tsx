@@ -30,16 +30,17 @@ const useOnClickOutside = <T extends HTMLElement = HTMLElement>(
 };
 
 export type NavBarEntry = {
+  id: string;
   link: string;
   title: string;
 };
 
-const NavBar = ({
+const NavBar = <T extends NavBarEntry[]>({
   entries,
-  currentPath,
+  activeNav,
 }: {
-  entries: NavBarEntry[];
-  currentPath: string;
+  entries: T;
+  activeNav: "/" | T[number]["id"];
 }) => {
   const [extend, setExtend] = useState(false);
 
@@ -80,8 +81,8 @@ const NavBar = ({
           className="flex-[2] text-center text-2xl font-bold md:flex-1 md:text-left"
         >
           <span
-            className={`border-b-2 border-transparent hover:border-indigo-600 ${
-              currentPath === "/" ? "border-indigo-600" : ""
+            className={`border-b-2 hover:border-indigo-600 ${
+              activeNav === "/" ? "border-indigo-600" : "border-transparent"
             }`}
           >
             An Hoang
@@ -90,15 +91,15 @@ const NavBar = ({
 
         <div className="hidden flex-[3] justify-center gap-4 text-lg md:flex">
           {entries.map((entry) => {
-            const isPath = currentPath.startsWith(entry.link);
+            const isActive = activeNav === entry.id;
             return (
               <a
                 key={entry.link}
                 href={entry.link}
-                className={`border-b-2 border-transparent p-2 hover:border-indigo-600 hover:text-neutral-900 dark:hover:text-neutral-100 ${
-                  isPath
+                className={`border-b-2 p-2 hover:border-indigo-600 hover:text-neutral-900 dark:hover:text-neutral-100 ${
+                  isActive
                     ? "border-indigo-600 text-neutral-900 dark:text-neutral-100"
-                    : "text-neutral-400 dark:text-neutral-400"
+                    : "border-transparent text-neutral-400 dark:text-neutral-400"
                 }`}
               >
                 {entry.title}
