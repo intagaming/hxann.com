@@ -12,7 +12,8 @@ collections:
     folder: "src/posts" # The path to the folder where the documents are stored
     create: true # Allow users to create new documents in this collection
     slug: "{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
-    fields: # The fields for each document, usually in front matter
+    fields:
+      # The fields for each document, usually in front matter
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Slug", name: "slug", widget: "string" }
       - { label: "Author", name: "author", widget: "string" }
@@ -24,3 +25,4 @@ collections:
       - { label: "Excerpt", name: "excerpt", widget: "string" }
       - { label: "Cover URL", name: "cover_url", widget: "image" }
       - { label: "Body", name: "body", widget: "markdown" }
+    sortable_fields: ["title", "publication_date", "author"]
