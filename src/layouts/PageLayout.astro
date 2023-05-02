@@ -23,7 +23,7 @@ const seo: SEO = {
     type: "article",
     description: content.excerpt,
     url: canonicalURL.toString(),
-    image: `${Astro.site?.href || ""}/images/banner.png`,
+    image: `${Astro.site?.href || "/"}images/banner.png`,
     article: {
       authors: [content.author],
       publishedTime: content.publication_date,

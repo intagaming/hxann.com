@@ -5,21 +5,12 @@ import type { PostFrontmatter, SEO } from "src/types";
 import Button from "@/components/Button";
 import PostCard from "@/components/PostCard";
 import BaseLayout from "@/layouts/BaseLayout.astro";
+import { defaultSeo } from "@/seo";
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
-const seo: SEO = {
-  title: "An Hoang",
-  description:
-    "I do Software Engineering stuff. Coding, Architecting, criticize things engineers make.",
-  openGraph: {
-    title: "An Hoang",
-    type: "website",
-    description:
-      "I do Software Engineering stuff. Coding, Architecting, criticize things engineers make.",
-    url: canonicalURL.toString(),
-    image: `${Astro.site?.href || ""}/images/banner.png`,
-  },
-};
+const seo: SEO = structuredClone(defaultSeo);
+seo.openGraph.url = canonicalURL.toString();
+seo.openGraph.image = `${Astro.site?.href || "/"}images/banner.png`;
 
 const featuredPosts = (
   await Astro.glob<MarkdownInstance<PostFrontmatter>>("../posts/*.{md,mdx}")
