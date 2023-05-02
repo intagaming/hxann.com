@@ -10,6 +10,25 @@ const ThemeToggle = () => {
     setMounted(true);
   }, []);
 
+  const changeGiscusTheme = () => {
+    const sendMessage = (message: any) => {
+      const iframe = document.querySelector<HTMLIFrameElement>(
+        "iframe.giscus-frame"
+      );
+      if (!iframe) return;
+      iframe.contentWindow?.postMessage(
+        { giscus: message },
+        "https://giscus.app"
+      );
+    };
+
+    sendMessage({
+      setConfig: {
+        theme: theme === "light" ? "light" : "dark",
+      },
+    });
+  };
+
   useEffect(() => {
     if (theme === "dark") {
       document.documentElement.classList.add("dark");
@@ -17,6 +36,7 @@ const ThemeToggle = () => {
       document.documentElement.classList.remove("dark");
     }
     localStorage.setItem("theme", theme);
+    changeGiscusTheme();
   });
 
   const handleClick = () => {

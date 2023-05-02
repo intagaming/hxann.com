@@ -9,6 +9,7 @@ import PostLastNextNav from "@/components/PostLastNextNav";
 import PublicationAndModifiedDate from "@/components/PublicationAndModifiedDate";
 
 import BaseLayout from "./BaseLayout.astro";
+import Giscus from "@/components/Giscus";
 
 export interface Props {
   content: MarkdownContent<PostFrontmatter>;
@@ -99,14 +100,7 @@ const author = getAuthor(content.author);
         next={nextPost?.frontmatter}
       />
 
-      <script
-        src="https://utteranc.es/client.js"
-        repo="intagaming/hxann.com"
-        issue-term="pathname"
-        theme="github-dark"
-        crossorigin="anonymous"
-        async
-      ></script>
+      <Giscus client:only="react" />
     </article>
   </div>
 </BaseLayout>

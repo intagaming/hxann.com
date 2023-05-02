@@ -4,7 +4,7 @@ import { getAuthor } from "src/authors";
 import type { PageFrontmatter, SEO } from "src/types";
 
 import AuthorInfo from "@/components/AuthorInfo";
-import Utterances from "@/components/Utterances";
+import Giscus from "@/components/Giscus";
 
 import BaseLayout from "./BaseLayout.astro";
 
@@ -42,6 +42,7 @@ const author = getAuthor(content.author);
     <slot />
     <hr />
     {author && <AuthorInfo author={author} />}
-    <Utterances client:only="react" />
+
+    <Giscus client:only="react" />
   </article>
 </BaseLayout>
