@@ -1,10 +1,10 @@
 ---
 title: About OpenAPI, its tools, and design-first APIs
 slug: about-openapi-its-tools-and-design-first-apis
-author: "An7"
-publication_date: "2022-06-07"
+author: An7
+publication_date: 2022-06-07
 excerpt: OpenAPI has not ripen.
-cover_url: https://res.cloudinary.com/an7/image/upload/v1656043904/blog/openapi_o3ewy8.jpg
+cover_url: /images/uploads/5c5sorpe1.jpg
 ---
 
 When it comes to designing a web API, OpenAPI is the standard. It's everywhere,
