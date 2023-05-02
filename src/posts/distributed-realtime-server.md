@@ -1,12 +1,11 @@
 ---
 title: Distributed Realtime Server Architecture
 slug: distributed-realtime-server
-author: "An7"
-publication_date: "2022-07-08 03:33:00"
+author: An7
+publication_date: 2022-07-08 03:33:00
 excerpt: How I tried to scale a realtime authoritative server horizontally.
-cover_url: https://res.cloudinary.com/an7/image/upload/v1657248180/blog/distributed-realtime-architecture-overview_e9mm3e.png
+cover_url: /images/uploads/syo26ia6z.png
 ---
-
 Here you go, free TL;DR. Interested?
 
 ## Storytime
@@ -16,7 +15,7 @@ known about them for the longest time but had not written a single line of
 WebSocket code. I kind of knew what it is about, something about chat
 applications, but didn't know how it works.
 
-I heard about Ably from [Theo][theo]. Theo is the CTO of [Ping][ping]. He talks
+I heard about Ably from [Theo](https://t3.gg/). Theo is the CTO of [Ping](https://ping.gg/). He talks
 about web development and software development in general, you can find him on
 Twitch streaming or watch the cuts on YouTube. I remembered he said something
 along the lines of, if he was going to make a realtime app, he would use Ably or
@@ -37,7 +36,7 @@ dive into the architecture overview.
 
 ## Architecture Overview
 
-![Architecture Diagram](https://res.cloudinary.com/an7/image/upload/v1657248180/blog/distributed-realtime-architecture-overview_e9mm3e.png)
+![Architecture Diagram](/images/uploads/syo26ia6z.png)
 
 We can start with the clients. The clients are, for example, the browser chat
 app or a game client. They publish messages to the "Control" message channel,
@@ -48,8 +47,8 @@ Queue is a thing that takes messages from a message channel (among other
 sources) and puts them in a queue, awaiting their destinations.
 
 Ably Queue ensures that a message only goes to one subscriber exactly once.
-Technically it's hard, but [seems like they can be done.][1] What I care though
-is the fact that [messages are evenly distributed to its subscribers][2], i.e.
+Technically it's hard, but [seems like they can be done.](https://ably.com/blog/achieving-exactly-once-message-processing-with-ably) What I care though
+is the fact that [messages are evenly distributed to its subscribers](https://ably.com/docs/general/queues), i.e.
 our workers. Because of that, we can design our workers to be stateless so that
 it doesn't matter which worker receives the message. The state lives in Redis,
 which all workers share.
@@ -69,11 +68,11 @@ the recipient can decrypt.
 
 I made a Tic Tac Toe game that implements this architecture.
 
-[Try the game live here.][ttt]
+[Try the game live here.](https://ttt.hxann.com)
 
-[The Next.js frontend "Client" GitHub repository][3]
+[The Next.js frontend "Client" GitHub repository](https://github.com/intagaming/tic-tac-toe)
 
-[The Go worker GitHub repository][4]
+[The Go worker GitHub repository](https://github.com/intagaming/tic-tac-toe-worker)
 
 ## The "Ticker" extension
 
@@ -88,7 +87,7 @@ each time a tick passes is called a Ticker. For context, CSGO's dedicated server
 can be 64 or 128 ticks per second. Minecraft servers are 20 ticks per second (or
 at least they try to be).
 
-![Architecture Extended](https://res.cloudinary.com/an7/image/upload/v1657248180/blog/distributed-realtime-architecture-extended_f3olml.png)
+![Architecture Extended](/images/uploads/distributed-realtime-architecture-extended_f3olml.png)
 
 So, a Ticker does just that. It runs some code every time a tick passes. It's a
 continually running thing, 24/7. But our Tickers have a special trick up their
@@ -104,7 +103,7 @@ Immediately after ticking a game match, the Ticker will go and pick the next
 one, if any game match needs ticking at that moment. They can also go into Idle
 Mode if there's no job to do after a while. The process of picking a game match
 to tick, which includes Locking, Ticking, Scheduling, Idling etc. is pretty
-complex. [Check out the source code for the worker][4] (which also includes the
+complex. [Check out the source code for the worker](https://github.com/intagaming/tic-tac-toe-worker) (which also includes the
 package for the Ticker) to get to the nitty-gritty.
 
 Of course, you can have 500 Tickers 500 game matches, or 1 Ticker 500 game
@@ -124,11 +123,3 @@ architectures laid out in some easy-to-understand way. They must be practical
 and relevant in this modern world. There are modern solutions to solve old
 problems, and as an emerging citizen of an emerging new world, I want to
 document and elaborate on things happening just to stay informed in some way.
-
-[1]: https://ably.com/blog/achieving-exactly-once-message-processing-with-ably
-[2]: https://ably.com/docs/general/queues
-[3]: https://github.com/intagaming/tic-tac-toe
-[4]: https://github.com/intagaming/tic-tac-toe-worker
-[ping]: https://ping.gg/
-[theo]: https://t3.gg/
-[ttt]: https://ttt.hxann.com
