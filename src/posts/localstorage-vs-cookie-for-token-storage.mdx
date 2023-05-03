@@ -5,7 +5,7 @@ author: "An7"
 publication_date: "2021-09-24"
 modified_date: "2022-08-01 14:05:00"
 excerpt: localStorage is not as unsecured as you'd think.
-cover_url: https://res.cloudinary.com/an7/image/upload/v1656043905/blog/cookie_iwqxlf.jpg
+cover_url: /images/uploads/cookie.jpg
 ---
 
 import { YouTube } from "@astro-community/astro-embed-youtube";
@@ -24,13 +24,13 @@ Some time ago, I had to store the JWT token returned from Strapi in a React web
 app. Strapi is a **stateless** server. The React app is **client-side**. Here's
 what the internet has to say when I need to learn "jwt storage":
 
-![jwt-storage-google](https://res.cloudinary.com/an7/image/upload/v1656043904/blog/jwt-storage-google_pq7lyt.png)
+![jwt-storage-google](/images/uploads/jwt-storage-google_pq7lyt.png)
 
 Seems like most opposed to the idea of using `localStorage`.
 
 What about "react jwt storage"?
 
-![react-jwt-storage-google](https://res.cloudinary.com/an7/image/upload/v1656043905/blog/react-jwt-storage-google_m8on8v.png)
+![react-jwt-storage-google](/images/uploads/react-jwt-storage-google_m8on8v.png)
 
 First one that recommends `localStorage`! Hmm, there are also people that
 recommend storing JWT in Cookie. Also, there's a recommendation of using
@@ -39,7 +39,7 @@ refreshes.][8] So let's not talk about it.
 
 Let's dig into [the first StackOverflow post][9] above:
 
-![jwt-first-so-answer](https://res.cloudinary.com/an7/image/upload/v1656043904/blog/jwt-first-so-answer_kbfpiz.png)
+![jwt-first-so-answer](/images/uploads/jwt-first-so-answer_kbfpiz.png)
 
 Okay. They said that I should use cookies and refresh token instead. And the
 Refresh Token should be stored in a cookie with `httpOnly` flag. Hold that idea
@@ -47,7 +47,7 @@ for a second.
 
 How about [the second post][10]:
 
-![jwt-second-so-answer](https://res.cloudinary.com/an7/image/upload/v1656043904/blog/jwt-second-so-answer_rhln47.png)
+![jwt-second-so-answer](/images/uploads/jwt-second-so-answer_rhln47.png)
 
 Interesting. Two posts that recommend the same Cookie approach. Look at the 3rd
 point. They said that I should store my JWT in a Cookie, because in point number
@@ -106,7 +106,7 @@ I'm at the Cheat Sheet. Here's the steps:
 
 Here's a visualization of what's going on:
 
-![double-submit](https://res.cloudinary.com/an7/image/upload/v1656043906/blog/double-submit_siyipg.png)
+![double-submit](/images/uploads/double-submit_siyipg.png)
 
 The end result is, if the attacker wants to do the CSRF now, they would need to:
 
