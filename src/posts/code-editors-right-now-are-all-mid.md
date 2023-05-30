@@ -3,6 +3,7 @@ title: Code editors right now are all mid
 slug: code-editors-right-now-are-all-mid
 author: "An7"
 publication_date: "2023-03-12 16:15:00"
+modified_date: "2023-05-31 00:50:00"
 excerpt: Just spent my weekend improving my editor situation. Let's talk about what happened.
 cover_url: /og-image?title=Code editors right now are all mid
 featured: true
@@ -11,7 +12,7 @@ featured: true
 Just spent my weekend improving my editor situation. Let's talk about what
 happened.
 
-Last updated time: March 13th, 2023.
+Last updated time: May 31th, 2023.
 
 Let's set the stage: I started with VSCode, learned Vim motions and used it in
 VSCode. Everything is fine. Started seeking workflow optimizations. Landing on
@@ -22,10 +23,16 @@ TypeScript. Alright, let's go.
 
 Neovim is great. Production-ready editor.
 
-[`nvim-cmp` is having a hard time with
+~~[`nvim-cmp` is having a hard time with
 `tailwindcss-language-server`.](https://github.com/hrsh7th/nvim-cmp/issues/1009)
 Typing classes will have Neovim sucks big time. A dealbreaker compares to
-VSCode.
+VSCode.~~ This had been fixed by the famous @folke.
+
+Using Neovim everyday for work. It serves me well. I can hack around and write
+code, but I feel I can be faster with more tricks. For now I'm sticking with
+Neovim and see if I can _git gud_.
+
+**The below is the original post.**
 
 Maybe my Macbook Pro 15" 2015 (8 years old machine) can't handle modern LSPs.
 Let's try remote development.
