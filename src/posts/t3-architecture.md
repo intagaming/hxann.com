@@ -5,7 +5,6 @@ author: An7
 publication_date: 2022-09-25 03:47:00
 excerpt: Is it even MVC? Serverless?
 cover_url: /images/uploads/riv7jhhgy.png
-featured: true
 ---
 ## MVC and its derived patterns
 
