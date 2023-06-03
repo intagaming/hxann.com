@@ -40,7 +40,7 @@ thinking, their life viewpoints, their lifestyle, their future interactions, …
 
 Now you probably have faced this situation in your life, which is when you have
 to decide if you want to continue dealing with this person or not. Your parents
-probably taught you that whoever you plays with will make you (or just about any
+probably taught you that whoever you play with will make you (or just about any
 paraphrase of it). Do you want to become that person? And I’m not saying that
 bad English will make bad people, I’m talking about their lifestyle and
 viewpoints and behaviors and such. Use whatever language they like, but if they
