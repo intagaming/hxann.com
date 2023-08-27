@@ -1,0 +1,23 @@
+{
+  "name": "hxann.com",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astro-community/astro-embed-youtube": "^0.4.1",
+    "@astrojs/mdx": "^0.19.7",
+    "@astrojs/rss": "^2.4.4",
+    "@astrojs/sitemap": "^2.0.2",
+    "astro": "^2.10.14"
+  },
+  "devDependencies": {
+    "prettier": "^3.0.2",
+    "prettier-plugin-astro": "^0.12.0"
+  }
+}
