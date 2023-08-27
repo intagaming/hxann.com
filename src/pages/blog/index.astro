@@ -28,7 +28,7 @@ const posts = (await getCollection("blog")).sort(
 							<li>
 								<h4 style="display: inline-block; margin: 0;">
 									<a
-										href={`/blog/${post.slug}/`}
+										href={`/${post.slug}/`}
 										style="display: inline-block;"
 									>
 										{post.data.title}
