@@ -1,0 +1,45 @@
+---
+import type { CollectionEntry } from "astro:content";
+import BaseHead from "../components/BaseHead.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import FormattedDate from "../components/FormattedDate.astro";
+
+type Props = CollectionEntry<"blog">["data"];
+
+const { title, excerpt, cover_url, publication_date } = Astro.props;
+---
+
+<html lang="en">
+	<head>
+		<BaseHead title={title} description={excerpt} image={cover_url} />
+	</head>
+
+	<body>
+		<Header />
+		<main>
+			<article>
+				<div>
+					{
+						cover_url && (
+							<img
+								src={cover_url}
+								alt=""
+							/>
+						)
+					}
+				</div>
+				<div>
+					<div>
+						<h1>{title}</h1>
+						<div>
+							<FormattedDate date={publication_date} />
+						</div>
+					</div>
+					<slot />
+				</div>
+			</article>
+		</main>
+		<Footer />
+	</body>
+</html>
