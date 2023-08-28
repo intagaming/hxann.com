@@ -3,6 +3,11 @@ html {
   font-size: 22px;
   max-width: 1000px;
 }
+@media (max-width: 1000px) {
+  html {
+    font-size: unset;
+  }
+}
 img {
   max-width: 100%;
 }
