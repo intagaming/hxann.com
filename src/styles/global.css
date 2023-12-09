@@ -2,6 +2,7 @@ html {
   font-family: "Merriweather", serif;
   font-size: 22px;
   max-width: 1000px;
+  margin: 0 auto;
 }
 @media (max-width: 1000px) {
   html {
