@@ -11,10 +11,10 @@
   },
   "dependencies": {
     "@astro-community/astro-embed-youtube": "^0.4.1",
-    "@astrojs/mdx": "^0.19.7",
-    "@astrojs/rss": "^2.4.4",
-    "@astrojs/sitemap": "^2.0.2",
-    "astro": "^2.10.14"
+    "@astrojs/mdx": "^2.0.0",
+    "@astrojs/rss": "^4.0.1",
+    "@astrojs/sitemap": "^3.0.3",
+    "astro": "^4.0.3"
   },
   "devDependencies": {
     "prettier": "^3.0.2",
