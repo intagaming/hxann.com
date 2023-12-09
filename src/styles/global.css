@@ -26,10 +26,15 @@ img {
   border-width: 0;
 }
 
-blockquote p::before {
-  content: "\201C";
+blockquote {
+  border-left: 4px solid gray;
+  padding-left: 0.5em;
 }
 
-blockquote p::after {
-  content: "\201D";
-}
+/* blockquote p::before { */
+/*   content: "\201C"; */
+/* } */
+/**/
+/* blockquote p::after { */
+/*   content: "\201D"; */
+/* } */
