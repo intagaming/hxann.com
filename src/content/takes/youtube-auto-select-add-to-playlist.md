@@ -9,6 +9,6 @@ previously selected playlist, and they won't show the title of the video/song
 being added to the playlist.**
 
 Just added a song 5 minutes ago. Now I'm switching genre and ended up adding a
-fucking hip-hop song into the chill playlist, costing me another 2 clicks and 5
-seconds. Want a solution? Add a fucking _remember_ checkbox. How many years did
-it took?
+fucking hip-hop song into the chill playlist, costing me another 3 clicks
+(instead of 2) and 5 seconds. Want a solution? Add a fucking _remember_
+checkbox. How many years did it took?
