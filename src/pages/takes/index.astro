@@ -1,0 +1,61 @@
+---
+import BaseHead from "../../components/BaseHead.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../../consts";
+import { getCollection } from "astro:content";
+import FormattedDate from "../../components/FormattedDate.astro";
+
+const takes = await Promise.all(
+  (await getCollection("takes"))
+    .sort(
+      (a, b) =>
+        b.data.publication_date.valueOf() - a.data.publication_date.valueOf(),
+    )
+    .map(async (take) => {
+      return {
+        ...take,
+        rendered: await take.render(),
+      };
+    }),
+);
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead
+      title={"Takes | " + SITE_TITLE}
+      description="Here houses all of my takes."
+    />
+  </head>
+  <body>
+    <Header />
+    <main>
+      <h1>Takes</h1>
+
+      <p>Here houses all of my takes.</p>
+
+      <section>
+        {
+          takes.map((take) => {
+            const { Content } = take.rendered;
+
+            return (
+              <div>
+                <h2 id={take.slug}>
+                  <a href={`#${take.slug}`}>#</a> {take.data.title}
+                </h2>
+                <div>
+                  <FormattedDate date={take.data.publication_date} />
+                </div>
+                <Content />
+              </div>
+            );
+          })
+        }
+      </section>
+    </main>
+    <Footer />
+  </body></html
+>
