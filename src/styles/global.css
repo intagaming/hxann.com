@@ -1,14 +1,22 @@
 html {
-  font-family: "Merriweather", serif;
-  font-size: 22px;
+  font-family: 'IBM Plex Mono', 'Menlo', 'DejaVu Sans Mono',
+  'Bitstream Vera Sans Mono', Courier, monospace;
+  font-size: 21px;
   max-width: 1000px;
   margin: 0 auto;
+  background-color: #2e3440;
+  color: #F0F0F4;
 }
 @media (max-width: 1000px) {
   html {
     font-size: unset;
   }
 }
+
+a, a:visited, a:hover, a:active {
+  color: rgb(135, 192, 208);
+}
+
 img {
   max-width: 100%;
 }
