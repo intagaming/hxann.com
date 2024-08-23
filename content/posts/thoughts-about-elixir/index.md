@@ -49,7 +49,7 @@ But I was working on another Elixir project at work. Here I encountered:
 
   "A line or two" means you do a fucking query to update a line. Nice!
 
-- `credo`. Oh Clean Code. You don't write a long project, you split them up and
+- `credo`. Oh Clean Code. You don't write a long function, you split them up and
   have to name every single piece. You don't write `// TODO:` or it won't let
   your code pass CI. Idiomatic Elixir.
 
