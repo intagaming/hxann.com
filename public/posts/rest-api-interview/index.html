@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  
+    <title>&#34;Tell me about the basics of REST API.&#34; :: An Hoang</title>
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Spoiler: It was about HTTP." />
+<meta name="keywords" content="" />
+
+  <meta name="robots" content="noodp" />
+
+<link rel="canonical" href="http://localhost:1313/posts/rest-api-interview/" />
+
+
+  
+
+
+
+
+
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/buttons.min.3be0bba9fe18b5b77c8fe97175a5ff803eb3b8d6b94a4c43e6c842bc229040f1.css">
+
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/code.min.00125962708925857e7b66dbc58391d55be1191a3d0ce2034de8c9cd2c481c36.css">
+
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/fonts.min.90c955c31dd7c0e05aae3d4f583d4d8a2af799d69c961337eaf2a825063a55dd.css">
+
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/footer.min.2e3eb191baee58dd05a9f0104ac1fab0827bca7c64dafe0b2579f934c33a1d69.css">
+
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/gist.min.a751e8b0abe1ba8bc53ced52a38b19d8950fe78ca29454ea8c2595cf26aad5c0.css">
+
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/header.min.b6fb4423cf82a9f9d7abc9cd010223fa3d70a6526a3f28f8e17d814c06e18f9e.css">
+
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/main.min.1d8be2dd1b5de9fdaed058c8c59fcf4485f36619574abfb47ed0cfda4812c16d.css">
+
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/menu.min.83637a90d903026bc280d3f82f96ceb06c5fc72b7c1a8d686afb5bbf818a29f7.css">
+
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/pagination.min.82f6400eae7c7c6dc3c866733c2ec0579e4089608fea69400ff85b3880aa0d3c.css">
+
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/post.min.ae96bd858b485e91dd4d30f50f4298bdc371cb1a2a55dcfa043d76a6c95b59b0.css">
+
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/prism.min.9023bbc24533d09e97a51a0a42a5a7bfe4c591ae167c5551fb1d2191d11977c0.css">
+
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/syntax.min.cc789ed9377260d7949ea4c18781fc58959a89287210fe4edbff44ebfc1511b6.css">
+
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/terminal.min.fa7e148bd9d175a5fda1e62ea44a0e535f3bb05f7634ec615154cccbe71b3a9a.css">
+
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/terms.min.b81791663c3790e738e571cdbf802312390d30e4b1d8dc9d814a5b5454d0ac11.css">
+
+
+
+
+
+
+
+<link rel="shortcut icon" href="http://localhost:1313/favicon.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+
+
+<meta name="twitter:card" content="summary" />
+
+  
+    <meta name="twitter:site" content="" />
+  
+    <meta name="twitter:creator" content="" />
+
+
+
+<meta property="og:locale" content="en" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="&#34;Tell me about the basics of REST API.&#34;">
+<meta property="og:description" content="Spoiler: It was about HTTP." />
+<meta property="og:url" content="http://localhost:1313/posts/rest-api-interview/" />
+<meta property="og:site_name" content="An Hoang" />
+
+  <meta property="og:image" content="http://localhost:1313/og-image.png">
+
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="627">
+
+
+  <meta property="article:published_time" content="2023-12-09 00:00:00 &#43;0000 UTC" />
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+<body>
+
+
+<div class="container center">
+
+  <header class="header">
+  <div class="header__inner">
+    <div class="header__logo">
+      <a href="/">
+  <div class="logo">
+    An Hoang
+  </div>
+</a>
+
+    </div>
+    
+      <ul class="menu menu--mobile">
+  <li class="menu__trigger">Menu&nbsp;▾</li>
+  <li>
+    <ul class="menu__dropdown">
+      
+        
+          <li><a href="/about">About</a></li>
+        
+      
+        
+          <li><a href="/showcase">Showcase</a></li>
+        
+      
+      
+    </ul>
+  </li>
+</ul>
+
+    
+    
+  </div>
+  
+    <nav class="navigation-menu">
+  <ul class="navigation-menu__inner menu--desktop">
+    
+      
+        
+          <li><a href="/about" >About</a></li>
+        
+      
+        
+          <li><a href="/showcase" >Showcase</a></li>
+        
+      
+      
+    
+  </ul>
+</nav>
+
+  
+</header>
+
+
+  <div class="content">
+    
+<article class="post">
+  <h1 class="post-title">
+    <a href="http://localhost:1313/posts/rest-api-interview/">&ldquo;Tell me about the basics of REST API.&rdquo;</a>
+  </h1>
+  <div class="post-meta"><time class="post-date">2023-12-09</time><span class="post-author">An7</span><span class="post-reading-time">4 min read (828 words)</span></div>
+
+  
+  
+
+
+  
+
+  <div class="post-content"><div>
+        <h2 id="the-interview">The interview<a href="#the-interview" class="hanchor" ariaLabel="Anchor">#</a> </h2>
+<p>The question was from a fullstack interview. The interviewer asked:</p>
+<blockquote>
+<p>Tell me about the basics of REST API.</p>
+</blockquote>
+<p>Let&rsquo;s be real for a moment. Here was the outline of what happened next in the
+interview:</p>
+<ol>
+<li>I tried to explain in 3-4 sentences about how most of today&rsquo;s REST APIs are
+not actually REST APIs based on <a href="https://ics.uci.edu/~fielding/pubs/dissertation/rest_arch_style.htm">the definition of Roy Fielding</a>. I state
+<a href="https://htmx.org/essays/hateoas/">HATEOAS</a> as the reason.</li>
+<li>The interviewer said I was not answering the question about the basics of
+REST APIs.</li>
+<li>I tried to gave him what I thought he wanted, roughly: REST API is
+REpresentational State Transfer, which is the guideline for an API to
+provide interactions with and queries for Resources.</li>
+</ol>
+<p>Then he solved the question himself, stating the followings:</p>
+<ul>
+<li>REST APIs have Status Code, like 200s, 400s, 500s.</li>
+<li>They have request body, response body, the type of the request/response body
+i.e. JSON or image.</li>
+<li>They have actions like <code>GET</code>, <code>POST</code>, <code>UPDATE</code>, <code>DELETE</code>&hellip;</li>
+<li>Probably some more, I don&rsquo;t totally remember.</li>
+</ul>
+<p>Regarding my &ldquo;today&rsquo;s REST APIs are not actually REST APIs&rdquo; statement, he
+stated:</p>
+<ul>
+<li>REST is just a <strong>guideline</strong>. People are using REST APIs just fine. Whether
+they implement REST fully or not doesn&rsquo;t matter.</li>
+<li>(About HATEOAS) It isn&rsquo;t necessary to put endpoints into the response, people
+solve that differently, like using Swagger to discover the API&rsquo;s endpoints.</li>
+</ul>
+<p>That&rsquo;s what happened. Now onto my thoughts after a few weeks.</p>
+<h2 id="was-the-interviewer-right">Was the interviewer right?<a href="#was-the-interviewer-right" class="hanchor" ariaLabel="Anchor">#</a> </h2>
+<p>Just to state the obvious: I am fully aware that I am no way a senior, and up to
+now I wasn&rsquo;t saying that I was right or he was wrong.</p>
+<p><strong>I don&rsquo;t think &ldquo;the basics of REST API&rdquo; includes an overview of the HTTP
+specification.</strong></p>
+<p>There are two parts here: REST and API. Here is <a href="https://ics.uci.edu/~fielding/pubs/dissertation/rest_arch_style.htm">REST</a>. API is, well, existed
+before REST happens. It is the Application Programming Interface, which is fancy
+for &ldquo;a way to interact with something&rdquo;. None of which mentions anything about
+response body or status code.</p>
+<p>If the interviewer wanted to ask about how the HTTP server and the HTTP client
+communicates with each other, then the question is about <strong>APIs that use HTTP
+as the protocol</strong>, not REST or API or REST API. Quoting <a href="https://ics.uci.edu/~fielding/pubs/dissertation/rest_arch_style.htm">the original Roy
+Fielding dissertation</a>:</p>
+<blockquote>
+<p>The Representational State Transfer (REST) style <strong>is an abstraction</strong> of the
+architectural elements within a distributed hypermedia system. REST <strong>ignores
+the details of component implementation and protocol syntax</strong> in order to
+focus on the roles of components, the constraints upon their interaction with
+other components, and their interpretation of significant data elements.</p>
+</blockquote>
+<p>Judging from the beginning of the quote, it could be regarded as the definition
+of REST. So there is that.</p>
+<h2 id="he-asked-the-wrong-question-and-thats-fine">He asked the wrong question, and that&rsquo;s fine*<a href="#he-asked-the-wrong-question-and-thats-fine" class="hanchor" ariaLabel="Anchor">#</a> </h2>
+<p>I get it. He wanted to know how much I knew about &ldquo;APIs&rdquo; since the interview was
+for the fullstack position. The question was just too ambiguous.</p>
+<p>I already know what you think: <strong>You have to say what the interviewer wants you
+to say.</strong> And at the heat of the moment I was aware of that, but maybe I cared
+too much and made an essay about REST. That&rsquo;s on me.</p>
+<p>With that said: <strong>I still stand by my opinion about the term &ldquo;REST API&rdquo;.</strong>
+Here&rsquo;s another quote from Roy Fielding himself about the misconception:</p>
+<blockquote>
+<p>I am getting frustrated by the number of people calling any HTTP-based
+interface a REST API. Today’s example is the SocialSite REST API. That is RPC.
+It screams RPC. There is so much coupling on display that it should be given
+an X rating.</p>
+<p>What needs to be done to make the REST architectural style clear on the notion
+that hypertext is a constraint? In other words, if the engine of application
+state (and hence the API) is not being driven by hypertext, then it cannot be
+RESTful and cannot be a REST API. Period. Is there some broken manual
+somewhere that needs to be fixed?</p>
+<p>–Roy Fielding, Creator of the term REST</p>
+<p><a href="https://roy.gbiv.com/untangled/2008/rest-apis-must-be-hypertext-driven">REST APIs must be hypertext-driven</a></p>
+</blockquote>
+<p>The article I found the quote on was <a href="https://htmx.org/essays/how-did-rest-come-to-mean-the-opposite-of-rest/">&ldquo;How Did REST Come To Mean The Opposite of
+REST?&rdquo; by Carson Gross</a>.</p>
+<h2 id="optional-the-outcome-of-the-interview">(Optional) The outcome of the interview<a href="#optional-the-outcome-of-the-interview" class="hanchor" ariaLabel="Anchor">#</a> </h2>
+<p>Here&rsquo;s what I think of the interview: The interviewer was not very nice and was
+frustrated about my answer<strong>s</strong> (notice the plural in &ldquo;answers&rdquo;). He really gave
+me a <strong>lecture</strong> on &ldquo;REST API&rdquo;. Depending on my view on the topic, you may
+choose to discount my opinion but I think my answers to the interviewer&rsquo;s
+questions were fair and knowledgable. <strong>He was the engineer on the team. After
+the interview, I don&rsquo;t want to work with him not because of the questions but
+because of the attitude.</strong></p>
+<p>The company&rsquo;s name? FPT Software. No bashing on the company itself though - I
+just happened to have this experience, and I will tell the experience. Also I
+went to FPT University. Just saying.</p>
+<p>Ultimately I turned down the deal because the salary was lower than my current
+job.</p>
+
+      </div></div>
+
+  
+    
+<div class="pagination">
+  <div class="pagination__title">
+    <span class="pagination__title-h">Read other posts</span>
+    <hr />
+  </div>
+  <div class="pagination__buttons">
+    
+      <a href="http://localhost:1313/posts/youtubes-add-to-playlist/" class="button inline prev">
+        YouTube&#39;s &#34;Add to playlist&#34;
+      </a>
+    
+    
+      ::
+    
+    
+      <a href="http://localhost:1313/posts/opinions/" class="button inline next">
+        Opinions
+      </a>
+    
+  </div>
+</div>
+
+
+  
+
+  
+    
+
+  
+</article>
+
+  </div>
+
+  
+    <footer class="footer">
+  <div class="footer__inner">
+    
+      <div class="copyright">
+        <span>© 2024 Powered by <a href="https://gohugo.io">Hugo</a></span>
+    
+      <span>:: <a href="https://github.com/panr/hugo-theme-terminal" target="_blank">Theme</a> made by <a href="https://github.com/panr" target="_blank">panr</a></span>
+      </div>
+  </div>
+</footer>
+
+
+
+
+
+
+<script type="text/javascript" src="/bundle.min.js"></script>
+
+
+
+
+
+  
+</div>
+
+</body>
+</html>

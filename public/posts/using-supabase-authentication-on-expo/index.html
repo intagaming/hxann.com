@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  
+    <title>Using Supabase Authentication on Expo :: An Hoang</title>
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="How to integrate Supabase Authentication into Expo, with GitHub OAuth example." />
+<meta name="keywords" content="" />
+
+  <meta name="robots" content="noodp" />
+
+<link rel="canonical" href="http://localhost:1313/posts/using-supabase-authentication-on-expo/" />
+
+
+  
+
+
+
+
+
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/buttons.min.3be0bba9fe18b5b77c8fe97175a5ff803eb3b8d6b94a4c43e6c842bc229040f1.css">
+
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/code.min.00125962708925857e7b66dbc58391d55be1191a3d0ce2034de8c9cd2c481c36.css">
+
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/fonts.min.90c955c31dd7c0e05aae3d4f583d4d8a2af799d69c961337eaf2a825063a55dd.css">
+
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/footer.min.2e3eb191baee58dd05a9f0104ac1fab0827bca7c64dafe0b2579f934c33a1d69.css">
+
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/gist.min.a751e8b0abe1ba8bc53ced52a38b19d8950fe78ca29454ea8c2595cf26aad5c0.css">
+
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/header.min.b6fb4423cf82a9f9d7abc9cd010223fa3d70a6526a3f28f8e17d814c06e18f9e.css">
+
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/main.min.1d8be2dd1b5de9fdaed058c8c59fcf4485f36619574abfb47ed0cfda4812c16d.css">
+
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/menu.min.83637a90d903026bc280d3f82f96ceb06c5fc72b7c1a8d686afb5bbf818a29f7.css">
+
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/pagination.min.82f6400eae7c7c6dc3c866733c2ec0579e4089608fea69400ff85b3880aa0d3c.css">
+
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/post.min.ae96bd858b485e91dd4d30f50f4298bdc371cb1a2a55dcfa043d76a6c95b59b0.css">
+
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/prism.min.9023bbc24533d09e97a51a0a42a5a7bfe4c591ae167c5551fb1d2191d11977c0.css">
+
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/syntax.min.cc789ed9377260d7949ea4c18781fc58959a89287210fe4edbff44ebfc1511b6.css">
+
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/terminal.min.fa7e148bd9d175a5fda1e62ea44a0e535f3bb05f7634ec615154cccbe71b3a9a.css">
+
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/terms.min.b81791663c3790e738e571cdbf802312390d30e4b1d8dc9d814a5b5454d0ac11.css">
+
+
+
+
+
+
+
+<link rel="shortcut icon" href="http://localhost:1313/favicon.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+
+
+<meta name="twitter:card" content="summary" />
+
+  
+    <meta name="twitter:site" content="" />
+  
+    <meta name="twitter:creator" content="" />
+
+
+
+<meta property="og:locale" content="en" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Using Supabase Authentication on Expo">
+<meta property="og:description" content="How to integrate Supabase Authentication into Expo, with GitHub OAuth example." />
+<meta property="og:url" content="http://localhost:1313/posts/using-supabase-authentication-on-expo/" />
+<meta property="og:site_name" content="An Hoang" />
+
+  <meta property="og:image" content="http://localhost:1313/og-image.png">
+
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="627">
+
+
+  <meta property="article:published_time" content="2021-12-24 00:00:00 &#43;0000 UTC" />
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+<body>
+
+
+<div class="container center">
+
+  <header class="header">
+  <div class="header__inner">
+    <div class="header__logo">
+      <a href="/">
+  <div class="logo">
+    An Hoang
+  </div>
+</a>
+
+    </div>
+    
+      <ul class="menu menu--mobile">
+  <li class="menu__trigger">Menu&nbsp;▾</li>
+  <li>
+    <ul class="menu__dropdown">
+      
+        
+          <li><a href="/about">About</a></li>
+        
+      
+        
+          <li><a href="/showcase">Showcase</a></li>
+        
+      
+      
+    </ul>
+  </li>
+</ul>
+
+    
+    
+  </div>
+  
+    <nav class="navigation-menu">
+  <ul class="navigation-menu__inner menu--desktop">
+    
+      
+        
+          <li><a href="/about" >About</a></li>
+        
+      
+        
+          <li><a href="/showcase" >Showcase</a></li>
+        
+      
+      
+    
+  </ul>
+</nav>
+
+  
+</header>
+
+
+  <div class="content">
+    
+<article class="post">
+  <h1 class="post-title">
+    <a href="http://localhost:1313/posts/using-supabase-authentication-on-expo/">Using Supabase Authentication on Expo</a>
+  </h1>
+  <div class="post-meta"><time class="post-date">2021-12-24</time><span class="post-author">An7</span><span class="post-reading-time">7 min read (1290 words)</span></div>
+
+  
+  
+  <img src="/posts/using-supabase-authentication-on-expo/cover.jpg"
+    class="post-cover"
+    alt="Using Supabase Authentication on Expo"
+    title="Cover Image" />
+
+
+  
+
+  <div class="post-content"><div>
+        <p>I will start in the order of the steps you would want to do with a new Expo
+project. Although you could figure out Supabase Authentication via this blog, I
+highly recommend following Supabase documentation first, starting with the
+non-native version.</p>
+<p>Checkout the initialization of a brand new Expo project since <code>expo init</code>
+<a href="https://github.com/intagaming/expo-todo/tree/f0ec63c75cc1769f63db7f4ee8094d74039b00c6">here</a>.</p>
+<h1 id="supabase-initialization">Supabase initialization<a href="#supabase-initialization" class="hanchor" ariaLabel="Anchor">#</a> </h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-typescript" data-lang="typescript"><span style="display:flex;"><span><span style="color:#75715e">// src/lib/supabase.ts
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">AsyncStorageLib</span> <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#34;@react-native-async-storage/async-storage&#34;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">createClient</span> } <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#34;@supabase/supabase-js&#34;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">Constants</span> <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#34;expo-constants&#34;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">supabaseConfig</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">Constants</span>.<span style="color:#a6e22e">manifest</span><span style="color:#f92672">?</span>.<span style="color:#a6e22e">extra</span><span style="color:#f92672">?</span>.<span style="color:#a6e22e">supabase</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">supabase</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">createClient</span>(<span style="color:#a6e22e">supabaseConfig</span>.<span style="color:#a6e22e">url</span>, <span style="color:#a6e22e">supabaseConfig</span>.<span style="color:#a6e22e">publicKey</span>, {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">localStorage</span>: <span style="color:#66d9ef">AsyncStorageLib</span>,
+</span></span><span style="display:flex;"><span>});
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> <span style="color:#a6e22e">supabase</span>;
+</span></span></code></pre></div><p>Notice how I&rsquo;m using the <code>localStorage</code> option.</p>
+<p>I use <code>app.json</code> to configure Supabase, simply because I haven&rsquo;t found any
+reason to use something like environment variables for a mobile app.
+<a href="https://docs.expo.dev/workflow/configuration/">Learn more about configuring Expo app with app.json.</a></p>
+<p>One thing I should note,
+<a href="https://docs.expo.dev/versions/latest/sdk/auth-session/#it-makes-redirect-url-allowlists-easier-to">you need to set a <code>scheme</code> in your <code>app.json</code> in order for the Expo redirection proxy to work</a>.</p>
+<h1 id="auth-context">Auth Context<a href="#auth-context" class="hanchor" ariaLabel="Anchor">#</a> </h1>
+<p>Since it&rsquo;s a client-side app (of course it is), I would store the Auth Session
+in a React Context because it <strong>absolutely</strong> does NOT need Redux. It is heavily
+inspired from Kent C. Dodds&rsquo; <a href="https://kentcdodds.com/blog/how-to-use-react-context-effectively">&ldquo;How to use React Context effectively&rdquo;</a>.</p>
+<p>The code below is <strong>long</strong> and contains documentation &amp; explainations. You can
+find various stripped-out version of this context on the internet, but I&rsquo;ve gone
+through and solve some of these following problems:</p>
+<ul>
+<li>Supabase uses <code>setTimeout</code> for refreshing the Access Token. In the context of
+Native apps, the app might be backgrounded, so it warns you about that. We can
+safely ignore this, check the explanation in the code.</li>
+<li>If the app <em>cold starts</em>, even if the user has signed in before, the
+<code>AsyncStorage</code> on the Native would not response <em>synchronously</em>, hence causing
+the login screen to flash for a second. Solution, documentation and
+explanation is in the code.</li>
+<li><code>useAuthUser</code> fetches the user from the session. It is, my by intention,
+included in the same file. Doesn&rsquo;t make sense to put that anywhere else.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-typescript" data-lang="typescript"><span style="display:flex;"><span><span style="color:#75715e">// src/state/auth-context.tsx
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">AsyncStorageLib</span> <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#34;@react-native-async-storage/async-storage&#34;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">AuthSession</span> } <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#34;@supabase/supabase-js&#34;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">createContext</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">ReactNode</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">useContext</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">useEffect</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">useMemo</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">useState</span>,
+</span></span><span style="display:flex;"><span>} <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#34;react&#34;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">LogBox</span> } <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#34;react-native&#34;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">isBrowser</span> } <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#34;../lib/helpers&#34;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">supabase</span> <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#34;../lib/supabase&#34;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">State</span> <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">session</span>: <span style="color:#66d9ef">AuthSession</span> <span style="color:#f92672">|</span> <span style="color:#66d9ef">null</span> <span style="color:#f92672">|</span> <span style="color:#66d9ef">undefined</span>;
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">AuthContext</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">createContext</span>&lt;<span style="color:#f92672">State</span> <span style="color:#960050;background-color:#1e0010">|</span> <span style="color:#a6e22e">undefined</span>&gt;(<span style="color:#66d9ef">undefined</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">AuthContextProvider</span>({ <span style="color:#a6e22e">children</span> }<span style="color:#f92672">:</span> { <span style="color:#a6e22e">children</span>: <span style="color:#66d9ef">ReactNode</span> }) {
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">/**
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">   * What the session state can tell us:
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">   * - undefined: The session is being loaded.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">   * - null: The session is fetched and is unavailable.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">   * - AuthSession: There is a session.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">   */</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">const</span> [<span style="color:#a6e22e">session</span>, <span style="color:#a6e22e">setSession</span>] <span style="color:#f92672">=</span> <span style="color:#a6e22e">useState</span>&lt;<span style="color:#f92672">AuthSession</span> <span style="color:#960050;background-color:#1e0010">|</span> <span style="color:#a6e22e">null</span> <span style="color:#960050;background-color:#1e0010">|</span> <span style="color:#a6e22e">undefined</span>&gt;(
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">undefined</span>,
+</span></span><span style="display:flex;"><span>  );
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">useEffect</span>(() <span style="color:#f92672">=&gt;</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">/**
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">     * About the &#34;Setting a timer for a long period of time...&#34; warning:
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">     *
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">     * Take a look at this GitHub response: https://github.com/facebook/react-native/issues/12981#issuecomment-652745831
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">     * It says:
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">     *
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">     * &gt; If you don&#39;t mind having your timer get activated later when the app is
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">     * &gt; foregrounded again, then I think ignoring the YellowBox warning is a good idea.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">     *
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">     * The timer is for the token refresh task, from GoTrueClient.js. When the access token is expired,
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">     *  the access token needs to be refreshed. For a 1 hour JWT expiration duration on Supabase,
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">     *  it is scheduled when 59 minutes has passed. If it could not run at that specific time
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">     *  because the app were not foregrounded, then the access token would be refreshed as
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">     *  soon as the app is opened up. If it succeeded, the authentication is conserved. Otherwise,
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">     *  the session would be expired, requiring the user for a re-login.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">     *
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">     * Therefore, we can safely ignore this warning. Even in the case of the user making requests
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">     *  while the token is being refreshed, they should fail as they are using the expired token.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">     *  The failed requests should be handled accordingly instead of bringing the app to a halt.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">     *  The refresh should be fast enough.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">     */</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">LogBox</span>.<span style="color:#a6e22e">ignoreLogs</span>([<span style="color:#e6db74">&#34;Setting a timer&#34;</span>]);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">fetchedSession</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">supabase</span>.<span style="color:#a6e22e">auth</span>.<span style="color:#a6e22e">session</span>();
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">/**
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">     * Fixing the &#34;login screen flashing on app open&#34; problem:
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">     *
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">     * The session could be immediately fetched on the web. But we might be using Native here.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">     *
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">     * So if it&#39;s Native, we would keep the session as undefined if it&#39;s not already been fetched before.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">     *  We would then go visit the AsyncStorage, if it doesn&#39;t have a session, the session would be null.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">     *  If it has, keep the current session state because the onAuthStateChange would setSession for us later.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">     *  It might even have done that before our check.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">     */</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">setSession</span>(<span style="color:#a6e22e">fetchedSession</span> <span style="color:#f92672">||</span> <span style="color:#a6e22e">isBrowser</span>() <span style="color:#f92672">?</span> <span style="color:#a6e22e">fetchedSession</span> : <span style="color:#66d9ef">undefined</span>);
+</span></span><span style="display:flex;"><span>    (<span style="color:#66d9ef">async</span> () <span style="color:#f92672">=&gt;</span> {
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">isBrowser</span>()) <span style="color:#66d9ef">return</span>;
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">storageSession</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> <span style="color:#a6e22e">AsyncStorageLib</span>.<span style="color:#a6e22e">getItem</span>(
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;supabase.auth.token&#34;</span>,
+</span></span><span style="display:flex;"><span>      );
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#a6e22e">storageSession</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">setSession</span>((<span style="color:#a6e22e">oldSession</span>) <span style="color:#f92672">=&gt;</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#a6e22e">oldSession</span> <span style="color:#f92672">===</span> <span style="color:#66d9ef">undefined</span> <span style="color:#f92672">?</span> <span style="color:#66d9ef">null</span> <span style="color:#f92672">:</span> <span style="color:#a6e22e">oldSession</span>,
+</span></span><span style="display:flex;"><span>        );
+</span></span><span style="display:flex;"><span>      }
+</span></span><span style="display:flex;"><span>    })();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">const</span> { <span style="color:#a6e22e">data</span>: <span style="color:#66d9ef">authListener</span> } <span style="color:#f92672">=</span> <span style="color:#a6e22e">supabase</span>.<span style="color:#a6e22e">auth</span>.<span style="color:#a6e22e">onAuthStateChange</span>(
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">async</span> (<span style="color:#a6e22e">_event</span>, <span style="color:#a6e22e">newSession</span>) <span style="color:#f92672">=&gt;</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">setSession</span>(<span style="color:#a6e22e">newSession</span>);
+</span></span><span style="display:flex;"><span>      },
+</span></span><span style="display:flex;"><span>    );
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> () <span style="color:#f92672">=&gt;</span> {
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">authListener</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">authListener</span>.<span style="color:#a6e22e">unsubscribe</span>();
+</span></span><span style="display:flex;"><span>      }
+</span></span><span style="display:flex;"><span>    };
+</span></span><span style="display:flex;"><span>  }, []);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">value</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">useMemo</span>(
+</span></span><span style="display:flex;"><span>    () <span style="color:#f92672">=&gt;</span> ({
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">session</span>,
+</span></span><span style="display:flex;"><span>    }),
+</span></span><span style="display:flex;"><span>    [<span style="color:#a6e22e">session</span>],
+</span></span><span style="display:flex;"><span>  );
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> &lt;<span style="color:#f92672">AuthContext.Provider</span> <span style="color:#a6e22e">value</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">value</span>}&gt;{<span style="color:#a6e22e">children</span>}&lt;/<span style="color:#f92672">AuthContext.Provider</span>&gt;;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">useAuthContext</span> <span style="color:#f92672">=</span> () <span style="color:#f92672">=&gt;</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">context</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">useContext</span>(<span style="color:#a6e22e">AuthContext</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">context</span> <span style="color:#f92672">===</span> <span style="color:#66d9ef">undefined</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> Error(
+</span></span><span style="display:flex;"><span>      <span style="color:#e6db74">`useAuthContext must be used within a AuthContextProvider.`</span>,
+</span></span><span style="display:flex;"><span>    );
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">context</span>;
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">useAuthUser</span> <span style="color:#f92672">=</span> () <span style="color:#f92672">=&gt;</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">const</span> { <span style="color:#a6e22e">session</span> } <span style="color:#f92672">=</span> <span style="color:#a6e22e">useAuthContext</span>();
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">session</span> <span style="color:#f92672">===</span> <span style="color:#66d9ef">undefined</span>) <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">undefined</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">session</span><span style="color:#f92672">?</span>.<span style="color:#a6e22e">user</span> <span style="color:#f92672">??</span> <span style="color:#66d9ef">null</span>;
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">export</span> { <span style="color:#a6e22e">AuthContextProvider</span>, <span style="color:#a6e22e">useAuthContext</span>, <span style="color:#a6e22e">useAuthUser</span> };
+</span></span></code></pre></div><p>The helper file:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-typescript" data-lang="typescript"><span style="display:flex;"><span><span style="color:#75715e">// src/lib/helpers.ts
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">Platform</span> } <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#34;react-native&#34;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// eslint-disable-next-line import/prefer-default-export
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">isBrowser</span> <span style="color:#f92672">=</span> () <span style="color:#f92672">=&gt;</span> <span style="color:#a6e22e">Platform</span>.<span style="color:#a6e22e">OS</span> <span style="color:#f92672">===</span> <span style="color:#e6db74">&#34;web&#34;</span>;
+</span></span></code></pre></div><h1 id="login-screen">Login Screen<a href="#login-screen" class="hanchor" ariaLabel="Anchor">#</a> </h1>
+<p>Again, you could find various versions of this. They could not figure out how to
+work with the redirect proxy that Expo provides, so I do it myself.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-typescript" data-lang="typescript"><span style="display:flex;"><span><span style="color:#75715e">// src/screens/auth/Login.tsx
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">import</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">as</span> <span style="color:#a6e22e">AuthSession</span> <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#34;expo-auth-session&#34;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">Pressable</span>, <span style="color:#a6e22e">StyleSheet</span>, <span style="color:#a6e22e">Text</span>, <span style="color:#a6e22e">View</span> } <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#34;react-native&#34;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">supabase</span>, { <span style="color:#a6e22e">supabaseConfig</span> } <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#34;../../lib/supabase&#34;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">styles</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">StyleSheet</span>.<span style="color:#a6e22e">create</span>({
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">container</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">alignItems</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;center&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">flex</span>: <span style="color:#66d9ef">1</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">justifyContent</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;center&#34;</span>,
+</span></span><span style="display:flex;"><span>  },
+</span></span><span style="display:flex;"><span>});
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">Login() {</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">handleGithubLogin</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">async</span> () <span style="color:#f92672">=&gt;</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">/**
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">     * Read this: https://docs.expo.dev/versions/latest/sdk/auth-session/#what--authexpoio--does-for-you
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">     * In the `authUrl` we don&#39;t want Supabase to know our varied URL. The auth.expo.io flow tries to hide
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">     *  the varied URL from Supabase. So, auth.expo.io is the one who will know our varied URL, and Supabase
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">     *  will only know https://auth.expo.io/@username/app-slug.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">     */</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">proxyRedirectUri</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">AuthSession</span>.<span style="color:#a6e22e">makeRedirectUri</span>({ <span style="color:#a6e22e">useProxy</span>: <span style="color:#66d9ef">true</span> }); <span style="color:#75715e">// https://auth.expo.io
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">redirectUri</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">AuthSession</span>.<span style="color:#a6e22e">makeRedirectUri</span>({ <span style="color:#a6e22e">useProxy</span>: <span style="color:#66d9ef">false</span> }); <span style="color:#75715e">// Some URL which we don&#39;t know beforehand
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">provider</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;github&#34;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">response</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> <span style="color:#a6e22e">AuthSession</span>.<span style="color:#a6e22e">startAsync</span>({
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">authUrl</span><span style="color:#f92672">:</span> <span style="color:#e6db74">`</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">supabaseConfig</span>.<span style="color:#a6e22e">url</span><span style="color:#e6db74">}</span><span style="color:#e6db74">/auth/v1/authorize?provider=</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">provider</span><span style="color:#e6db74">}</span><span style="color:#e6db74">&amp;redirect_to=</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">proxyRedirectUri</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">returnUrl</span>: <span style="color:#66d9ef">redirectUri</span>,
+</span></span><span style="display:flex;"><span>    });
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">response</span>.<span style="color:#66d9ef">type</span> <span style="color:#f92672">!==</span> <span style="color:#e6db74">&#34;success&#34;</span>) <span style="color:#66d9ef">return</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">await</span> <span style="color:#a6e22e">supabase</span>.<span style="color:#a6e22e">auth</span>.<span style="color:#a6e22e">signIn</span>({
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">refreshToken</span>: <span style="color:#66d9ef">response.params.refresh_token</span>,
+</span></span><span style="display:flex;"><span>    });
+</span></span><span style="display:flex;"><span>  };
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> (
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">View</span> <span style="color:#a6e22e">style</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">styles</span>.<span style="color:#a6e22e">container</span>}&gt;
+</span></span><span style="display:flex;"><span>      &lt;<span style="color:#f92672">Text</span>&gt;<span style="color:#a6e22e">Login</span>&lt;/<span style="color:#f92672">Text</span>&gt;
+</span></span><span style="display:flex;"><span>      &lt;<span style="color:#f92672">Pressable</span> <span style="color:#a6e22e">onPress</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">handleGithubLogin</span>}&gt;
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">Text</span>&gt;<span style="color:#a6e22e">Login</span> <span style="color:#66d9ef">with</span> <span style="color:#a6e22e">GitHub</span>&lt;/<span style="color:#f92672">Text</span>&gt;
+</span></span><span style="display:flex;"><span>      &lt;/<span style="color:#f92672">Pressable</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;/<span style="color:#f92672">View</span>&gt;
+</span></span><span style="display:flex;"><span>  );
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h1 id="navigation">Navigation<a href="#navigation" class="hanchor" ariaLabel="Anchor">#</a> </h1>
+<p>The principle is aligned with the examples on the React Navigation
+documentation. Notice which screens are rendered with each possible value of
+<code>user</code>. Another thing is the <code>Promise.allSettled()</code> polyfill that Supabase
+requires, see the code for the documentation.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-typescript" data-lang="typescript"><span style="display:flex;"><span><span style="color:#75715e">// App.tsx
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">NavigationContainer</span> } <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#34;@react-navigation/native&#34;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">createNativeStackNavigator</span> } <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#34;@react-navigation/native-stack&#34;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">allSettled</span> <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#34;promise.allsettled&#34;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">LogoutButton</span> <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#34;./src/components/LogoutButton&#34;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">RootStackParamList</span> } <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#34;./src/navigation/types&#34;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">Login</span> <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#34;./src/screens/auth/Login&#34;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">Home</span> <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#34;./src/screens/Home&#34;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">Loading</span> <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#34;./src/screens/auth/Loading&#34;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">AuthContextProvider</span>, <span style="color:#a6e22e">useAuthUser</span> } <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#34;./src/state/auth-context&#34;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">Stack</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">createNativeStackNavigator</span>&lt;<span style="color:#f92672">RootStackParamList</span>&gt;();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">AppNavigator() {</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">user</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">useAuthUser</span>();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> (
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">NavigationContainer</span>&gt;
+</span></span><span style="display:flex;"><span>      &lt;<span style="color:#f92672">Stack.Navigator</span>&gt;
+</span></span><span style="display:flex;"><span>        {<span style="color:#a6e22e">user</span> <span style="color:#f92672">===</span> <span style="color:#66d9ef">undefined</span> <span style="color:#f92672">&amp;&amp;</span> (
+</span></span><span style="display:flex;"><span>          &lt;<span style="color:#f92672">Stack.Screen</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Loading&#34;</span> <span style="color:#a6e22e">component</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">Loading</span>} /&gt;
+</span></span><span style="display:flex;"><span>        )}
+</span></span><span style="display:flex;"><span>        {<span style="color:#a6e22e">user</span> <span style="color:#f92672">===</span> <span style="color:#66d9ef">null</span> <span style="color:#f92672">&amp;&amp;</span> &lt;<span style="color:#f92672">Stack.Screen</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Login&#34;</span> <span style="color:#a6e22e">component</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">Login</span>} /&gt;}
+</span></span><span style="display:flex;"><span>        {<span style="color:#a6e22e">user</span> <span style="color:#f92672">&amp;&amp;</span> (
+</span></span><span style="display:flex;"><span>          &lt;&gt;
+</span></span><span style="display:flex;"><span>            &lt;<span style="color:#f92672">Stack.Screen</span>
+</span></span><span style="display:flex;"><span>              <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Home&#34;</span>
+</span></span><span style="display:flex;"><span>              <span style="color:#a6e22e">component</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">Home</span>}
+</span></span><span style="display:flex;"><span>              <span style="color:#a6e22e">options</span><span style="color:#f92672">=</span>{{ <span style="color:#a6e22e">headerRight</span>: <span style="color:#66d9ef">LogoutButton</span> }}
+</span></span><span style="display:flex;"><span>            /&gt;
+</span></span><span style="display:flex;"><span>          &lt;/&gt;
+</span></span><span style="display:flex;"><span>        )}
+</span></span><span style="display:flex;"><span>      &lt;/<span style="color:#f92672">Stack.Navigator</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;/<span style="color:#f92672">NavigationContainer</span>&gt;
+</span></span><span style="display:flex;"><span>  );
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">App() {</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">/**
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">   * Polyfill for Promise.allSettled, used by Supabase. Remove when
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">   *  this PR has been merged: https://github.com/then/promise/pull/171
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">   * Supabase usage: https://github.com/supabase/supabase-js/commit/6cf54a2972472e259a775bd950c88dff4cd91a1f
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">   */</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">allSettled</span>.<span style="color:#a6e22e">shim</span>();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> (
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">AuthContextProvider</span>&gt;
+</span></span><span style="display:flex;"><span>      &lt;<span style="color:#f92672">AppNavigator</span> /&gt;
+</span></span><span style="display:flex;"><span>    &lt;/<span style="color:#f92672">AuthContextProvider</span>&gt;
+</span></span><span style="display:flex;"><span>  );
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h1 id="resources">Resources<a href="#resources" class="hanchor" ariaLabel="Anchor">#</a> </h1>
+<p>Check out the code snapshot <a href="https://github.com/intagaming/expo-todo/tree/f0ec63c75cc1769f63db7f4ee8094d74039b00c6">here</a>.</p>
+
+      </div></div>
+
+  
+    
+<div class="pagination">
+  <div class="pagination__title">
+    <span class="pagination__title-h">Read other posts</span>
+    <hr />
+  </div>
+  <div class="pagination__buttons">
+    
+      <a href="http://localhost:1313/posts/about-the-hesitancy-in-reading-software-engineering-writings/" class="button inline prev">
+        About the hesitancy in reading Software Engineering writings
+      </a>
+    
+    
+      ::
+    
+    
+      <a href="http://localhost:1313/posts/consuming-contents-without-caption/" class="button inline next">
+        Consuming contents without caption
+      </a>
+    
+  </div>
+</div>
+
+
+  
+
+  
+    
+
+  
+</article>
+
+  </div>
+
+  
+    <footer class="footer">
+  <div class="footer__inner">
+    
+      <div class="copyright">
+        <span>© 2024 Powered by <a href="https://gohugo.io">Hugo</a></span>
+    
+      <span>:: <a href="https://github.com/panr/hugo-theme-terminal" target="_blank">Theme</a> made by <a href="https://github.com/panr" target="_blank">panr</a></span>
+      </div>
+  </div>
+</footer>
+
+
+
+
+
+
+<script type="text/javascript" src="/bundle.min.js"></script>
+
+
+
+
+
+  
+</div>
+
+</body>
+</html>

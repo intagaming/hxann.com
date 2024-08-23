@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  
+    <title>What is the architecture of the T3 application? :: An Hoang</title>
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Is it even MVC? Serverless?" />
+<meta name="keywords" content="" />
+
+  <meta name="robots" content="noodp" />
+
+<link rel="canonical" href="http://localhost:1313/posts/t3-architecture/" />
+
+
+  
+
+
+
+
+
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/buttons.min.3be0bba9fe18b5b77c8fe97175a5ff803eb3b8d6b94a4c43e6c842bc229040f1.css">
+
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/code.min.00125962708925857e7b66dbc58391d55be1191a3d0ce2034de8c9cd2c481c36.css">
+
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/fonts.min.90c955c31dd7c0e05aae3d4f583d4d8a2af799d69c961337eaf2a825063a55dd.css">
+
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/footer.min.2e3eb191baee58dd05a9f0104ac1fab0827bca7c64dafe0b2579f934c33a1d69.css">
+
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/gist.min.a751e8b0abe1ba8bc53ced52a38b19d8950fe78ca29454ea8c2595cf26aad5c0.css">
+
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/header.min.b6fb4423cf82a9f9d7abc9cd010223fa3d70a6526a3f28f8e17d814c06e18f9e.css">
+
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/main.min.1d8be2dd1b5de9fdaed058c8c59fcf4485f36619574abfb47ed0cfda4812c16d.css">
+
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/menu.min.83637a90d903026bc280d3f82f96ceb06c5fc72b7c1a8d686afb5bbf818a29f7.css">
+
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/pagination.min.82f6400eae7c7c6dc3c866733c2ec0579e4089608fea69400ff85b3880aa0d3c.css">
+
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/post.min.ae96bd858b485e91dd4d30f50f4298bdc371cb1a2a55dcfa043d76a6c95b59b0.css">
+
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/prism.min.9023bbc24533d09e97a51a0a42a5a7bfe4c591ae167c5551fb1d2191d11977c0.css">
+
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/syntax.min.cc789ed9377260d7949ea4c18781fc58959a89287210fe4edbff44ebfc1511b6.css">
+
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/terminal.min.fa7e148bd9d175a5fda1e62ea44a0e535f3bb05f7634ec615154cccbe71b3a9a.css">
+
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/terms.min.b81791663c3790e738e571cdbf802312390d30e4b1d8dc9d814a5b5454d0ac11.css">
+
+
+
+
+
+
+
+<link rel="shortcut icon" href="http://localhost:1313/favicon.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+
+
+<meta name="twitter:card" content="summary" />
+
+  
+    <meta name="twitter:site" content="" />
+  
+    <meta name="twitter:creator" content="" />
+
+
+
+<meta property="og:locale" content="en" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="What is the architecture of the T3 application?">
+<meta property="og:description" content="Is it even MVC? Serverless?" />
+<meta property="og:url" content="http://localhost:1313/posts/t3-architecture/" />
+<meta property="og:site_name" content="An Hoang" />
+
+  <meta property="og:image" content="http://localhost:1313/og-image.png">
+
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="627">
+
+
+  <meta property="article:published_time" content="2022-09-25 03:47:00 &#43;0700 &#43;07" />
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+<body>
+
+
+<div class="container center">
+
+  <header class="header">
+  <div class="header__inner">
+    <div class="header__logo">
+      <a href="/">
+  <div class="logo">
+    An Hoang
+  </div>
+</a>
+
+    </div>
+    
+      <ul class="menu menu--mobile">
+  <li class="menu__trigger">Menu&nbsp;▾</li>
+  <li>
+    <ul class="menu__dropdown">
+      
+        
+          <li><a href="/about">About</a></li>
+        
+      
+        
+          <li><a href="/showcase">Showcase</a></li>
+        
+      
+      
+    </ul>
+  </li>
+</ul>
+
+    
+    
+  </div>
+  
+    <nav class="navigation-menu">
+  <ul class="navigation-menu__inner menu--desktop">
+    
+      
+        
+          <li><a href="/about" >About</a></li>
+        
+      
+        
+          <li><a href="/showcase" >Showcase</a></li>
+        
+      
+      
+    
+  </ul>
+</nav>
+
+  
+</header>
+
+
+  <div class="content">
+    
+<article class="post">
+  <h1 class="post-title">
+    <a href="http://localhost:1313/posts/t3-architecture/">What is the architecture of the T3 application?</a>
+  </h1>
+  <div class="post-meta"><time class="post-date">2022-09-25</time><span class="post-author">An7</span><span class="post-reading-time">5 min read (966 words)</span></div>
+
+  
+  
+  <img src="/posts/t3-architecture/cover.png"
+    class="post-cover"
+    alt="What is the architecture of the T3 application?"
+    title="Cover Image" />
+
+
+  
+
+  <div class="post-content"><div>
+        <h2 id="mvc-and-its-derived-patterns">MVC and its derived patterns<a href="#mvc-and-its-derived-patterns" class="hanchor" ariaLabel="Anchor">#</a> </h2>
+<p><a href="https://developer.mozilla.org/en-US/docs/Glossary/MVC">Model-View-Controller (MVC) is a user interface architecture
+pattern.</a></p>
+<p><img alt="mvc-diagram" src="/images/uploads/mvc-diagram_ygwmqy.png"></p>
+<p>It describes how data (i.e. Model) is applied into the View, which is via the
+Controller. The data might come from some database, and the Controller will go
+and fetch them.</p>
+<p>Model-View-ViewModel (MVVM) is based on MVC, concerning with the separation
+between the GUI (View) and the logic (ViewModel &amp; Model). The point is making
+the View to not contain any logic at all, moving logic somewhere else.</p>
+<p>Because MVC, MVVM and similar architectures are defining the architecture of a
+whole application, when considering the architecture of the T3 stack, we must
+consider the architecture of the whole T3 stack. Expect there is a problem: the
+T3 stack contains multiple applications, each with different architecture.</p>
+<p><em>Side note about what a T3 stack is: <a href="https://init.tips/">https://init.tips/</a></em></p>
+<h2 id="the-t3-application-breakdown">The T3 application breakdown<a href="#the-t3-application-breakdown" class="hanchor" ariaLabel="Anchor">#</a> </h2>
+<h3 id="react">React<a href="#react" class="hanchor" ariaLabel="Anchor">#</a> </h3>
+<p>The React application has no default architecture, i.e. the way which the
+application must be architected. A React app can be architected based on how the
+data moves within the app. The T3 stack doesn&rsquo;t impose any architecture on the
+React app.</p>
+<h3 id="nextjs-backend">Next.js (backend)<a href="#nextjs-backend" class="hanchor" ariaLabel="Anchor">#</a> </h3>
+<p>The Next.js application, which uses React as the frontend, can do several <em>data
+fetching patterns</em> depending on how Next.js is used.</p>
+<ul>
+<li>Client-side Rendering (CSR) is the pattern where data is fetched on the
+client-side, i.e. the user&rsquo;s browser.</li>
+<li>Server-side Rendering (SSR): data is fetched on the server, then sent to
+user&rsquo;s browser.</li>
+<li>Static Site Generation (SSG) and its variant, Incremental Static Regeneration
+(ISR): data is fetch once, then no more. From the second requests on, the page
+has the same data.</li>
+</ul>
+<p>The aboves are just patterns to <em>fetch data for the Next.js frontend</em>. There are
+also the Next.js backend: a bunch of functions waiting to be called. Not much of
+an architecture on the Next.js backend itself: how the Next.js backend is
+organized is not regulated and varies between apps. However the Next.js frontend
+can use one of the above patterns to fetch data from the Next.js backend. This
+is just the <strong>Client-Server architecture</strong>. In the T3 stack, tRPC is powered by
+the Next.js backend, so nothing special about tRPC.</p>
+<p>If we decide to throw in a React Native frontend for mobile in the T3 stack, we
+are just replacing the React in Next.js with React Native. React Native can call
+the Next.js backend just like the React app, a.k.a. Client-side rendering. Here,
+the link between RN and the Next.js backend is just a Client-Server
+architecture.</p>
+<h2 id="mvc-in-t3-stack">MVC in T3 stack?<a href="#mvc-in-t3-stack" class="hanchor" ariaLabel="Anchor">#</a> </h2>
+<p>Let&rsquo;s walk back and try to fit MVC and its derived patterns somewhere in the T3
+stack.</p>
+<p>If we look into React, it is a thing to make UIs. It can be a full application
+by itself, but it&rsquo;s not how typical React applications work. The React
+application (typically) needs a backend. So React is the View.</p>
+<p>One small note about MVVM: Because the distance between the React and the server
+can be huge compare to a WPF application, as well as the fact that the Model
+part in the T3 stack is stateless (meaning there is no state on the backend that
+can be subscribed to; the data is fetched on demand), MVVM is usually not common
+on the web.</p>
+<p>Model is the data. Data is handled by the Next.js backend. How does the data
+from the Next.js backend move to the React app? In MVC, it must be facilitated
+by the Controller. There are a few options here:</p>
+<ul>
+<li>If Next.js&rsquo; SSR or SSG is used, then Next.js is the thing that provides data
+to the React app. Hence Next.js is the Controller.</li>
+<li>If no SSR or SSG is used, the Controller is the React app. The React app has
+to actually go and fetch the data it needs by itself.</li>
+<li>Even if SSR or SSG is used, those are just used to <em>fetch</em> data <strong>initially</strong>.
+If we need to fetch/update data while the app is running, React must go and do
+that itself by calling the Next.js backend. React is now the Controller.</li>
+</ul>
+<p>So, it is not clear what the M, V and C are. Though we can still make the case
+that the T3 application is an MVC application. I would argue that MVC is so
+generic it can be applied to many applications that don&rsquo;t even have MVC written
+in its portfolio. MVC is just a way to think about UI and logic segregations.</p>
+<h2 id="serverless">Serverless?<a href="#serverless" class="hanchor" ariaLabel="Anchor">#</a> </h2>
+<p>What about Serverless architecture?</p>
+<p>Serverless refers to the fact that the server that hosts the Next.js backend
+functions are handled by a third-party service responsible for scaling the
+infrastructure. Next.js backend functions are now called Lambdas, which are code
+that run on a server somewhere on-demand. The first time the Lambda gets called,
+it needs to be deployed on a server somewhere, which takes some relatively short
+time. This is called a Cold Start. Following requests are just as fast as a
+normal API request. If the Lambda doesn&rsquo;t get called for awhile, the server
+brings the code down.</p>
+<p>Because of the fact that there is no one fixed server in the Serverless
+architecture, the Lambdas must be &ldquo;stateless&rdquo;: there must be no state retained
+from the previous requests. Though, state can be stored outside of Lambdas, e.g.
+in an external database.</p>
+<p>If the Next.js backend is deployed on a Serverless platform like Vercel or
+Netlify, it exhibits a Serverless architecture. If the Next.js backend is
+deployed on a normal fixed server, it is otherwise not Serverless, which is
+advised against anyway.</p>
+<h2 id="the-t3-stack-architecture">The T3 stack architecture<a href="#the-t3-stack-architecture" class="hanchor" ariaLabel="Anchor">#</a> </h2>
+<p>That said, what is the architecture of the T3 stack?</p>
+<p>As you can see, there are options to choose from, and we can even choose
+multiple options at once, so as everything else in life, &ldquo;it depends&rdquo;.</p>
+<p>Here is a diagram to sum it up:</p>
+<p><img alt="t3-architecture" src="/images/uploads/riv7jhhgy.png"></p>
+
+      </div></div>
+
+  
+    
+<div class="pagination">
+  <div class="pagination__title">
+    <span class="pagination__title-h">Read other posts</span>
+    <hr />
+  </div>
+  <div class="pagination__buttons">
+    
+      <a href="http://localhost:1313/posts/religious-software-development-arguments/" class="button inline prev">
+        Religious software development arguments
+      </a>
+    
+    
+      ::
+    
+    
+      <a href="http://localhost:1313/posts/distributed-realtime-server/" class="button inline next">
+        Distributed Realtime Server Architecture
+      </a>
+    
+  </div>
+</div>
+
+
+  
+
+  
+    
+
+  
+</article>
+
+  </div>
+
+  
+    <footer class="footer">
+  <div class="footer__inner">
+    
+      <div class="copyright">
+        <span>© 2024 Powered by <a href="https://gohugo.io">Hugo</a></span>
+    
+      <span>:: <a href="https://github.com/panr/hugo-theme-terminal" target="_blank">Theme</a> made by <a href="https://github.com/panr" target="_blank">panr</a></span>
+      </div>
+  </div>
+</footer>
+
+
+
+
+
+
+<script type="text/javascript" src="/bundle.min.js"></script>
+
+
+
+
+
+  
+</div>
+
+</body>
+</html>
