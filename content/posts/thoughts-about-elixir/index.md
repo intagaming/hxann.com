@@ -1,5 +1,5 @@
 +++
-title = "Thoughts about elixir"
+title = "Thoughts about Elixir"
 date = "2024-04-06"
 author = "An7"
 authorTwitter = ""
