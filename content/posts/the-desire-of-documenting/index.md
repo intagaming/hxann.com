@@ -44,7 +44,7 @@ what I call a _refreshing_ story.
 Look, you better have your reasoning **and** be responsible. On the flip side is
 what they describe _a potato_. Do yourself a favor.
 
-![lifehack.gif](/images/uploads/lifehack_cpri1e.gif)
+![lifehack.gif](lifehack_cpri1e.gif)
 
 ## Why university defy natural psychology
 
@@ -59,7 +59,7 @@ There's a _tippity tappity_ point, something the _modern_ people called
 Great things charm the whole history, like Mozart and Da Vinci. Then there's
 **contemporary education system** to join the conversation.
 
-![our-meme.jpg](/images/uploads/our-meme.jpg)
+![our-meme.jpg](our-meme.jpg)
 
 You can, **today**, [send me](mailto:xuanan2001@gmail.com) what knowledge you
 could extract out of 4 years of university that can make you get in the $500 job
@@ -75,7 +75,7 @@ Now where do I start _documenting_ this? Betcha knows, I document this **to a
 great extent**. About _that school project_, how about asking your grandkid how
 they feel about Internet Explorer. Must've been an _exciting_ TED talk.
 
-![internet-explorer-meme.png](/images/uploads/internet-explorer-meme.png)
+![internet-explorer-meme.png](internet-explorer-meme.png)
 
 ## How much?
 

@@ -43,7 +43,7 @@ about web at school.
 > so that it **doesn't refresh the page without teaching APIs**. Can you guess
 > why?
 
-![AJAX without API](/images/uploads/jsp.jpg)
+![AJAX without API](jsp.jpg)
 
 ## The APIs approach
 

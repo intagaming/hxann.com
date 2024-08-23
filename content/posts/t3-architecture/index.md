@@ -16,7 +16,7 @@ hideComments = false
 [Model-View-Controller (MVC) is a user interface architecture
 pattern.](https://developer.mozilla.org/en-US/docs/Glossary/MVC)
 
-![mvc-diagram](/images/uploads/mvc-diagram_ygwmqy.png)
+![mvc-diagram](mvc-diagram_ygwmqy.png)
 
 It describes how data (i.e. Model) is applied into the View, which is via the
 Controller. The data might come from some database, and the Controller will go
@@ -133,4 +133,4 @@ multiple options at once, so as everything else in life, "it depends".
 
 Here is a diagram to sum it up:
 
-![t3-architecture](/images/uploads/riv7jhhgy.png)
+![t3-architecture](riv7jhhgy.png)

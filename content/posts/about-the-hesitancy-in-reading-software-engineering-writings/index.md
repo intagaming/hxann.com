@@ -37,7 +37,7 @@ backends with JavaScript. So you look for a tutorial.
 
 Let's hit YouTube, the _default_ source of graduates' knowledge. Here's one:
 
-![](/images/uploads/idnbo6lug.png)
+![](idnbo6lug.png)
 
 "8 hours!?" says a graduate. They proceed anyway. How many of you actually went
 through an 8-hour tutorial and feels superior afterwards?
@@ -50,13 +50,13 @@ Node.js_ highlighted in green color.
 Here I am, the link that's recommended by the Node.js officials, _Introduction
 to Node.js_:
 
-![](/images/uploads/g6zly4qwc.png)
+![](g6zly4qwc.png)
 
 As a newcomer, not only this page tells me what is Node.js, it also instructs me
 about what I need to know before learning _Node.js_. The _Getting Started_
 section does exactly what it implies: **Getting Started**.
 
-![](/images/uploads/mszm-arlu.png)
+![](mszm-arlu.png)
 
 Take the page _The Node.js fs module_ for example, which is the "File System"
 module. It is as concise as it is possible. I'm sure you can read this in 5

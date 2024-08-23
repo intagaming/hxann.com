@@ -41,7 +41,7 @@ dive into the architecture overview.
 
 ## Architecture Overview
 
-![Architecture Diagram](/images/uploads/syo26ia6z.png)
+![Architecture Diagram](syo26ia6z.png)
 
 We can start with the clients. The clients are, for example, the browser chat
 app or a game client. They publish messages to the "Control" message channel,
@@ -92,7 +92,7 @@ each time a tick passes is called a Ticker. For context, CSGO's dedicated server
 can be 64 or 128 ticks per second. Minecraft servers are 20 ticks per second (or
 at least they try to be).
 
-![Architecture Extended](/images/uploads/distributed-realtime-architecture-extended_f3olml.png)
+![Architecture Extended](distributed-realtime-architecture-extended_f3olml.png)
 
 So, a Ticker does just that. It runs some code every time a tick passes. It's a
 continually running thing, 24/7. But our Tickers have a special trick up their

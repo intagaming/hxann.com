@@ -25,13 +25,13 @@ Some time ago, I had to store the JWT token returned from Strapi in a React web
 app. Strapi is a **stateless** server. The React app is **client-side**. Here's
 what the internet has to say when I need to learn "jwt storage":
 
-![jwt-storage-google](/images/uploads/jwt-storage-google_pq7lyt.png)
+![jwt-storage-google](jwt-storage-google_pq7lyt.png)
 
 Seems like most opposed to the idea of using `localStorage`.
 
 What about "react jwt storage"?
 
-![react-jwt-storage-google](/images/uploads/react-jwt-storage-google_m8on8v.png)
+![react-jwt-storage-google](react-jwt-storage-google_m8on8v.png)
 
 First one that recommends `localStorage`! Hmm, there are also people that
 recommend storing JWT in Cookie. Also, there's a recommendation of using
@@ -40,7 +40,7 @@ refreshes.][8] So let's not talk about it.
 
 Let's dig into [the first StackOverflow post][9] above:
 
-![jwt-first-so-answer](/images/uploads/jwt-first-so-answer_kbfpiz.png)
+![jwt-first-so-answer](jwt-first-so-answer_kbfpiz.png)
 
 Okay. They said that I should use cookies and refresh token instead. And the
 Refresh Token should be stored in a cookie with `httpOnly` flag. Hold that idea
@@ -48,7 +48,7 @@ for a second.
 
 How about [the second post][10]:
 
-![jwt-second-so-answer](/images/uploads/jwt-second-so-answer_rhln47.png)
+![jwt-second-so-answer](jwt-second-so-answer_rhln47.png)
 
 Interesting. Two posts that recommend the same Cookie approach. Look at the 3rd
 point. They said that I should store my JWT in a Cookie, because in point number
@@ -107,7 +107,7 @@ I'm at the Cheat Sheet. Here's the steps:
 
 Here's a visualization of what's going on:
 
-![double-submit](/images/uploads/double-submit_siyipg.png)
+![double-submit](double-submit_siyipg.png)
 
 The end result is, if the attacker wants to do the CSRF now, they would need to:
 

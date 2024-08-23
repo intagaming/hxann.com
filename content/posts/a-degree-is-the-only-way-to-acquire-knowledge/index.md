@@ -13,7 +13,7 @@ hideComments = false
 
 Today I came across this:
 
-![Youtube comment](/images/uploads/youtube-comment.png)
+![Youtube comment](youtube-comment.png)
 
 Maybe YouTube isn't the right thing to "substitute" your degree, and I agreed.
 However, you are mixing terms.

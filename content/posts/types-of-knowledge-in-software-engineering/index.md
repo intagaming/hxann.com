@@ -53,7 +53,7 @@ true. For example:
 
 [Link to the answer on SO](https://stackoverflow.com/a/61106253)
 
-![](/images/uploads/where-to-store-access-token-in-react-js_hzelfl.png)
+![](where-to-store-access-token-in-react-js_hzelfl.png)
 
 It's gotten some hefty upvotes eh?
 
