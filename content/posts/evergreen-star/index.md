@@ -11,7 +11,7 @@ readingTime = true
 hideComments = false
 +++
 
-[{{< image src="https://img.shields.io/badge/Evergreen*-complied-2ea44f" alt="Evergreen* complied badge" style="border: none; padding: 0;" >}}](/posts/evergreen-star)
+[{{< image src="https://img.shields.io/badge/Evergreen*-complied-2ea44f" alt="Evergreen* complied badge" style="border: none; padding: 0;" >}}](https://hxann.com/posts/evergreen-star)
 
 Evergreen* (pronounced Evergreen Star) describes software that will continue to
 provide value according to its specification for as long as possible. It's
