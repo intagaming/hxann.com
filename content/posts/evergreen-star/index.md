@@ -22,9 +22,14 @@ possible.
 
 Evergreen* software must ensure the followings:
 
-- Must be tested. This is the core of the software's specification.
+- The happy cases must be tested. This is the core of the software's
+  specification.
+    - Ideally test all cases you can think of, but if short on time, happy cases
+      are enough.
 - All the software's dependencies must be vendored.
 - The environment that the software runs in must be deterministic.
+- Any exception that leaves the system in an unknown state must crash the
+  software.
 - If software crashes, it must be restarted, no limits on how many times it
   restarts.
     - A software crash, in other words, is the fact that something did not went
