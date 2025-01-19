@@ -24,4 +24,6 @@ directly. You will have to set your own LLM provider and API key in the
 settings. And I don't have money so I won't make a SaaS out of this. But my
 server does split the chapters up for you though._
 
-I recommend using `google/gemini-flash-1.5-8b`.
+I recommend using `google/gemini-flash-1.5` if you're summarizing books that's
+not English. Otherwise the smaller model `google/gemini-flash-1.5-8b` is
+adequate.
