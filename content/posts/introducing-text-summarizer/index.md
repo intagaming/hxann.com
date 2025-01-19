@@ -10,6 +10,8 @@ readingTime = true
 hideComments = false
 +++
 
+![Text Summarizer summarizing Pride and Prejudice](text-summarizer.png)
+
 Upload an EPUB, choose a chapter until which to summarize, and see summarization
 for each previous chapters!
 
@@ -22,4 +24,4 @@ directly. You will have to set your own LLM provider and API key in the
 settings. And I don't have money so I won't make a SaaS out of this. But my
 server does split the chapters up for you though._
 
-![Text Summarizer summarizing Pride and Prejudice](text-summarizer.png)
+I recommend using `google/gemini-flash-1.5-8b`.
